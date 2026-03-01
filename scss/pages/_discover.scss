@@ -1,0 +1,125 @@
+.hero-section {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 1rem;
+
+  .hero-left {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .hero-image-wrapper {
+      position: relative;
+
+      .hero-image {
+        max-width: 400px;
+        border-radius: 1rem;
+      }
+
+      .slider-timer {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 5px;
+        align-items: center;
+
+        .slider-line {
+          width: 60px;
+          height: 4px;
+          background-color: rgba(255, 255, 255, 0.5);
+          border-radius: 2px;
+
+          &.active {
+            background-color: #1db954; // Spotify green
+          }
+        }
+
+        .slider-arrow {
+          background: none;
+          border: none;
+          color: white;
+          font-size: 1rem;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .hero-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+
+    .info-card {
+      display: flex;
+      gap: 1rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 1rem;
+      border-radius: 1rem;
+
+      .info-left {
+        img.artist-image {
+          width: 80px;
+          height: 80px;
+          border-radius: 0.5rem;
+        }
+      }
+
+      .info-right {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        .title {
+          font-size: 1.2rem;
+          font-weight: bold;
+        }
+
+        .by {
+          font-size: 0.9rem;
+          opacity: 0.7;
+        }
+
+        .meta {
+          font-size: 0.8rem;
+          opacity: 0.6;
+        }
+
+        .player-controls {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+
+          button {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+          }
+        }
+
+        .genre-buttons {
+          display: flex;
+          gap: 0.5rem;
+
+          .genre-btn {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: none;
+            padding: 0.3rem 0.6rem;
+            border-radius: 0.5rem;
+            color: white;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
