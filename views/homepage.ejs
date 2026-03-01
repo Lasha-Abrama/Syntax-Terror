@@ -25,79 +25,12 @@
               Audiobooks
             </button>
           </div>
-
           <!-- Made For You Section -->
-          <section class="section top-mixes">
+          <section class="section">
             <div class="section-title">
-              <h3>Made For You</h3>
-              <div class="section-actions">
-                <button class="arrow arrow-left">
-                  <svg
-                    width="41"
-                    height="41"
-                    viewBox="0 0 41 41"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g opacity="0.5">
-                      <path
-                        d="M27.7832 20.2064H13.471M13.471 20.2064L19.3643 26.0996M13.471 20.2064L19.3643 14.3131"
-                        stroke="#898989"
-                        stroke-width="2.02054"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </g>
-                  </svg>
-                </button>
-                <button class="arrow arrow-right">
-                  <svg
-                    width="41"
-                    height="41"
-                    viewBox="0 0 41 41"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g opacity="0.5">
-                      <path
-                        d="M13.4688 20.2057H27.7809M27.7809 20.2057L21.8877 14.3125M27.7809 20.2057L21.8877 26.099"
-                        stroke="#898989"
-                        stroke-width="2.02054"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </g>
-                  </svg>
-                </button>
-                <svg
-                  width="40"
-                  height="40"
-                  viewBox="0 0 40 40"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="11.7853"
-                    cy="20.2072"
-                    r="1.68378"
-                    fill="#898989"
-                  />
-                  <circle
-                    cx="20.2053"
-                    cy="20.2072"
-                    r="1.68378"
-                    fill="#898989"
-                  />
-                  <circle
-                    cx="28.6232"
-                    cy="20.2072"
-                    r="1.68378"
-                    fill="#898989"
-                  />
-                </svg>
-              </div>
+              <h3>Made for you</h3>
+              <%- include('partials/actions') %>
             </div>
-
             <div class="cards-viewport">
               <div class="card-container">
                 <% data.mixes.slice(0,12).forEach(item => { %>
@@ -106,77 +39,11 @@
               </div>
             </div>
           </section>
-
           <!-- Your Top Mixes Section -->
-          <section class="section top-mixes">
+          <section class="section">
             <div class="section-title">
-              <h3>Your Top Mixes</h3>
-              <div class="section-actions">
-                <button class="arrow arrow-left">
-                  <svg
-                    width="41"
-                    height="41"
-                    viewBox="0 0 41 41"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g opacity="0.5">
-                      <path
-                        d="M27.7832 20.2064H13.471M13.471 20.2064L19.3643 26.0996M13.471 20.2064L19.3643 14.3131"
-                        stroke="#898989"
-                        stroke-width="2.02054"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </g>
-                  </svg>
-                </button>
-                <button class="arrow arrow-right">
-                  <svg
-                    width="41"
-                    height="41"
-                    viewBox="0 0 41 41"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g opacity="0.5">
-                      <path
-                        d="M13.4688 20.2057H27.7809M27.7809 20.2057L21.8877 14.3125M27.7809 20.2057L21.8877 26.099"
-                        stroke="#898989"
-                        stroke-width="2.02054"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </g>
-                  </svg>
-                </button>
-                <svg
-                  width="40"
-                  height="40"
-                  viewBox="0 0 40 40"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="11.7853"
-                    cy="20.2072"
-                    r="1.68378"
-                    fill="#898989"
-                  />
-                  <circle
-                    cx="20.2053"
-                    cy="20.2072"
-                    r="1.68378"
-                    fill="#898989"
-                  />
-                  <circle
-                    cx="28.6232"
-                    cy="20.2072"
-                    r="1.68378"
-                    fill="#898989"
-                  />
-                </svg>
-              </div>
+              <h3>Your top mixes</h3>
+              <%- include('partials/actions') %>
             </div>
 
             <div class="cards-viewport">
@@ -187,77 +54,11 @@
               </div>
             </div>
           </section>
-
           <!-- Your Favorite Artists Section -->
-          <section class="section favorite-artists">
+          <section class="section">
             <div class="section-title">
-              <h3>Your Favorite Artists</h3>
-              <div class="section-actions">
-                <button class="arrow arrow-left">
-                  <svg
-                    width="41"
-                    height="41"
-                    viewBox="0 0 41 41"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g opacity="0.5">
-                      <path
-                        d="M27.7832 20.2064H13.471M13.471 20.2064L19.3643 26.0996M13.471 20.2064L19.3643 14.3131"
-                        stroke="#898989"
-                        stroke-width="2.02054"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </g>
-                  </svg>
-                </button>
-                <button class="arrow arrow-right">
-                  <svg
-                    width="41"
-                    height="41"
-                    viewBox="0 0 41 41"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g opacity="0.5">
-                      <path
-                        d="M13.4688 20.2057H27.7809M27.7809 20.2057L21.8877 14.3125M27.7809 20.2057L21.8877 26.099"
-                        stroke="#898989"
-                        stroke-width="2.02054"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </g>
-                  </svg>
-                </button>
-                <svg
-                  width="40"
-                  height="40"
-                  viewBox="0 0 40 40"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="11.7853"
-                    cy="20.2072"
-                    r="1.68378"
-                    fill="#898989"
-                  />
-                  <circle
-                    cx="20.2053"
-                    cy="20.2072"
-                    r="1.68378"
-                    fill="#898989"
-                  />
-                  <circle
-                    cx="28.6232"
-                    cy="20.2072"
-                    r="1.68378"
-                    fill="#898989"
-                  />
-                </svg>
-              </div>
+              <h3>Your favorite artists</h3>
+              <%- include('partials/actions') %>
             </div>
             <div class="cards-viewport">
               <div class="card-container">
@@ -267,13 +68,60 @@
               </div>
             </div>
           </section>
-          <section class="section favorite-artists">
-            <h3>Albums For You</h3>
-            <div class="card-container">
-              <% data.albums.forEach(item => { %>
-              <%- include('partials/card', {
-              item, type: 'album' }) %>
-              <% }) %>
+          <!-- Your Albums Section -->
+          <section class="section">
+            <div class="section-title">
+              <h3>Albums for You</h3>
+              <%- include('partials/actions') %>
+            </div>
+            <div class="cards-viewport">
+              <div class="card-container">
+                <% data.albums.forEach(item => { %>
+                <%- include('partials/card', { item, type: 'album' }) %>
+                <% }) %>
+              </div>
+            </div>
+          </section>
+          <!-- Your Audiobooks Section -->
+          <section class="section">
+            <div class="section-title">
+              <h3>Audiobooks for you</h3>
+              <%- include('partials/actions') %>
+            </div>
+            <div class="cards-viewport">
+              <div class="card-container">
+                <% data.audiobooks.forEach(item => { %>
+                <%- include('partials/card', { item, type: 'audiobooks' }) %>
+                <% }) %>
+              </div>
+            </div>
+          </section>
+          <!-- Your Podcasts Section -->
+          <section class="section">
+            <div class="section-title">
+              <h3>Podcasts for you</h3>
+              <%- include('partials/actions') %>
+            </div>
+            <div class="cards-viewport">
+              <div class="card-container">
+                <% data.podcasts.forEach(item => { %>
+                <%- include('partials/card', { item, type: 'podcasts' }) %>
+                <% }) %>
+              </div>
+            </div>
+          </section>
+          <!-- Your Episodes Section -->
+          <section class="section">
+            <div class="section-title">
+              <h3>Episodes for you</h3>
+              <%- include('partials/actions') %>
+            </div>
+            <div class="cards-viewport">
+              <div class="card-container">
+                <% data.podcasts.forEach(item => { %>
+                <%- include('partials/card', { item, type: 'episodes' }) %>
+                <% }) %>
+              </div>
             </div>
           </section>
         </main>

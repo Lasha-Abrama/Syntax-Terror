@@ -7,7 +7,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: variables.$font-primary;
     color: variables.$text-secondary;
     background-color: variables.$background-main;
 
@@ -40,7 +39,6 @@
           border: none;
           outline: none;
           color: variables.$text-primary;
-          font-family: variables.$font-primary;
 
           &::placeholder {
             color: variables.$text-secondary;

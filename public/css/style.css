@@ -43,6 +43,7 @@ ol {
   min-height: 100vh;
   padding: 0 7px;
   background-color: #060606;
+  font-family: "Satoshi", sans-serif;
 }
 
 .right {
@@ -113,7 +114,6 @@ svg {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: "Satoshi", sans-serif;
   color: #898989;
   background-color: #060606;
 }
@@ -163,7 +163,6 @@ svg {
   border: none;
   outline: none;
   color: #e0e0e0;
-  font-family: "Satoshi", sans-serif;
 }
 .header .navigation .nav-left .search-box input::placeholder {
   color: #898989;
@@ -204,6 +203,13 @@ svg {
   display: flex;
   gap: 11px;
 }
+.card-container .artist .card-content-top {
+  justify-content: center;
+}
+.card-container .mix .card-content-top,
+.card-container .album .card-content-top {
+  justify-content: space-between;
+}
 .card-container .card {
   display: flex;
   flex-direction: column;
@@ -225,11 +231,14 @@ svg {
 }
 .card-container .card .card-content-top {
   display: flex;
-  justify-content: space-between;
 }
 .card-container .card .card-content .card-title {
   font-size: 14px;
   font-weight: 500;
+  width: 140px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   color: #e0e0e0;
 }
 .card-container .card .card-content .card-quantity {

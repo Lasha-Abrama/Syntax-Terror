@@ -121,22 +121,22 @@
     {
       "image": "assets/images/albums/Frame 66.png",
       "title": "Meteora",
-      "artist": "Linkin Park"
+      "description": "Linkin Park"
     },
     {
       "image": "assets/images/albums/Frame 65.png",
       "title": "Random Access Memories",
-      "artist": "Daft Punk"
+      "description": "Daft Punk"
     },
     {
       "image": "assets/images/albums/Frame 66-1.png",
       "title": "Abbey Road",
-      "artist": "The Beatles"
+      "description": "The Beatles"
     },
     {
       "image": "assets/images/albums/Frame 64.png",
       "title": "Black Holes and Revelations",
-      "artist": "Muse"
+      "description": "Muse"
     }
   ],
 
@@ -144,17 +144,17 @@
     {
       "image": "assets/images/audiobooks/image 2.png",
       "title": "Halo: The Flood",
-      "author": "William C. Dietz"
+      "description": "William C. Dietz"
     },
     {
       "image": "assets/images/audiobooks/image 2-1.png",
       "title": "Halo: First Strike",
-      "author": "Eric Nylund"
+      "description": "Eric Nylund"
     },
     {
       "image": "assets/images/audiobooks/image 2-2.png",
       "title": "Halo: Ghosts of Onyx",
-      "author": "Eric Nylund"
+      "description": "Eric Nylund"
     }
   ],
 
@@ -162,19 +162,19 @@
     {
       "image": "assets/images/podcasts/image 2.png",
       "title": "anything goes...",
-      "author": "emma chamberlain",
+      "description": "emma chamberlain",
       "border-color": "#85C585"
     },
     {
       "image": "assets/images/podcasts/Frame 8.png",
       "title": "The Joe Rogan...",
-      "author": "Joe Rogan",
+      "description": "Joe Rogan",
       "border-color": "#F1CEBC"
     },
     {
       "image": "assets/images/podcasts/Frame 8-1.png",
       "title": "The Journal",
-      "author": "The Wall Street Journal",
+      "description": "The Wall Street Journal",
       "border-color": "#F67D4D"
     }
   ],

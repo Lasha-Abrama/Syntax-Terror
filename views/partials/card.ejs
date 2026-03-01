@@ -4,7 +4,17 @@
   </div>
 
   <div class="card-content">
-    <h4 class="card-title"><%= item.title || item.name %></h4>
+    <div class="card-content-top">
+      <h4 class="card-title"><%= item.title || item.name %></h4>
+      <% if (type
+      == "mix") { %>
+      <p class="card-quantity">50</p>
+      <% } %>
+      <% if (type
+      == "album") { %>
+      <p class="card-quantity">13</p>
+      <% } %>
+    </div>
 
     <% if (item.description) { %>
     <p class="card-description"><%= item.description %></p>

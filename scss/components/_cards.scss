@@ -7,6 +7,17 @@
   display: flex;
   gap: 11px;
 
+  .artist {
+    .card-content-top {
+      justify-content: center;
+    }
+  }
+  .mix,
+  .album {
+    .card-content-top {
+      justify-content: space-between;
+    }
+  }
   .card {
     display: flex;
     flex-direction: column;
@@ -21,7 +32,6 @@
         object-fit: cover;
       }
     }
-
     .card-content {
       display: flex;
       flex-direction: column;
@@ -29,11 +39,15 @@
 
       &-top {
         display: flex;
-        justify-content: space-between;
       }
+
       .card-title {
         font-size: 14px;
         font-weight: 500;
+        width: 140px; // max width
+        white-space: nowrap; // don’t wrap to next line
+        overflow: hidden; // hide overflowing text
+        text-overflow: ellipsis; // show "..."
         color: variables.$text-primary;
       }
 
