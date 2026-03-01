@@ -1,39 +1,64 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Music UI</title>
-  <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<body>
+  <head>
+    <title>Spotify</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <%- include('partials/sidebar') %>
 
-  <%- include('partials/header') %>
+      <div class="right">
+        <%- include('partials/header') %>
 
-  <div class="layout">
-    <%- include('partials/sidebar') %>
+        <main class="main-content">
+          <!-- Top Buttons -->
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="music">Music</button>
+            <button class="filter-btn" data-filter="podcasts">Podcasts</button>
+            <button class="filter-btn" data-filter="audiobooks">
+              Audiobooks
+            </button>
+          </div>
 
-    <main class="main-content">
-      <section class="section">
-        <h2>Made For You</h2>
-        <div class="card-row">
-          <% for(let i = 0; i < 8; i++) { %>
-            <div class="music-card"></div>
-          <% } %>
-        </div>
-      </section>
+          <!-- Made For You Section -->
+          <section class="section made-for-you">
+            <h3>Made For You</h3>
+            <div class="card-container">
+              <!-- <%# madeForYou.forEach(item => { %>
+                <%#- include('partials/card', { item }) %>
+              <%# }) %> -->
+            </div>
+          </section>
 
-      <section class="section">
-        <h2>Your Top Mixes</h2>
-        <div class="card-row">
-          <% for(let i = 0; i < 8; i++) { %>
-            <div class="music-card"></div>
-          <% } %>
-        </div>
-      </section>
-    </main>
-  </div>
+          <!-- Your Top Mixes Section -->
+          <section class="section top-mixes">
+            <h3>Your Top Mixes</h3>
+            <div class="card-container">
+              <!-- <%# topMixes.forEach(item => { %>
+                <%#- include('partials/card', { item }) %>
+              <%# }) %> -->
+            </div>
+          </section>
 
-  <%- include('partials/player') %>
+          <!-- Your Favorite Artists Section -->
+          <section class="section favorite-artists">
+            <h3>Your Favorite Artists</h3>
+            <div class="artist-container">
+              <!-- <%# favoriteArtists.forEach(artist => { %>
+                <%#- include('partials/artist', { artist }) %>
+              <%# }) %> -->
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
 
-</body>
+    <%- include('partials/player') %>
+  </body>
 </html>

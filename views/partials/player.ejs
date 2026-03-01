@@ -1,30 +1,42 @@
-<footer class="music-player">
+<footer class="player">
+  <!-- Left Zone: Track Info -->
   <div class="player-left">
-    <div class="album-cover"></div>
-    <div class="song-meta">
-      <p class="song-title">Get Lucky</p>
-      <p class="artist">Daft Punk</p>
+    <img src="album-cover.jpg" alt="Album Cover" class="track-cover" />
+    <div class="track-info">
+      <span class="track-title">Track Title</span>
+      <span class="track-artist">Artist Name</span>
+    </div>
+    <div class="track-actions">
+      <button class="like-btn">❤️</button>
+      <button class="more-btn">⋯</button>
     </div>
   </div>
 
+  <!-- Center Zone: Playback Controls -->
   <div class="player-center">
-    <div class="controls">
-      <i class="fas fa-backward"></i>
-      <button class="play-btn">
-        <i class="fas fa-play"></i>
-      </button>
-      <i class="fas fa-forward"></i>
+    <div class="playback-controls">
+      <button class="prev-btn">⏮️</button>
+      <button class="play-pause-btn">▶️</button>
+      <button class="next-btn">⏭️</button>
     </div>
-
-    <div class="timeline">
-      <span>2:25</span>
-      <input type="range" value="40" />
-      <span>4:45</span>
+    <div class="progress-bar">
+      <span class="time current">0:00</span>
+      <div class="progress-track">
+        <div class="progress-filled"></div>
+      </div>
+      <span class="time total">3:45</span>
     </div>
   </div>
 
+  <!-- Right Zone: Actions -->
   <div class="player-right">
-    <i class="fas fa-list"></i>
-    <i class="fas fa-volume-up"></i>
+    <button class="queue-btn">📃</button>
+    <button class="device-btn">💻</button>
+    <div class="volume-control">
+      <span>🔊</span>
+      <div class="volume-slider">
+        <div class="volume-filled"></div>
+      </div>
+    </div>
   </div>
 </footer>

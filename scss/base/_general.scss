@@ -1,0 +1,29 @@
+@use "../abstracts/_variables";
+.wrapper {
+  display: flex;
+  height: 100vh;
+  padding: 0 7px;
+  background-color: variables.$background-main;
+}
+.right {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.active {
+  color: variables.$text-primary;
+  background-color: variables.$background-primary;
+  border-radius: 10px;
+  svg {
+    stroke: variables.$text-primary;
+    fill: variables.$text-primary;
+  }
+}
+svg {
+  width: 41px;
+  height: 41px;
+  fill: none;
+  stroke: variables.$text-secondary;
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
