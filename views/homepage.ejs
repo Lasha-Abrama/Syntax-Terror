@@ -30,9 +30,8 @@
           <section class="section made-for-you">
             <h3>Made For You</h3>
             <div class="card-container">
-              <!-- <%# madeForYou.forEach(item => { %>
-                <%#- include('partials/card', { item }) %>
-              <%# }) %> -->
+              <% mixes.slice(0, 8).forEach(item => { %> <%-
+              include('partials/card', { item }) %> <% }) %>
             </div>
           </section>
 
@@ -40,9 +39,8 @@
           <section class="section top-mixes">
             <h3>Your Top Mixes</h3>
             <div class="card-container">
-              <!-- <%# topMixes.forEach(item => { %>
-                <%#- include('partials/card', { item }) %>
-              <%# }) %> -->
+              <% mixes.slice(8).forEach(item => { %> <%-
+              include('partials/card', { item }) %> <% }) %>
             </div>
           </section>
 

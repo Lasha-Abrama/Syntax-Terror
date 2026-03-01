@@ -2,12 +2,14 @@
 .card-container {
   display: flex;
   gap: 11px;
+  overflow-x: auto;
 
   .card {
     display: flex;
     flex-direction: column;
     width: 170px; // same as image width
     flex-shrink: 0; // prevent shrinking in flex row
+    min-width: 180px;
 
     .card-image {
       width: 170px;

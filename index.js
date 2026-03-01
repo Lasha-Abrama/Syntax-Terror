@@ -3,6 +3,8 @@ const path = require("path");
 const app = express();
 const PORT = 3000;
 
+const data = require("./data/data.json");
+
 // Set EJS as view engine
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -12,7 +14,9 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Routes
 app.get("/", (req, res) => {
-  res.render("homepage", { page: "home" });
+  res.render("homepage", {
+    mixes: data.mixes,
+  });
 });
 
 app.get("/about", (req, res) => {
