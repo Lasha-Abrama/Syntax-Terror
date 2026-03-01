@@ -1,0 +1,383 @@
+{
+  "mixes": [
+    {
+      "image": "public/assets/images/mixes/Frame 124.png",
+      "title": "Discover Weekly",
+      "description": "Your weekly mixtape of fresh music."
+    },
+    {
+      "image": "public/assets/images/mixes/Frame 124-1.png",
+      "title": "Daily Mix 1",
+      "description": "Linkin Park, System Of A Down, Coal Chamber..."
+    },
+    {
+      "image": "public/assets/images/mixes/Frame 124-2.png",
+      "title": "Daily Mix 2",
+      "description": "Avril Lavigne, Lorde, Charli XCX and more"
+    },
+    {
+      "image": "public/assets/images/mixes/Frame 124-3.png",
+      "title": "Daily Mix 3",
+      "description": "The Strokes, Martin Garrix, MGMT and more"
+    },
+    {
+      "image": "public/assets/images/mixes/Frame 124-4.png",
+      "title": "Daily Mix 4",
+      "description": "Chuck Berry, Elvis Presley, Roy Orbison and more"
+    },
+    {
+      "image": "public/assets/images/mixes/Frame 124-5.png",
+      "title": "Daily Mix 5",
+      "description": "Frank Sinatra, Gerhard Trede, Dean Martin and more"
+    },
+    {
+      "image": "public/assets/images/mixes/Frame 124-6.png",
+      "title": "Nirvana Radio",
+      "description": "The Strokes, Martin Garrix, MGMT and more"
+    },
+    {
+      "image": "public/assets/images/mixes/Frame 124-7.png",
+      "title": "Fall Out Boy Radio",
+      "description": "With Panic! At The Disco, The All-American Rejects,..."
+    },
+    {
+      "image": "public/assets/images/mixes/Frame 124-8.png",
+      "title": "Rock Mix",
+      "description": "Red Hot Chili Peppers, R.E.M., Guns N’ Roses..."
+    },
+    {
+      "image": "public/assets/images/mixes/Frame 124-9.png",
+      "title": "Chill Mix",
+      "description": "MF DOOM, Daft Punk, The Chainsmokers, and more"
+    },
+    {
+      "image": "public/assets/images/mixes/Frame 124-10.png",
+      "title": "Pop Mix",
+      "description": "Red Hot Chili Peppers, R.E.M., Guns N’ Roses..."
+    },
+    {
+      "image": "public/assets/images/mixes/Frame 124-11.png",
+      "title": "Daft Punk Mix",
+      "description": "Daft Punk, MGMT, Muse, and more"
+    },
+    {
+      "image": "public/assets/images/mixes/Frame 124-12.png",
+      "title": "Happy Mix",
+      "description": "The Turtles, Van Morrison, ABBA and more"
+    },
+    {
+      "image": "public/assets/images/mixes/Frame 124-13.png",
+      "title": "David Bowie Mix",
+      "description": "Soft Cell, The Who and The Clash"
+    },
+    {
+      "image": "public/assets/images/mixes/Frame 124-14.png",
+      "title": "Upbeat Mix",
+      "description": "Kylie Minogue, Charli XCX, Cage The Elephant and..."
+    },
+    {
+      "image": "public/assets/images/mixes/Frame 124-15.png",
+      "title": "60s Mix",
+      "description": "Chuck Berry, Skeeter David, Van Morrison and..."
+    }
+  ],
+
+  "artists": [
+    {
+      "name": "Guns N’ Roses",
+      "image": "public/assets/images/artists/Frame 8.png"
+    },
+    {
+      "name": "Daft Punk",
+      "image": "public/assets/images/artists/image 3.png"
+    },
+    {
+      "name": "David Bowie",
+      "image": "public/assets/images/artists/image 4.png"
+    }
+  ],
+
+  "albums": [
+    {
+      "image": "public/assets/images/albums/Frame 66.png",
+      "title": "Meteora",
+      "artist": "Linkin Park"
+    },
+    {
+      "image": "public/assets/images/albums/Frame 65.png",
+      "title": "Random Access Memories",
+      "artist": "Daft Punk"
+    },
+    {
+      "image": "public/assets/images/albums/Frame 66-1.png",
+      "title": "Abbey Road",
+      "artist": "The Beatles"
+    },
+    {
+      "image": "public/assets/images/albums/Frame 64.png",
+      "title": "Black Holes and Revelations",
+      "artist": "Muse"
+    }
+  ],
+
+  "audiobooks": [
+    {
+      "image": "public/assets/images/audiobooks/image 2.png",
+      "title": "Halo: The Flood",
+      "author": "William C. Dietz"
+    },
+    {
+      "image": "public/assets/images/audiobooks/image 2-1.png",
+      "title": "Halo: First Strike",
+      "author": "Eric Nylund"
+    },
+    {
+      "image": "public/assets/images/audiobooks/image 2-2.png",
+      "title": "Halo: Ghosts of Onyx",
+      "author": "Eric Nylund"
+    }
+  ],
+
+  "podcasts": [
+    {
+      "image": "public/assets/images/podcasts/image 2.png",
+      "title": "anything goes...",
+      "author": "emma chamberlain",
+      "border-color": "#85C585"
+    },
+    {
+      "image": "public/assets/images/podcasts/Frame 8.png",
+      "title": "The Joe Rogan...",
+      "author": "Joe Rogan",
+      "border-color": "#F1CEBC"
+    },
+    {
+      "image": "public/assets/images/podcasts/Frame 8-1.png",
+      "title": "The Journal",
+      "author": "The Wall Street Journal",
+      "border-color": "#F67D4D"
+    }
+  ],
+  "browse": [
+    {
+      "category": "Discover",
+      "items": [
+        {
+          "title": "Made For You",
+          "image": "public/assets/images/discover/image 2.png",
+          "color": "#1e3264"
+        },
+        {
+          "title": "New Releases",
+          "image": "public/assets/images/discover/image 13.png",
+          "color": "#BA5D07"
+        },
+        {
+          "title": "Spotify Classics",
+          "image": "public/assets/images/discover/image 13-1.png",
+          "color": "#1E3264"
+        },
+        {
+          "title": "Charts",
+          "image": "public/assets/images/discover/image 13-2.png",
+          "color": "#8D67AB"
+        },
+        {
+          "title": "Trending",
+          "image": "public/assets/images/discover/image 13-3.png",
+          "color": "#eB02897"
+        },
+        {
+          "title": "Discover",
+          "image": "public/assets/images/discover/image 13-4.png",
+          "color": "#8D67AB"
+        },
+        {
+          "title": "Spotify Singles",
+          "image": "public/assets/images/discover/image 13-5.png",
+          "color": "#777777"
+        },
+        {
+          "title": "Decades",
+          "image": "public/assets/images/discover/image 13-6.png",
+          "color": "#BA5D07"
+        }
+      ]
+    },
+
+    {
+      "category": "Genres",
+      "items": [
+        {
+          "title": "Pop",
+          "image": "public/assets/images/genres/image 13.png",
+          "color": "#148a08"
+        },
+        {
+          "title": "Country",
+          "image": "public/assets/images/genres/image 13-1.png",
+          "color": "#D84000"
+        },
+        {
+          "title": "Hip-Hop",
+          "image": "public/assets/images/genres/image 13-2.png",
+          "color": "#503750"
+        },
+        {
+          "title": "Rock",
+          "image": "public/assets/images/genres/image 13-3.png",
+          "color": "#006450"
+        },
+        {
+          "title": "Indie",
+          "image": "public/assets/images/genres/image 13-4.png",
+          "color": "#E91429"
+        },
+        {
+          "title": "Punk",
+          "image": "public/assets/images/genres/image 13-5.png",
+          "color": "#1e3264"
+        },
+        {
+          "title": "Metal",
+          "image": "public/assets/images/genres/image 13-6.png",
+          "color": "#E91429"
+        },
+        {
+          "title": "Instrumental",
+          "image": "public/assets/images/genres/image 13-7.png",
+          "color": "#537AA1"
+        }
+      ]
+    },
+
+    {
+      "category": "Mood & Activity",
+      "items": [
+        {
+          "title": "In the car",
+          "image": "public/assets/images/mood_activity/image 13.png",
+          "color": "#2D46B9"
+        },
+        {
+          "title": "Mood",
+          "image": "public/assets/images/mood_activity/image 13-1.png",
+          "color": "#E1118C"
+        },
+        {
+          "title": "Workout",
+          "image": "public/assets/images/mood_activity/image 13-2.png",
+          "color": "#777777"
+        },
+        {
+          "title": "Chill",
+          "image": "public/assets/images/mood_activity/image 13-3.png",
+          "color": "#D84000"
+        },
+        {
+          "title": "Sleep",
+          "image": "public/assets/images/mood_activity/image 13-4.png",
+          "color": "#1E3264"
+        },
+        {
+          "title": "Party",
+          "image": "public/assets/images/mood_activity/image 13-5.png",
+          "color": "#537AA1"
+        },
+        {
+          "title": "At Home",
+          "image": "public/assets/images/mood_activity/image 13-6.png",
+          "color": "#5179A1"
+        },
+        {
+          "title": "Focus",
+          "image": "public/assets/images/mood_activity/image 13-7.png",
+          "color": "#503750"
+        }
+      ]
+    },
+
+    {
+      "category": "Entertainment",
+      "items": [
+        {
+          "title": "Netflix",
+          "image": "public/assets/images/entertainment/image 13.png",
+          "color": "#EB1E32"
+        },
+        {
+          "title": "Anime",
+          "image": "public/assets/images/entertainment/image 14.png",
+          "color": "#E41D63"
+        },
+        {
+          "title": "Disney",
+          "image": "public/assets/images/entertainment/image 13-1.png",
+          "color": "#0D73EC"
+        },
+        {
+          "title": "Gaming",
+          "image": "public/assets/images/entertainment/image 13-2.png",
+          "color": "#E8115B"
+        }
+      ]
+    },
+
+    {
+      "category": "Podcasts",
+      "items": [
+        {
+          "title": "Podcasts",
+          "image": "public/assets/images/browse_podcasts/image 13.png",
+          "color": "#006450"
+        },
+        {
+          "title": "Podcast Charts",
+          "image": "public/assets/images/browse_podcasts/image 13-1.png",
+          "color": "#0D73EC"
+        },
+        {
+          "title": "Podcast New Releases",
+          "image": "public/assets/images/browse_podcasts/image 13-2.png",
+          "color": "#27856A"
+        },
+        {
+          "title": "Video",
+          "image": "public/assets/images/browse_podcasts/image 13-3.png",
+          "color": "#E61E32"
+        }
+      ]
+    },
+
+    {
+      "category": "Audiobooks",
+      "items": [
+        {
+          "title": "Audiobooks",
+          "image": "public/assets/images/browse_podcasts/image 13.png",
+          "color": "#1E3264"
+        },
+        {
+          "title": "Sci-Fi & Fantasy",
+          "image": "public/assets/images/browse_podcasts/image 13-1.png",
+          "color": "#8D67AB"
+        },
+        {
+          "title": "Fiction & Literature",
+          "image": "public/assets/images/browse_podcasts/image 13-2.png",
+          "color": "#503750"
+        },
+        {
+          "title": "Mystery & Thriller",
+          "image": "public/assets/images/browse_podcasts/image 13-3.png",
+          "color": "#1E3264"
+        },
+        {
+          "title": "Self-Help",
+          "image": "public/assets/images/browse_podcasts/image 13-4.png",
+          "color": "#006450"
+        }
+      ]
+    }
+  ]
+}

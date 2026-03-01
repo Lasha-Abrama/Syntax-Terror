@@ -3,6 +3,7 @@
 
 .header {
   .navigation {
+    margin-left: 260px;
     height: 54px;
     display: flex;
     justify-content: space-between;
@@ -20,6 +21,7 @@
         @include mixins.flex-link();
         padding: 7px 0;
         border-radius: 10px;
+        width: 210px;
 
         &.active {
           color: variables.$text-primary;
