@@ -3,102 +3,122 @@
     {
       "image": "assets/images/mixes/Frame124.png",
       "title": "Discover Weekly",
-      "description": "Your weekly mixtape of fresh music."
+      "description": "Your weekly mixtape of fresh music.",
+      "rating-color": "#CE6E9A"
     },
     {
       "image": "assets/images/mixes/Frame 124-1.png",
       "title": "Daily Mix 1",
-      "description": "Linkin Park, System Of A Down, Coal Chamber..."
+      "description": "Linkin Park, System Of A Down, Coal Chamber...",
+      "rating-color": "#95E6D3"
     },
     {
       "image": "assets/images/mixes/Frame 124-2.png",
       "title": "Daily Mix 2",
-      "description": "Avril Lavigne, Lorde, Charli XCX and more"
+      "description": "Avril Lavigne, Lorde, Charli XCX and more",
+      "rating-color": "#F4B8BD"
     },
     {
       "image": "assets/images/mixes/Frame 124-3.png",
       "title": "Daily Mix 3",
-      "description": "The Strokes, Martin Garrix, MGMT and more"
+      "description": "The Strokes, Martin Garrix, MGMT and more",
+      "rating-color": "#C3E7B7"
     },
     {
       "image": "assets/images/mixes/Frame 124-4.png",
       "title": "Daily Mix 4",
-      "description": "Chuck Berry, Elvis Presley, Roy Orbison and more"
+      "description": "Chuck Berry, Elvis Presley, Roy Orbison and more",
+      "rating-color": "#F37FA6"
     },
     {
       "image": "assets/images/mixes/Frame 124-5.png",
-      "title": "Daily Mix 5",
-      "description": "Frank Sinatra, Gerhard Trede, Dean Martin and more"
+      "title": "Daily Mix 6",
+      "description": "Frank Sinatra, Gerhard Trede, Dean Martin and more",
+      "rating-color": "#A0BEC8"
     },
     {
       "image": "assets/images/mixes/Frame 124-6.png",
       "title": "Nirvana Radio",
-      "description": "The Strokes, Martin Garrix, MGMT and more"
+      "description": "The Strokes, Martin Garrix, MGMT and more",
+      "rating-color": "#FDD87D"
     },
     {
       "image": "assets/images/mixes/Frame 124-7.png",
       "title": "Fall Out Boy Radio",
-      "description": "With Panic! At The Disco, The All-American Rejects,..."
+      "description": "With Panic! At The Disco, The All-American Rejects,...",
+      "rating-color": "#D4B2A9"
     },
     {
       "image": "assets/images/mixes/Frame 124-16.png",
       "title": "Adele Radio",
-      "description": "With Sia, Sam Smith, P!nk and more"
+      "description": "With Sia, Sam Smith, P!nk and more",
+      "rating-color": "#DEB075"
     },
     {
       "image": "assets/images/mixes/Frame 124-17.png",
       "title": "Daft Punk Radio",
-      "description": "With Justice, The Chemical Brothers, ..."
+      "description": "With Justice, The Chemical Brothers, ...",
+      "rating-color": "#8DC3B5"
     },
     {
       "image": "assets/images/mixes/Frame 124-18.png",
       "title": "ABBA Radio",
-      "description": "With Honey M., Bee Gees, Bonnie Tyler, and more"
+      "description": "With Honey M., Bee Gees, Bonnie Tyler, and more",
+      "rating-color": "#A6BAD3"
     },
     {
       "image": "assets/images/mixes/Frame 124-19.png",
-      "title": "Daily Mix 6",
-      "description": "One Direction, Avril Lavigne, Lorde, and more"
+      "title": "Daily Mix 3",
+      "description": "One Direction, Avril Lavigne, Lorde, and more",
+      "rating-color": "#C3E7B7"
     },
     {
       "image": "assets/images/mixes/Frame 124-8.png",
       "title": "Rock Mix",
-      "description": "Red Hot Chili Peppers, R.E.M., Guns N’ Roses..."
+      "description": "Red Hot Chili Peppers, R.E.M., Guns N’ Roses...",
+      "rating-color": "#CCF665"
     },
     {
       "image": "assets/images/mixes/Frame 124-9.png",
       "title": "Chill Mix",
-      "description": "MF DOOM, Daft Punk, The Chainsmokers, and more"
+      "description": "MF DOOM, Daft Punk, The Chainsmokers, and more",
+      "rating-color": "#F9E72C"
     },
     {
       "image": "assets/images/mixes/Frame 124-10.png",
       "title": "Pop Mix",
-      "description": "Red Hot Chili Peppers, R.E.M., Guns N’ Roses..."
+      "description": "Red Hot Chili Peppers, R.E.M., Guns N’ Roses...",
+      "rating-color": "#9BF0E2"
     },
     {
       "image": "assets/images/mixes/Frame 124-11.png",
       "title": "Daft Punk Mix",
-      "description": "Daft Punk, MGMT, Muse, and more"
+      "description": "Daft Punk, MGMT, Muse, and more",
+      "rating-color": "#6F86FF"
     },
     {
       "image": "assets/images/mixes/Frame 124-12.png",
       "title": "Happy Mix",
-      "description": "The Turtles, Van Morrison, ABBA and more"
+      "description": "The Turtles, Van Morrison, ABBA and more",
+      "rating-color": "#FFCBD4"
     },
     {
       "image": "assets/images/mixes/Frame 124-13.png",
       "title": "David Bowie Mix",
-      "description": "Soft Cell, The Who and The Clash"
+      "description": "Soft Cell, The Who and The Clash",
+      "rating-color": "#FFC668"
     },
     {
       "image": "assets/images/mixes/Frame 124-14.png",
       "title": "Upbeat Mix",
-      "description": "Kylie Minogue, Charli XCX, Cage The Elephant and..."
+      "description": "Kylie Minogue, Charli XCX, Cage The Elephant and...",
+      "rating-color": "#27856B"
     },
     {
       "image": "assets/images/mixes/Frame 124-15.png",
       "title": "60s Mix",
-      "description": "Chuck Berry, Skeeter David, Van Morrison and..."
+      "description": "Chuck Berry, Skeeter David, Van Morrison and...",
+      "rating-color": "#DD138B"
     }
   ],
 

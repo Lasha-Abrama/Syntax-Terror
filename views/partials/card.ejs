@@ -8,7 +8,7 @@
       <h4 class="card-title"><%= item.title || item.name %></h4>
       <% if (type
       == "mix") { %>
-      <p class="card-quantity">50</p>
+      <p class="card-quantity" data-colour="<%= item['rating-color'] %>">50</p>
       <% } %>
       <% if (type
       == "album") { %>
@@ -27,3 +27,5 @@
     <% } %>
   </div>
 </div>
+
+<script src="../../public/js/script.js"></script>
