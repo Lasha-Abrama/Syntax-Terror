@@ -1,0 +1,36 @@
+@use "../abstracts/_variables";
+@use "../abstracts/_mixins";
+
+.sidebar {
+  padding: 7px 0;
+
+  .sidebar-nav {
+    ul.sidebar-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 11px; // gap between li elements
+      width: 260px; // fixed desktop width
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        a.nav-btn {
+          @include mixins.flex-link();
+
+          span {
+            color: variables.$text-secondary;
+          }
+        }
+
+        &.active a.nav-btn {
+          border-radius: 4px;
+          font-weight: 700;
+
+          span {
+            color: variables.$text-primary;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+@use "../abstracts/_variables";
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; // gap between sections
+  border-radius: 10px;
+  border: 1px solid #202020;
+  margin-left: 7px;
+  padding: 12px 25px;
+
+  .filter-buttons {
+    display: flex;
+    gap: 10px; // gap between buttons
+
+    .filter-btn {
+      background-color: rgba(32, 32, 32, 0.5);
+      color: variables.$text-primary;
+      border-radius: 8px;
+      padding: 8px 15px;
+      border: none;
+      cursor: pointer;
+      font-family: variables.$font-primary;
+      font-size: 14px;
+      transition: all 0.2s ease;
+
+      &.active {
+        background-color: variables.$text-primary;
+        color: variables.$background-primary;
+        font-weight: bold;
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; // gap between h3 and cards container
+
+    h3 {
+      font-family: variables.$font-primary;
+      font-size: 18px;
+      font-weight: 600;
+      color: variables.$text-primary;
+    }
+  }
+}
