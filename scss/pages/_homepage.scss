@@ -41,6 +41,10 @@
     flex-direction: column;
     gap: 15px; // gap between h3 and cards container
 
+    &-title {
+      display: flex;
+      justify-content: space-between;
+    }
     h3 {
       font-family: variables.$font-primary;
       font-size: 18px;

@@ -1,7 +1,7 @@
 @use "../abstracts/_variables";
 .wrapper {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   padding: 0 7px;
   background-color: variables.$background-main;
 }
@@ -9,6 +9,8 @@
   display: flex;
   width: 100%;
   flex-direction: column;
+  flex: 1;
+  min-width: 0;
 }
 .active {
   color: variables.$text-primary;

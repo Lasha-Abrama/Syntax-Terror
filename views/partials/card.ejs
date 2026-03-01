@@ -1,10 +1,19 @@
-<div class="card">
+<div class="card <%= type %>">
   <div class="card-image">
-    <img src="<%= item.image %>" alt="<%= item.title %>" />
+    <img src="<%= item.image %>" alt="<%= item.title || item.name %>" />
   </div>
+
   <div class="card-content">
-    <h4 class="card-title"><%= item.title %></h4>
-    <span class="card-quantity">50</span>
+    <h4 class="card-title"><%= item.title || item.name %></h4>
+
+    <% if (item.description) { %>
     <p class="card-description"><%= item.description %></p>
+    <% } %>
+    <% if (item.artist) { %>
+    <p class="card-sub"><%= item.artist %></p>
+    <% } %>
+    <% if (item.author) { %>
+    <p class="card-sub"><%= item.author %></p>
+    <% } %>
   </div>
 </div>
