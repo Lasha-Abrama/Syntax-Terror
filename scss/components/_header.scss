@@ -1,0 +1,69 @@
+@use "../abstracts/_variables";
+@use "../abstracts/_mixins";
+
+.header {
+  .navigation {
+    height: 54px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: variables.$font-primary;
+    color: variables.$text-secondary;
+    background-color: variables.$background-main;
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+
+      a.nav-btn {
+        @include mixins.flex-link();
+        padding: 7px 0;
+        border-radius: 10px;
+
+        &.active {
+          color: variables.$text-primary;
+          background-color: variables.$background-primary;
+        }
+
+        span {
+          font-size: 14px;
+        }
+      }
+
+      .search-box {
+        @include mixins.flex-link(8px);
+
+        input {
+          background: transparent;
+          border: none;
+          outline: none;
+          color: variables.$text-primary;
+          font-family: variables.$font-primary;
+
+          &::placeholder {
+            color: variables.$text-secondary;
+          }
+        }
+      }
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+
+      a {
+        @include mixins.flex-link();
+        font-size: 16px;
+      }
+
+      .profile-circle {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-color: variables.$background-player;
+      }
+    }
+  }
+}

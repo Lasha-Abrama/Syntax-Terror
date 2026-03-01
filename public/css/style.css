@@ -1,0 +1,127 @@
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/satoshi/Satoshi-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/satoshi/Satoshi-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+/* ===== RESET ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.header .navigation {
+  height: 54px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Satoshi", sans-serif;
+  color: #898989;
+  background-color: #060606;
+}
+.header .navigation .nav-left {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.header .navigation .nav-left a.nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #898989;
+  font-family: "Satoshi", sans-serif;
+  transition: color 0.2s ease;
+}
+.header .navigation .nav-left a.nav-btn:hover {
+  color: #e0e0e0;
+}
+.header .navigation .nav-left a.nav-btn {
+  padding: 7px 0;
+  border-radius: 10px;
+}
+.header .navigation .nav-left a.nav-btn.active {
+  color: #e0e0e0;
+  background-color: #111111;
+}
+.header .navigation .nav-left a.nav-btn span {
+  font-size: 14px;
+}
+.header .navigation .nav-left .search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #898989;
+  font-family: "Satoshi", sans-serif;
+  transition: color 0.2s ease;
+}
+.header .navigation .nav-left .search-box:hover {
+  color: #e0e0e0;
+}
+.header .navigation .nav-left .search-box input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #e0e0e0;
+  font-family: "Satoshi", sans-serif;
+}
+.header .navigation .nav-left .search-box input::placeholder {
+  color: #898989;
+}
+.header .navigation .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+.header .navigation .nav-right a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #898989;
+  font-family: "Satoshi", sans-serif;
+  transition: color 0.2s ease;
+}
+.header .navigation .nav-right a:hover {
+  color: #e0e0e0;
+}
+.header .navigation .nav-right a {
+  font-size: 16px;
+}
+.header .navigation .nav-right .profile-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #333842;
+}
+
+/*# sourceMappingURL=style.css.map */
