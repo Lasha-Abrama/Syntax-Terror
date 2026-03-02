@@ -6,7 +6,21 @@
 .card-container {
   display: flex;
   gap: 11px;
+  .podcasts {
+    position: relative; /* needed for ::before */
+    padding-left: 12px; /* space for the line */
+  }
 
+  .podcasts::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px; /* thickness of the line */
+    border-radius: 5px; /* rounded corners */
+    background-color: var(--border-colour);
+  }
   .artist {
     .card-content-top {
       justify-content: center;

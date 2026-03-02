@@ -1,9 +1,14 @@
-<div class="card <%= type %>">
+<div 
+  class="card <%= type %>" 
+  <% if (type === 'podcasts') { %>
+    data-colour="<%= item['border-color'] %>"
+  <% } %>
+>
   <div class="card-image">
     <img src="<%= item.image %>" alt="<%= item.title || item.name %>" />
   </div>
 
-  <div class="card-content">
+  <div class="card-content <%= type %>-content">
     <div class="card-content-top">
       <h4 class="card-title"><%= item.title || item.name %></h4>
       <% if (type
@@ -28,4 +33,4 @@
   </div>
 </div>
 
-<script src="../../public/js/script.js"></script>
+<script src="/js/script.js"></script>
