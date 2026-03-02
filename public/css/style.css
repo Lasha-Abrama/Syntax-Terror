@@ -220,6 +220,12 @@ svg {
 .card-container .artist .card-content-top {
   justify-content: center;
 }
+.card-container .artist .card-image img {
+  border-radius: 50%;
+}
+.card-container .artist .card-title {
+  text-align: center;
+}
 .card-container .mix .card-content-top,
 .card-container .album .card-content-top {
   justify-content: space-between;
@@ -303,8 +309,15 @@ svg {
 .main-content .section-title {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .main-content .section h3 {
+  font-family: "Satoshi", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+.main-content .section h4 {
   font-family: "Satoshi", sans-serif;
   font-size: 18px;
   font-weight: 600;

@@ -25,6 +25,12 @@
     .card-content-top {
       justify-content: center;
     }
+    .card-image img {
+      border-radius: 50%;
+    }
+    .card-title {
+      text-align: center;
+    }
   }
   .mix,
   .album {

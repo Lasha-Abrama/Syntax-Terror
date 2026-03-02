@@ -15,4 +15,102 @@
       <div class="right">
         <%- include('partials/header') %>
 
-    <%- include('partials/player') %>
+        <main class="main-content">
+          <section class="section">
+            <div class="section-title">
+              <h3>Recent searches</h3>
+              <svg
+              width="40"
+              height="40"
+              viewBox="0 0 40 40"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="11.7853" cy="20.2072" r="1.68378" fill="#898989" />
+              <circle cx="20.2053" cy="20.2072" r="1.68378" fill="#898989" />
+              <circle cx="28.6232" cy="20.2072" r="1.68378" fill="#898989" />
+            </svg>
+            </div>
+            <div class="cards-viewport">
+              <div class="card-container">
+                <% data.artists
+                .filter(a => a.name === "Daft Punk" || a.name === "David Bowie")
+                .forEach(a => { %>
+
+                <div class="card artist">
+                  <div class="card-image">
+                    <img src="/<%= a.image %>" alt="<%= a.name %>">
+                  </div>
+
+                  <div class="card-content">
+                    <div class="card-content-top">
+                      <div class="card-title"><%= a.name %></div>
+                    </div>
+                  </div>
+                </div>
+
+              <% }) %>
+
+              <% data.albums
+                .filter(alb => alb.title === "Black Holes and Revelations")
+                .forEach(alb => { %>
+
+                <div class="card album">
+                  <div class="card-image">
+                    <img src="/<%= alb.image %>" alt="<%= alb.title %>">
+                  </div>
+
+                  <div class="card-content">
+                    <div class="card-content-top">
+                      <div class="card-title"><%= alb.title %></div>
+                    </div>
+                    <div class="card-description"><%= alb.description %></div>
+                  </div>
+                </div>
+
+              <% }) %>
+              </div>
+            </div>
+          </section>
+
+
+          <!-- ✅ BROWSE ALL -->
+          <section class="section">
+            <h3>Browse all</h3>
+  
+            <% data.browse.forEach(section => { %>
+  
+              <div class="section-title">
+                <h3><%= section.category %></h3>
+                <%- include('partials/actions', {type : 'search'}) %>
+
+              </div>
+              <div class="cards-viewport">
+                <div class="card-container">
+
+                  <% section.items.forEach(item => { %>
+
+                    <div class="card mix" style="background-color: <%= item.color %>;">
+                      <div class="card-image">
+                        <img src="/<%= item.image %>" alt="<%= item.title %>">
+                      </div>
+
+                      <div class="card-content">
+                        <div class="card-content-top">
+                          <div class="card-title"><%= item.title %></div>
+                        </div>
+                        <div class="card-description">Playlist</div>
+                      </div>
+                    </div>
+
+                  <% }) %>
+
+                </div>
+              </div>
+            <% }) %>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

@@ -44,8 +44,15 @@
     &-title {
       display: flex;
       justify-content: space-between;
+      align-items: center;
     }
     h3 {
+      font-family: variables.$font-primary;
+      font-size: 20px;
+      font-weight: 600;
+      color: variables.$text-primary;
+    }
+    h4 {
       font-family: variables.$font-primary;
       font-size: 18px;
       font-weight: 600;

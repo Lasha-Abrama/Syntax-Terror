@@ -1,36 +1,89 @@
 <div 
   class="card <%= type %>" 
+
   <% if (type === 'podcasts') { %>
     data-colour="<%= item['border-color'] %>"
   <% } %>
+
+  <% if (type === 'browse') { %>
+    data-colour="<%= item.color %>"
+  <% } %>
 >
   <div class="card-image">
-    <img src="<%= item.image %>" alt="<%= item.title || item.name %>" />
+    <img src="/<%= item.image %>" alt="<%= item.title || item.name %>" />
   </div>
 
-  <div class="card-content <%= type %>-content">
+  <div class="card-content">
     <div class="card-content-top">
       <h4 class="card-title"><%= item.title || item.name %></h4>
-      <% if (type
-      == "mix") { %>
-      <p class="card-quantity" data-colour="<%= item['rating-color'] %>">50</p>
+
+      <% if (type === "mix") { %>
+        <p class="card-quantity" data-colour="<%= item['rating-color'] %>">50</p>
       <% } %>
-      <% if (type
-      == "album") { %>
-      <p class="card-quantity">13</p>
+
+      <% if (type === "album") { %>
+        <p class="card-quantity">13</p>
       <% } %>
     </div>
 
-    <% if (item.description) { %>
-    <p class="card-description"><%= item.description %></p>
+    <% if (item.description && type !== 'browse') { %>
+      <p class="card-description"><%= item.description %></p>
     <% } %>
+
     <% if (item.artist) { %>
-    <p class="card-sub"><%= item.artist %></p>
+      <p class="card-sub"><%= item.artist %></p>
     <% } %>
+
     <% if (item.author) { %>
-    <p class="card-sub"><%= item.author %></p>
+      <p class="card-sub"><%= item.author %></p>
     <% } %>
   </div>
 </div>
+
+    <script>
+      document.querySelectorAll(".section").forEach((section) => {
+        const container = section.querySelector(".card-container");
+        const viewport = section.querySelector(".cards-viewport");
+        const leftBtn = section.querySelector(".arrow-left");
+        const rightBtn = section.querySelector(".arrow-right");
+
+        if (!container || !leftBtn || !rightBtn) return;
+
+        const card = container.querySelector(".card");
+        const cardWidth = card.offsetWidth;
+        const gap = 11; // match your CSS
+        const step = cardWidth + gap;
+
+        const visibleCards = Math.floor(viewport.offsetWidth / step);
+        const totalCards = container.children.length;
+        const maxIndex = totalCards - visibleCards;
+
+        let currentIndex = 0;
+
+        function updateSlider() {
+          container.style.transition = "transform 0.3s ease";
+          const offset = currentIndex * step;
+          container.style.transform = `translateX(-${offset}px)`;
+        }
+
+        rightBtn.addEventListener("click", () => {
+          currentIndex++;
+          if (currentIndex > maxIndex) {
+            currentIndex = 0; // loop back to start
+          }
+          updateSlider();
+        });
+
+        leftBtn.addEventListener("click", () => {
+          currentIndex--;
+          if (currentIndex < 0) {
+            currentIndex = maxIndex; // loop to end
+          }
+          updateSlider();
+        });
+
+        updateSlider();
+      });
+    </script>
 
 <script src="/js/script.js"></script>

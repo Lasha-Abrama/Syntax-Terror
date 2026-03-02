@@ -29,7 +29,7 @@ app.get("/discover", (req, res) => {
 });
 
 app.get("/search", (req, res) => {
-  res.render("search");
+  res.render("search", { data});
 });
 
 app.get("/library", (req, res) => {
