@@ -229,17 +229,17 @@
         },
         {
           "title": "Discover",
-          "image": "assets/images/discover/image 13-4.png",
+          "image": "assets/images/browse/discover/image 13-4.png",
           "color": "#8D67AB"
         },
         {
           "title": "Spotify Singles",
-          "image": "assets/images/discover/image 13-5.png",
+          "image": "assets/images/browse/discover/image 13-5.png",
           "color": "#777777"
         },
         {
           "title": "Decades",
-          "image": "assets/images/discover/image 13-6.png",
+          "image": "assets/images/browse/discover/image 13-6.png",
           "color": "#BA5D07"
         }
       ]

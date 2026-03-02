@@ -55,6 +55,7 @@ body {
   flex-direction: column;
   flex: 1;
   min-width: 0;
+  position: relative;
 }
 
 .active {
@@ -203,6 +204,10 @@ svg {
   justify-content: space-between;
   background-color: #333842;
   padding: 12px 20px;
+  border-radius: 10px;
+  position: fixed;
+  bottom: 0;
+  width: calc(100% - 260px);
 }
 .player svg {
   stroke: none;

@@ -14,6 +14,7 @@ body {
   flex-direction: column;
   flex: 1;
   min-width: 0;
+  position: relative;
 }
 .active {
   color: variables.$text-primary;

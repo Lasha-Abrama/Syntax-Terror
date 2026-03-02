@@ -40,50 +40,5 @@
   </div>
 </div>
 
-    <script>
-      document.querySelectorAll(".section").forEach((section) => {
-        const container = section.querySelector(".card-container");
-        const viewport = section.querySelector(".cards-viewport");
-        const leftBtn = section.querySelector(".arrow-left");
-        const rightBtn = section.querySelector(".arrow-right");
-
-        if (!container || !leftBtn || !rightBtn) return;
-
-        const card = container.querySelector(".card");
-        const cardWidth = card.offsetWidth;
-        const gap = 11; // match your CSS
-        const step = cardWidth + gap;
-
-        const visibleCards = Math.floor(viewport.offsetWidth / step);
-        const totalCards = container.children.length;
-        const maxIndex = totalCards - visibleCards;
-
-        let currentIndex = 0;
-
-        function updateSlider() {
-          container.style.transition = "transform 0.3s ease";
-          const offset = currentIndex * step;
-          container.style.transform = `translateX(-${offset}px)`;
-        }
-
-        rightBtn.addEventListener("click", () => {
-          currentIndex++;
-          if (currentIndex > maxIndex) {
-            currentIndex = 0; // loop back to start
-          }
-          updateSlider();
-        });
-
-        leftBtn.addEventListener("click", () => {
-          currentIndex--;
-          if (currentIndex < 0) {
-            currentIndex = maxIndex; // loop to end
-          }
-          updateSlider();
-        });
-
-        updateSlider();
-      });
-    </script>
 
 <script src="/js/script.js"></script>
