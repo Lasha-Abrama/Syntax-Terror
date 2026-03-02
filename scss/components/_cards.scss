@@ -6,12 +6,18 @@
 .card-container {
   display: flex;
   gap: 11px;
-  .podcasts {
-    position: relative; /* needed for ::before */
-    padding-left: 12px; /* space for the line */
+  .podcasts-content {
+    position: relative;
+    padding: 10px 0 10px 12px;
+    background-color: rgba(
+      var(--colour-r),
+      var(--colour-g),
+      var(--colour-b),
+      0.05
+    );
   }
 
-  .podcasts::before {
+  .podcasts-content::before {
     content: "";
     position: absolute;
     left: 0;
@@ -19,60 +25,71 @@
     bottom: 0;
     width: 4px; /* thickness of the line */
     border-radius: 5px; /* rounded corners */
-    background-color: var(--border-colour);
+    background-color: rgba(
+      var(--colour-r),
+      var(--colour-g),
+      var(--colour-b),
+      0.6
+    );
   }
-  .artist {
-    .card-content-top {
-      justify-content: center;
+}
+.artist {
+  .card-content-top {
+    justify-content: center;
+  }
+  .card-image img {
+    border-radius: 50%;
+  }
+  .card-title {
+    text-align: center;
+  }
+}
+.mix,
+.album {
+  .card-content-top {
+    justify-content: space-between;
+  }
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 170px; /* fixed width */
+  gap: 6px;
+
+  .card-image {
+    width: 170px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
-  .mix,
-  .album {
-    .card-content-top {
-      justify-content: space-between;
-    }
-  }
-  .card {
+  .card-content {
     display: flex;
     flex-direction: column;
-    flex: 0 0 170px; /* fixed width */
-    gap: 6px;
+    gap: 8px;
 
-    .card-image {
-      width: 170px;
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-    .card-content {
+    &-top {
       display: flex;
-      flex-direction: column;
-      gap: 8px;
+    }
 
-      &-top {
-        display: flex;
-      }
+    .card-title {
+      font-size: 14px;
+      font-weight: 500;
+      width: 140px; // max width
+      white-space: nowrap; // don’t wrap to next line
+      overflow: hidden; // hide overflowing text
+      text-overflow: ellipsis; // show "..."
+      color: variables.$text-primary;
+    }
 
-      .card-title {
-        font-size: 14px;
-        font-weight: 500;
-        width: 140px; // max width
-        white-space: nowrap; // don’t wrap to next line
-        overflow: hidden; // hide overflowing text
-        text-overflow: ellipsis; // show "..."
-        color: variables.$text-primary;
-      }
+    .card-quantity {
+      font-size: 14px;
+    }
 
-      .card-quantity {
-        font-size: 14px;
-      }
-
-      .card-description {
-        font-size: 12px;
-        color: variables.$text-secondary;
-      }
+    .card-description {
+      font-size: 12px;
+      color: variables.$text-secondary;
     }
   }
 }
