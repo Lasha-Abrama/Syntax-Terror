@@ -1,121 +1,121 @@
 {
   "mixes": [
     {
-      "image": "assets/images/mixes/Frame124.png",
+      "image": "assets/images/home/mixes/Frame124.png",
       "title": "Discover Weekly",
       "description": "Your weekly mixtape of fresh music.",
       "rating-color": "#CE6E9A"
     },
     {
-      "image": "assets/images/mixes/Frame 124-1.png",
+      "image": "assets/images/home/mixes/Frame 124-1.png",
       "title": "Daily Mix 1",
       "description": "Linkin Park, System Of A Down, Coal Chamber...",
       "rating-color": "#95E6D3"
     },
     {
-      "image": "assets/images/mixes/Frame 124-2.png",
+      "image": "assets/images/home/mixes/Frame 124-2.png",
       "title": "Daily Mix 2",
       "description": "Avril Lavigne, Lorde, Charli XCX and more",
       "rating-color": "#F4B8BD"
     },
     {
-      "image": "assets/images/mixes/Frame 124-3.png",
+      "image": "assets/images/home/mixes/Frame 124-3.png",
       "title": "Daily Mix 3",
       "description": "The Strokes, Martin Garrix, MGMT and more",
       "rating-color": "#C3E7B7"
     },
     {
-      "image": "assets/images/mixes/Frame 124-4.png",
+      "image": "assets/images/home/mixes/Frame 124-4.png",
       "title": "Daily Mix 4",
       "description": "Chuck Berry, Elvis Presley, Roy Orbison and more",
       "rating-color": "#F37FA6"
     },
     {
-      "image": "assets/images/mixes/Frame 124-5.png",
+      "image": "assets/images/home/mixes/Frame 124-5.png",
       "title": "Daily Mix 6",
       "description": "Frank Sinatra, Gerhard Trede, Dean Martin and more",
       "rating-color": "#A0BEC8"
     },
     {
-      "image": "assets/images/mixes/Frame 124-6.png",
+      "image": "assets/images/home/mixes/Frame 124-6.png",
       "title": "Nirvana Radio",
       "description": "The Strokes, Martin Garrix, MGMT and more",
       "rating-color": "#FDD87D"
     },
     {
-      "image": "assets/images/mixes/Frame 124-7.png",
+      "image": "assets/images/home/mixes/Frame 124-7.png",
       "title": "Fall Out Boy Radio",
       "description": "With Panic! At The Disco, The All-American Rejects,...",
       "rating-color": "#D4B2A9"
     },
     {
-      "image": "assets/images/mixes/Frame 124-16.png",
+      "image": "assets/images/home/mixes/Frame 124-16.png",
       "title": "Adele Radio",
       "description": "With Sia, Sam Smith, P!nk and more",
       "rating-color": "#DEB075"
     },
     {
-      "image": "assets/images/mixes/Frame 124-17.png",
+      "image": "assets/images/home/mixes/Frame 124-17.png",
       "title": "Daft Punk Radio",
       "description": "With Justice, The Chemical Brothers, ...",
       "rating-color": "#8DC3B5"
     },
     {
-      "image": "assets/images/mixes/Frame 124-18.png",
+      "image": "assets/images/home/mixes/Frame 124-18.png",
       "title": "ABBA Radio",
       "description": "With Honey M., Bee Gees, Bonnie Tyler, and more",
       "rating-color": "#A6BAD3"
     },
     {
-      "image": "assets/images/mixes/Frame 124-19.png",
+      "image": "assets/images/home/mixes/Frame 124-19.png",
       "title": "Daily Mix 3",
       "description": "One Direction, Avril Lavigne, Lorde, and more",
       "rating-color": "#C3E7B7"
     },
     {
-      "image": "assets/images/mixes/Frame 124-8.png",
+      "image": "assets/images/home/mixes/Frame 124-8.png",
       "title": "Rock Mix",
       "description": "Red Hot Chili Peppers, R.E.M., Guns N’ Roses...",
       "rating-color": "#CCF665"
     },
     {
-      "image": "assets/images/mixes/Frame 124-9.png",
+      "image": "assets/images/home/mixes/Frame 124-9.png",
       "title": "Chill Mix",
       "description": "MF DOOM, Daft Punk, The Chainsmokers, and more",
       "rating-color": "#F9E72C"
     },
     {
-      "image": "assets/images/mixes/Frame 124-10.png",
+      "image": "assets/images/home/mixes/Frame 124-10.png",
       "title": "Pop Mix",
       "description": "Red Hot Chili Peppers, R.E.M., Guns N’ Roses...",
       "rating-color": "#9BF0E2"
     },
     {
-      "image": "assets/images/mixes/Frame 124-11.png",
+      "image": "assets/images/home/mixes/Frame 124-11.png",
       "title": "Daft Punk Mix",
       "description": "Daft Punk, MGMT, Muse, and more",
       "rating-color": "#6F86FF"
     },
     {
-      "image": "assets/images/mixes/Frame 124-12.png",
+      "image": "assets/images/home/mixes/Frame 124-12.png",
       "title": "Happy Mix",
       "description": "The Turtles, Van Morrison, ABBA and more",
       "rating-color": "#FFCBD4"
     },
     {
-      "image": "assets/images/mixes/Frame 124-13.png",
+      "image": "assets/images/home/mixes/Frame 124-13.png",
       "title": "David Bowie Mix",
       "description": "Soft Cell, The Who and The Clash",
       "rating-color": "#FFC668"
     },
     {
-      "image": "assets/images/mixes/Frame 124-14.png",
+      "image": "assets/images/home/mixes/Frame 124-14.png",
       "title": "Upbeat Mix",
       "description": "Kylie Minogue, Charli XCX, Cage The Elephant and...",
       "rating-color": "#27856B"
     },
     {
-      "image": "assets/images/mixes/Frame 124-15.png",
+      "image": "assets/images/home/mixes/Frame 124-15.png",
       "title": "60s Mix",
       "description": "Chuck Berry, Skeeter David, Van Morrison and...",
       "rating-color": "#DD138B"
@@ -125,36 +125,36 @@
   "artists": [
     {
       "name": "Guns N’ Roses",
-      "image": "assets/images/artists/Frame 8.png"
+      "image": "assets/images/home/artists/Frame 8.png"
     },
     {
       "name": "Daft Punk",
-      "image": "assets/images/artists/image 3.png"
+      "image": "assets/images/home/artists/image 3.png"
     },
     {
       "name": "David Bowie",
-      "image": "assets/images/artists/image 4.png"
+      "image": "assets/images/home/artists/image 4.png"
     }
   ],
 
   "albums": [
     {
-      "image": "assets/images/albums/Frame 66.png",
+      "image": "assets/images/home/albums/Frame 66.png",
       "title": "Meteora",
       "description": "Linkin Park"
     },
     {
-      "image": "assets/images/albums/Frame 65.png",
+      "image": "assets/images/home/albums/Frame 65.png",
       "title": "Random Access Memories",
       "description": "Daft Punk"
     },
     {
-      "image": "assets/images/albums/Frame 66-1.png",
+      "image": "assets/images/home/albums/Frame 66-1.png",
       "title": "Abbey Road",
       "description": "The Beatles"
     },
     {
-      "image": "assets/images/albums/Frame 64.png",
+      "image": "assets/images/home/albums/Frame 64.png",
       "title": "Black Holes and Revelations",
       "description": "Muse"
     }
@@ -162,17 +162,17 @@
 
   "audiobooks": [
     {
-      "image": "assets/images/audiobooks/image 2.png",
+      "image": "assets/images/home/audiobooks/image 2.png",
       "title": "Halo: The Flood",
       "description": "William C. Dietz"
     },
     {
-      "image": "assets/images/audiobooks/image 2-1.png",
+      "image": "assets/images/home/audiobooks/image 2-1.png",
       "title": "Halo: First Strike",
       "description": "Eric Nylund"
     },
     {
-      "image": "assets/images/audiobooks/image 2-2.png",
+      "image": "assets/images/home/audiobooks/image 2-2.png",
       "title": "Halo: Ghosts of Onyx",
       "description": "Eric Nylund"
     }
@@ -180,19 +180,19 @@
 
   "podcasts": [
     {
-      "image": "assets/images/podcasts/image 2.png",
+      "image": "assets/images/home/podcasts/image 2.png",
       "title": "anything goes...",
       "description": "emma chamberlain",
       "border-color": "#85C585"
     },
     {
-      "image": "assets/images/podcasts/Frame 8.png",
+      "image": "assets/images/home/podcasts/Frame 8.png",
       "title": "The Joe Rogan...",
       "description": "Joe Rogan",
       "border-color": "#F1CEBC"
     },
     {
-      "image": "assets/images/podcasts/Frame 8-1.png",
+      "image": "assets/images/home/podcasts/Frame 8-1.png",
       "title": "The Journal",
       "description": "The Wall Street Journal",
       "border-color": "#F67D4D"
@@ -250,42 +250,42 @@
       "items": [
         {
           "title": "Pop",
-          "image": "assets/images/genres/image 13.png",
+          "image": "assets/images/browse/genres/image 13.png",
           "color": "#148a08"
         },
         {
           "title": "Country",
-          "image": "assets/images/genres/image 13-1.png",
+          "image": "assets/images/browse/genres/image 13-1.png",
           "color": "#D84000"
         },
         {
           "title": "Hip-Hop",
-          "image": "assets/images/genres/image 13-2.png",
+          "image": "assets/images/browse/genres/image 13-2.png",
           "color": "#503750"
         },
         {
           "title": "Rock",
-          "image": "assets/images/genres/image 13-3.png",
+          "image": "assets/images/browse/genres/image 13-3.png",
           "color": "#006450"
         },
         {
           "title": "Indie",
-          "image": "assets/images/genres/image 13-4.png",
+          "image": "assets/images/browse/genres/image 13-4.png",
           "color": "#E91429"
         },
         {
           "title": "Punk",
-          "image": "assets/images/genres/image 13-5.png",
+          "image": "assets/images/browse/genres/image 13-5.png",
           "color": "#1e3264"
         },
         {
           "title": "Metal",
-          "image": "assets/images/genres/image 13-6.png",
+          "image": "assets/images/browse/genres/image 13-6.png",
           "color": "#E91429"
         },
         {
           "title": "Instrumental",
-          "image": "assets/images/genres/image 13-7.png",
+          "image": "assets/images/browse/genres/image 13-7.png",
           "color": "#537AA1"
         }
       ]
@@ -296,42 +296,42 @@
       "items": [
         {
           "title": "In the car",
-          "image": "assets/images/mood_activity/image 13.png",
+          "image": "assets/images/browse/mood_activity/image 13.png",
           "color": "#2D46B9"
         },
         {
           "title": "Mood",
-          "image": "assets/images/mood_activity/image 13-1.png",
+          "image": "assets/images/browse/mood_activity/image 13-1.png",
           "color": "#E1118C"
         },
         {
           "title": "Workout",
-          "image": "assets/images/mood_activity/image 13-2.png",
+          "image": "assets/images/browse/mood_activity/image 13-2.png",
           "color": "#777777"
         },
         {
           "title": "Chill",
-          "image": "assets/images/mood_activity/image 13-3.png",
+          "image": "assets/images/browse/mood_activity/image 13-3.png",
           "color": "#D84000"
         },
         {
           "title": "Sleep",
-          "image": "assets/images/mood_activity/image 13-4.png",
+          "image": "assets/images/browse/mood_activity/image 13-4.png",
           "color": "#1E3264"
         },
         {
           "title": "Party",
-          "image": "assets/images/mood_activity/image 13-5.png",
+          "image": "assets/images/browse/mood_activity/image 13-5.png",
           "color": "#537AA1"
         },
         {
           "title": "At Home",
-          "image": "assets/images/mood_activity/image 13-6.png",
+          "image": "assets/images/browse/mood_activity/image 13-6.png",
           "color": "#5179A1"
         },
         {
           "title": "Focus",
-          "image": "assets/images/mood_activity/image 13-7.png",
+          "image": "assets/images/browse/mood_activity/image 13-7.png",
           "color": "#503750"
         }
       ]
@@ -342,22 +342,22 @@
       "items": [
         {
           "title": "Netflix",
-          "image": "assets/images/entertainment/image 13.png",
+          "image": "assets/images/browse/entertainment/image 13.png",
           "color": "#EB1E32"
         },
         {
           "title": "Anime",
-          "image": "assets/images/entertainment/image 14.png",
+          "image": "assets/images/browse/entertainment/image 14.png",
           "color": "#E41D63"
         },
         {
           "title": "Disney",
-          "image": "assets/images/entertainment/image 13-1.png",
+          "image": "assets/images/browse/entertainment/image 13-1.png",
           "color": "#0D73EC"
         },
         {
           "title": "Gaming",
-          "image": "assets/images/entertainment/image 13-2.png",
+          "image": "assets/images/browse/entertainment/image 13-2.png",
           "color": "#E8115B"
         }
       ]
@@ -368,22 +368,22 @@
       "items": [
         {
           "title": "Podcasts",
-          "image": "assets/images/browse_podcasts/image 13.png",
+          "image": "assets/images/browse/podcasts/image 13.png",
           "color": "#006450"
         },
         {
           "title": "Podcast Charts",
-          "image": "assets/images/browse_podcasts/image 13-1.png",
+          "image": "assets/images/browse/podcasts/image 13-1.png",
           "color": "#0D73EC"
         },
         {
           "title": "Podcast New Releases",
-          "image": "assets/images/browse_podcasts/image 13-2.png",
+          "image": "assets/images/browse/podcasts/image 13-2.png",
           "color": "#27856A"
         },
         {
           "title": "Video",
-          "image": "assets/images/browse_podcasts/image 13-3.png",
+          "image": "assets/images/browse/podcasts/image 13-3.png",
           "color": "#E61E32"
         }
       ]
@@ -394,27 +394,27 @@
       "items": [
         {
           "title": "Audiobooks",
-          "image": "assets/images/browse_podcasts/image 13.png",
+          "image": "assets/images/browse/audiobooks/image 13.png",
           "color": "#1E3264"
         },
         {
           "title": "Sci-Fi & Fantasy",
-          "image": "assets/images/browse_podcasts/image 13-1.png",
+          "image": "assets/images/browse/audiobooks/image 13-1.png",
           "color": "#8D67AB"
         },
         {
           "title": "Fiction & Literature",
-          "image": "assets/images/browse_podcasts/image 13-2.png",
+          "image": "assets/images/browse/audiobooks/image 13-2.png",
           "color": "#503750"
         },
         {
           "title": "Mystery & Thriller",
-          "image": "assets/images/browse_podcasts/image 13-3.png",
+          "image": "assets/images/browse/audiobooks/image 13-3.png",
           "color": "#1E3264"
         },
         {
           "title": "Self-Help",
-          "image": "assets/images/browse_podcasts/image 13-4.png",
+          "image": "assets/images/browse/audiobooks/image 13-4.png",
           "color": "#006450"
         }
       ]
