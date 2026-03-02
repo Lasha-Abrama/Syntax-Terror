@@ -203,6 +203,20 @@ svg {
   display: flex;
   gap: 11px;
 }
+.card-container .podcasts {
+  position: relative; /* needed for ::before */
+  padding-left: 12px; /* space for the line */
+}
+.card-container .podcasts::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px; /* thickness of the line */
+  border-radius: 5px; /* rounded corners */
+  background-color: var(--border-colour);
+}
 .card-container .artist .card-content-top {
   justify-content: center;
 }
@@ -295,6 +309,112 @@ svg {
   font-size: 18px;
   font-weight: 600;
   color: #e0e0e0;
+}
+
+.hero-section {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+.hero-section .hero-left {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.hero-section .hero-left .hero-image-wrapper {
+  position: relative;
+}
+.hero-section .hero-left .hero-image-wrapper .hero-image {
+  max-width: 400px;
+  border-radius: 1rem;
+}
+.hero-section .hero-left .hero-image-wrapper .slider-timer {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.hero-section .hero-left .hero-image-wrapper .slider-timer .slider-line {
+  width: 60px;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+}
+.hero-section .hero-left .hero-image-wrapper .slider-timer .slider-line.active {
+  background-color: #1db954;
+}
+.hero-section .hero-left .hero-image-wrapper .slider-timer .slider-arrow {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.hero-section .hero-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.hero-section .hero-right .info-card {
+  display: flex;
+  gap: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+.hero-section .hero-right .info-card .info-left img.artist-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 0.5rem;
+}
+.hero-section .hero-right .info-card .info-right {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.hero-section .hero-right .info-card .info-right .title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.hero-section .hero-right .info-card .info-right .by {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+.hero-section .hero-right .info-card .info-right .meta {
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+.hero-section .hero-right .info-card .info-right .player-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.hero-section .hero-right .info-card .info-right .player-controls button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.hero-section .hero-right .info-card .info-right .genre-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+.hero-section .hero-right .info-card .info-right .genre-buttons .genre-btn {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.5rem;
+  color: white;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */
