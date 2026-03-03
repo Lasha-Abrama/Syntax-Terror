@@ -4,7 +4,8 @@ document.querySelectorAll(".card-quantity").forEach((el) => {
 });
 
 document.querySelectorAll(".podcasts").forEach((el) => {
-  const hex = el.dataset.colour;
+  let hex = el.dataset.colour;
+  hex = hex.replace(/"/g, "").trim();
   const r = parseInt(hex.slice(1, 3), 16);
   const g = parseInt(hex.slice(3, 5), 16);
   const b = parseInt(hex.slice(5, 7), 16);
@@ -98,4 +99,14 @@ document.querySelectorAll(".mix").forEach((card) => {
   if (color) {
     card.style.backgroundColor = color;
   }
+});
+
+//cancel button
+document.querySelectorAll(".cancel").forEach((btn) => {
+  btn.addEventListener("click", function () {
+    const card = this.closest(".card");
+    if (card) {
+      card.style.display = "none";
+    }
+  });
 });

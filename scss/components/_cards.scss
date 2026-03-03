@@ -45,6 +45,7 @@
   flex-direction: column;
   flex: 0 0 170px; /* fixed width */
   gap: 6px;
+  position: relative;
 
   .card-image {
     width: 170px;

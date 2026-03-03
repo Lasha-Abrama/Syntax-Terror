@@ -13,6 +13,13 @@
   }
 }
 .search-card {
-  position: relative;
   height: 170px;
+  border-radius: 10px;
+}
+.cancel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 13;
+  cursor: pointer;
 }

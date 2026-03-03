@@ -64,6 +64,7 @@ main {
   border: 1px solid #202020;
   overflow-y: auto;
   height: calc(100vh - 60px - 90px);
+  margin-bottom: 5px;
   /* hide scrollbar for WebKit browsers (Chrome, Safari) */
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE 10+ */
@@ -374,6 +375,7 @@ h4 {
   flex-direction: column;
   flex: 0 0 170px; /* fixed width */
   gap: 6px;
+  position: relative;
 }
 .card .card-image {
   width: 170px;
@@ -469,31 +471,35 @@ h4 {
 }
 
 .search-card {
-  position: relative;
   height: 170px;
+  border-radius: 10px;
+}
+
+.cancel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 13;
+  cursor: pointer;
 }
 
 .hero-section {
+  flex: 1;
   display: flex;
-  gap: 2rem;
-  margin-top: 2rem;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
   background-color: rgba(0, 0, 0, 0.6);
   padding: 2rem;
   border-radius: 1rem;
-}
-.hero-section .hero-left {
-  flex: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+  background-color: rgba(140, 216, 204, 0.1411764706);
 }
 .hero-section .hero-left .hero-image-wrapper {
   position: relative;
 }
 .hero-section .hero-left .hero-image-wrapper .hero-image {
   max-width: 400px;
-  border-radius: 1rem;
+  border-radius: 10px;
 }
 .hero-section .hero-left .hero-image-wrapper .slider-timer {
   position: absolute;
@@ -520,8 +526,15 @@ h4 {
   font-size: 1rem;
   cursor: pointer;
 }
+.hero-section .discover-action-btn {
+  position: absolute;
+  bottom: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 13;
+}
 .hero-section .hero-right {
-  flex: 1;
   display: flex;
   align-items: center;
 }
@@ -533,27 +546,24 @@ h4 {
   border-radius: 1rem;
 }
 .hero-section .hero-right .info-card .info-left img.artist-image {
-  width: 80px;
-  height: 80px;
-  border-radius: 0.5rem;
+  width: 184px;
+  height: 192px;
 }
 .hero-section .hero-right .info-card .info-right {
-  color: white;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  justify-content: center;
+  gap: 20px;
+}
+.hero-section .hero-right .info-card .info-right p {
+  color: #898989;
+  display: inline-block;
 }
 .hero-section .hero-right .info-card .info-right .title {
-  font-size: 1.2rem;
+  letter-spacing: 3%;
+  font-size: 30px;
   font-weight: bold;
-}
-.hero-section .hero-right .info-card .info-right .by {
-  font-size: 0.9rem;
-  opacity: 0.7;
-}
-.hero-section .hero-right .info-card .info-right .meta {
-  font-size: 0.8rem;
-  opacity: 0.6;
+  color: #e0e0e0;
 }
 .hero-section .hero-right .info-card .info-right .player-controls {
   display: flex;
@@ -563,20 +573,28 @@ h4 {
 .hero-section .hero-right .info-card .info-right .player-controls button {
   background: none;
   border: none;
-  color: white;
   cursor: pointer;
+}
+.hero-section .hero-right .info-card .info-right .player-controls .favorite {
+  display: flex;
+  align-items: center;
+}
+.hero-section .hero-right .info-card .info-right .player-controls-desc {
+  display: flex;
+  gap: 14px;
 }
 .hero-section .hero-right .info-card .info-right .genre-buttons {
   display: flex;
-  gap: 0.5rem;
+  gap: 10px;
 }
 .hero-section .hero-right .info-card .info-right .genre-buttons .genre-btn {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: none;
-  padding: 0.3rem 0.6rem;
-  border-radius: 0.5rem;
-  color: white;
+  background: none;
+  border: 2px solid rgba(137, 137, 137, 0.1);
+  color: #898989;
+  font-size: 12px;
+  padding: 8px 13px;
   cursor: pointer;
+  border-radius: 44px;
 }
 
 /*# sourceMappingURL=style.css.map */

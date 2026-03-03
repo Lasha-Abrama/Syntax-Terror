@@ -27,6 +27,16 @@
                 <% data.artists .filter(a => a.name === "Daft Punk" || a.name === "David Bowie") .forEach(a => { %>
 
                 <div class="card artist">
+                  <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" class="cancel">
+                    <rect y="-0.410156" width="40.4108" height="40.4108" rx="20.2054" fill="#111111" />
+                    <path
+                      d="M25.257 14.7441L20.2056 19.7955M15.1543 24.8468L20.2056 19.7955M20.2056 19.7955L15.1543 14.7441M20.2056 19.7955L25.257 24.8468"
+                      stroke="#898989"
+                      stroke-width="2.02054"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
                   <div class="card-image">
                     <img src="/<%= a.image %>" alt="<%= a.name %>" />
                   </div>
@@ -43,6 +53,17 @@
                 <% data.albums .filter (alb => alb.title === "Black Holes and Revelations") .forEach(alb => { %>
 
                 <div class="card album">
+                  <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" class="cancel">
+                    <rect y="-0.410156" width="40.4108" height="40.4108" rx="20.2054" fill="#111111" />
+                    <path
+                      d="M25.257 14.7441L20.2056 19.7955M15.1543 24.8468L20.2056 19.7955M20.2056 19.7955L15.1543 14.7441M20.2056 19.7955L25.257 24.8468"
+                      stroke="#898989"
+                      stroke-width="2.02054"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+
                   <div class="card-image">
                     <img src="/<%= alb.image %>" alt="<%= alb.title %>" />
                   </div>

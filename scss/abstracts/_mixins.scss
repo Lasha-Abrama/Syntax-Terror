@@ -1,11 +1,7 @@
 @use "variables";
 
 // Mixin for flex items with text styling
-@mixin flex-link(
-  $gap: 10px,
-  $color: variables.$text-secondary,
-  $hover-color: variables.$text-primary
-) {
+@mixin flex-link($gap: 10px, $color: variables.$text-secondary, $hover-color: variables.$text-primary) {
   display: flex;
   align-items: center;
   gap: $gap;
@@ -17,4 +13,14 @@
   &:hover {
     color: $hover-color;
   }
+}
+
+@mixin genre-button() {
+  background: none;
+  border: 2px solid rgba(137, 137, 137, 0.1); // #898989 at 10% opacity
+  color: variables.$text-secondary;
+  font-size: 12px;
+  padding: 8px 13px;
+  cursor: pointer;
+  border-radius: 44px;
 }
