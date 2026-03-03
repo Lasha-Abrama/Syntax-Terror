@@ -44,7 +44,7 @@ body {
 
 .wrapper {
   display: flex;
-  min-height: 100vh;
+  height: 100vh;
   padding: 0 7px;
   background-color: #060606;
 }
@@ -56,6 +56,21 @@ body {
   flex: 1;
   min-width: 0;
   position: relative;
+  margin-left: 7px;
+}
+
+main {
+  border-radius: 10px;
+  border: 1px solid #202020;
+  overflow-y: auto;
+  height: calc(100vh - 60px - 90px);
+  /* hide scrollbar for WebKit browsers (Chrome, Safari) */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.main::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 .active {
@@ -64,7 +79,7 @@ body {
   border-radius: 10px;
 }
 .active svg {
-  stroke: #e0e0e0;
+  stroke: #e0e0e0 !important;
   fill: #e0e0e0;
 }
 
@@ -72,9 +87,38 @@ svg {
   width: 41px;
   height: 41px;
   fill: none;
+}
+
+.sidebar,
+.header svg {
   stroke: #898989;
   stroke-width: 2;
   stroke-linejoin: round;
+}
+
+.arrow-left,
+.arrow-right {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.arrow-left.active,
+.arrow-right.active {
+  opacity: 1;
+  pointer-events: auto;
+  color: var(--text-primary);
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #e0e0e0;
 }
 
 .sidebar {
@@ -113,6 +157,9 @@ svg {
   color: #e0e0e0;
 }
 
+.header {
+  flex-shrink: 0;
+}
 .header .navigation {
   height: 54px;
   display: flex;
@@ -199,6 +246,7 @@ svg {
 }
 
 .player {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -360,6 +408,7 @@ svg {
 }
 .card .card-content .card-quantity {
   font-size: 14px;
+  color: #898989;
 }
 .card .card-content .card-description {
   font-size: 12px;
@@ -370,9 +419,6 @@ svg {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  border-radius: 10px;
-  border: 1px solid #202020;
-  margin-left: 7px;
   padding: 12px 25px;
 }
 .main-content .filter-buttons {
@@ -408,17 +454,23 @@ svg {
   justify-content: space-between;
   align-items: center;
 }
-.main-content .section h3 {
-  font-family: "Satoshi", sans-serif;
+
+.card-title-search {
+  color: white;
+  font-weight: 900;
+  margin: 20px 0 0 20px;
   font-size: 20px;
-  font-weight: 600;
-  color: #e0e0e0;
+  max-width: 88px;
 }
-.main-content .section h4 {
-  font-family: "Satoshi", sans-serif;
-  font-size: 18px;
-  font-weight: 600;
-  color: #e0e0e0;
+.card-image-search {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.search-card {
+  position: relative;
+  height: 170px;
 }
 
 .hero-section {

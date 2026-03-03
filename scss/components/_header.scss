@@ -2,6 +2,7 @@
 @use "../abstracts/_mixins";
 
 .header {
+  flex-shrink: 0;
   .navigation {
     height: 54px;
     display: flex;

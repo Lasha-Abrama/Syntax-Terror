@@ -3,10 +3,7 @@
   <head>
     <title>Spotify</title>
     <link rel="stylesheet" href="/css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   </head>
   <body>
     <div class="wrapper">
@@ -19,27 +16,19 @@
           <section class="section">
             <div class="section-title">
               <h3>Recent searches</h3>
-              <svg
-              width="40"
-              height="40"
-              viewBox="0 0 40 40"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="11.7853" cy="20.2072" r="1.68378" fill="#898989" />
-              <circle cx="20.2053" cy="20.2072" r="1.68378" fill="#898989" />
-              <circle cx="28.6232" cy="20.2072" r="1.68378" fill="#898989" />
-            </svg>
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="11.7853" cy="20.2072" r="1.68378" fill="#898989" />
+                <circle cx="20.2053" cy="20.2072" r="1.68378" fill="#898989" />
+                <circle cx="28.6232" cy="20.2072" r="1.68378" fill="#898989" />
+              </svg>
             </div>
             <div class="cards-viewport">
               <div class="card-container">
-                <% data.artists
-                .filter(a => a.name === "Daft Punk" || a.name === "David Bowie")
-                .forEach(a => { %>
+                <% data.artists .filter(a => a.name === "Daft Punk" || a.name === "David Bowie") .forEach(a => { %>
 
                 <div class="card artist">
                   <div class="card-image">
-                    <img src="/<%= a.image %>" alt="<%= a.name %>">
+                    <img src="/<%= a.image %>" alt="<%= a.name %>" />
                   </div>
 
                   <div class="card-content">
@@ -49,15 +38,13 @@
                   </div>
                 </div>
 
-              <% }) %>
+                <% }) %>
 
-              <% data.albums
-                .filter(alb => alb.title === "Black Holes and Revelations")
-                .forEach(alb => { %>
+                <% data.albums .filter (alb => alb.title === "Black Holes and Revelations") .forEach(alb => { %>
 
                 <div class="card album">
                   <div class="card-image">
-                    <img src="/<%= alb.image %>" alt="<%= alb.title %>">
+                    <img src="/<%= alb.image %>" alt="<%= alb.title %>" />
                   </div>
 
                   <div class="card-content">
@@ -68,102 +55,43 @@
                   </div>
                 </div>
 
-              <% }) %>
+                <% }) %>
               </div>
             </div>
           </section>
 
-
           <!-- ✅ BROWSE ALL -->
+          <h3>Browse all</h3>
+          <% data.browse.forEach(section => { %>
           <section class="section">
-            <h3>Browse all</h3>
-  
-            <% data.browse.forEach(section => { %>
-  
-              <div class="section-title">
-                <h3><%= section.category %></h3>
-                <% if ( 
-                  section.category === "Discover" ||
-                  section.category === "Genres" ||
-                  section.category === "Mood & Activity"
-                ) { %>
-                  <%- include('partials/actions', { type: 'search' }) %>
-                <% } %>
+            <div class="section-title">
+              <h4><%= section.category %></h4>
+              <% if (
+          section.category === "Discover" ||
+          section.category === "Genres" ||
+          section.category === "Mood & Activity"
+        ) { %>
+              <%- include('partials/actions', { type: 'search' }) %>
+              <% } %>
+            </div>
 
-              </div>
-              <div class="cards-viewport">
-                <div class="card-container">
-
-                  <% section.items.forEach(item => { %>
-
-                    <div class="card mix" style="background-color: <%= item.color %>;">
-                      <div class="card-image">
-                        <img src="/<%= item.image %>" alt="<%= item.title %>">
-                      </div>
-
-                      <div class="card-content">
-                        <div class="card-content-top">
-                          <div class="card-title"><%= item.title %></div>
-                        </div>
-                        <div class="card-description">Playlist</div>
-                      </div>
-                    </div>
-
-                  <% }) %>
-
+            <div class="cards-viewport">
+              <div class="card-container">
+                <% section.items.forEach(item => { %>
+                <div class="card mix search-card" data-color="<%= item.color %>">
+                  <div class="card-title-search"><%= item.title %></div>
+                  <img class="card-image-search" src="/<%= item.image %>" alt="<%= item.title %>" />
                 </div>
+                <% }) %>
               </div>
-            <% }) %>
+            </div>
           </section>
-          </main>
-          <%- include('partials/player') %>
+          <% }) %>
+        </main>
+        <%- include('partials/player') %>
       </div>
     </div>
 
-    <script>
-      document.querySelectorAll(".section").forEach((section) => {
-        const container = section.querySelector(".card-container");
-        const viewport = section.querySelector(".cards-viewport");
-        const leftBtn = section.querySelector(".arrow-left");
-        const rightBtn = section.querySelector(".arrow-right");
-
-        if (!container || !leftBtn || !rightBtn) return;
-
-        const card = container.querySelector(".card");
-        const cardWidth = card.offsetWidth;
-        const gap = 11; // match your CSS
-        const step = cardWidth + gap;
-
-        const visibleCards = Math.floor(viewport.offsetWidth / step);
-        const totalCards = container.children.length;
-        const maxIndex = totalCards - visibleCards;
-
-        let currentIndex = 0;
-
-        function updateSlider() {
-          container.style.transition = "transform 0.3s ease";
-          const offset = currentIndex * step;
-          container.style.transform = `translateX(-${offset}px)`;
-        }
-
-        rightBtn.addEventListener("click", () => {
-          currentIndex++;
-          if (currentIndex > maxIndex) {
-            currentIndex = 0; // loop back to start
-          }
-          updateSlider();
-        });
-
-        leftBtn.addEventListener("click", () => {
-          currentIndex--;
-          if (currentIndex < 0) {
-            currentIndex = maxIndex; // loop to end
-          }
-          updateSlider();
-        });
-
-        updateSlider();
-      });
-    </script>
+    <script src="/js/script.js"></script>
   </body>
 </html>

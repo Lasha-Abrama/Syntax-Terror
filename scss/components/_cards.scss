@@ -9,12 +9,7 @@
   .podcasts-content {
     position: relative;
     padding: 10px 0 10px 12px;
-    background-color: rgba(
-      var(--colour-r),
-      var(--colour-g),
-      var(--colour-b),
-      0.05
-    );
+    background-color: rgba(var(--colour-r), var(--colour-g), var(--colour-b), 0.05);
   }
 
   .podcasts-content::before {
@@ -25,12 +20,7 @@
     bottom: 0;
     width: 4px; /* thickness of the line */
     border-radius: 5px; /* rounded corners */
-    background-color: rgba(
-      var(--colour-r),
-      var(--colour-g),
-      var(--colour-b),
-      0.6
-    );
+    background-color: rgba(var(--colour-r), var(--colour-g), var(--colour-b), 0.6);
   }
 }
 .artist {
@@ -91,6 +81,7 @@
 
     .card-quantity {
       font-size: 14px;
+      color: variables.$text-secondary;
     }
 
     .card-description {

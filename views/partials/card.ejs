@@ -1,14 +1,6 @@
-<div 
-  class="card <%= type %>" 
-
-  <% if (type === 'podcasts') { %>
-    data-colour="<%= item['border-color'] %>"
-  <% } %>
-
-  <% if (type === 'browse') { %>
-    data-colour="<%= item.color %>"
-  <% } %>
->
+<div class="card <%= type %>" 
+     <%= type === 'podcasts' ? `data-colour="${item['border-color']}"` : '' %>
+     <%= type === 'browse' ? `data-colour="${item.color}"` : '' %>>
   <div class="card-image">
     <img src="/<%= item.image %>" alt="<%= item.title || item.name %>" />
   </div>
@@ -39,6 +31,3 @@
     <% } %>
   </div>
 </div>
-
-
-<script src="/js/script.js"></script>
