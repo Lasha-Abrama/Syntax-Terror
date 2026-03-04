@@ -59,12 +59,18 @@ body {
   margin-left: 7px;
 }
 
+.content-wrapper {
+  height: calc(100vh - 60px - 90px);
+  margin-bottom: 5px;
+  display: flex;
+}
+
 main {
+  flex: 1;
+  min-width: 0;
   border-radius: 10px;
   border: 1px solid #202020;
   overflow-y: auto;
-  height: calc(100vh - 60px - 90px);
-  margin-bottom: 5px;
   /* hide scrollbar for WebKit browsers (Chrome, Safari) */
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE 10+ */
@@ -366,7 +372,8 @@ h4 {
 }
 
 .mix .card-content-top,
-.album .card-content-top {
+.album .card-content-top,
+.playlist .card-content-top {
   justify-content: space-between;
 }
 
@@ -412,9 +419,94 @@ h4 {
   font-size: 14px;
   color: #898989;
 }
+.card .card-content .card-quantity-liked {
+  color: #1ed760;
+}
 .card .card-content .card-description {
   font-size: 12px;
   color: #898989;
+}
+
+.friends-section {
+  border-radius: 10px;
+  color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  flex: 0 0 0;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  transition: flex-basis 0.3s ease, padding 0.3s ease, border 0.3s ease;
+  height: calc(100vh - 60px - 90px);
+  z-index: 13;
+}
+.friends-section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.friends-section-title p {
+  font-size: 14px;
+}
+.friends-section-title-icons {
+  display: flex;
+  gap: 5px;
+}
+.friends-section .friend-activity {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.friends-section .friend-activity .friend {
+  display: flex;
+  gap: 4px;
+}
+.friends-section .friend-activity .friend img {
+  width: 40px;
+  height: 40px;
+}
+.friends-section .friend-activity .friend-content {
+  display: flex;
+  flex-direction: column;
+}
+.friends-section .friend-activity .friend-content-title {
+  font-size: 12px;
+  margin-left: 8px;
+}
+.friends-section .friend-activity .friend-content-activity {
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+}
+.friends-section .friend-activity .friend-content-activity-desc {
+  color: #898989;
+}
+.friends-section .friend-activity .not-active {
+  gap: 12px;
+}
+.friends-section .friend-activity .not-active .friend-content-title {
+  margin-left: 0;
+}
+.friends-section .friend-activity .not-active .friend-content {
+  gap: 5px;
+}
+.friends-section .friend-activity .not-active .friend-content-activity {
+  gap: 10px;
+}
+.friends-section .friend-activity .active-now .friend-content-activity {
+  gap: 3px;
+}
+.friends-section .friend-activity .active-now .friend-content-activity div {
+  display: flex;
+  gap: 10px;
+}
+
+.friends-section.active {
+  flex: 0 0 358px;
+  border: 1px solid #202020;
+  padding: 20px 21px;
+  margin-left: 5px;
 }
 
 .main-content {
@@ -486,6 +578,26 @@ h4 {
 .library .card-container {
   display: flex;
   flex-wrap: wrap;
+}
+
+.section-actions {
+  display: flex;
+  justify-content: space-between;
+}
+.section-actions-left {
+  display: flex;
+  gap: 35px;
+}
+.section-actions-left-first {
+  display: flex;
+  gap: 10px;
+}
+.section-actions button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #898989;
+  font-size: 14px;
 }
 
 .pinned {

@@ -110,3 +110,15 @@ document.querySelectorAll(".cancel").forEach((btn) => {
     }
   });
 });
+//friends activity
+const toggleBtn = document.getElementById("friendsToggle");
+
+toggleBtn?.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  const panel = document.getElementById("friendsPanel");
+
+  if (panel) {
+    panel.classList.toggle("active");
+  }
+});
