@@ -1,0 +1,89 @@
+@use "../abstracts/_variables";
+.friends-section {
+  border-radius: 10px;
+  color: variables.$text-primary;
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  flex: 0 0 0; // initial width = 0
+  overflow: hidden; // hide inner content
+  padding: 0; // remove padding when hidden
+  border: 0; // optional: remove border if you want fully hidden
+  transition:
+    flex-basis 0.3s ease,
+    padding 0.3s ease,
+    border 0.3s ease;
+  height: calc(100vh - 60px - 90px);
+  z-index: 13;
+  &-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p {
+      font-size: 14px;
+    }
+    &-icons {
+      display: flex;
+      gap: 5px;
+    }
+  }
+  .friend-activity {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .friend {
+      display: flex;
+      gap: 4px;
+      img {
+        width: 40px;
+        height: 40px;
+      }
+      &-content {
+        display: flex;
+        flex-direction: column;
+        &-title {
+          font-size: 12px;
+          margin-left: 8px;
+        }
+        &-activity {
+          display: flex;
+
+          font-size: 14px;
+          align-items: center;
+          &-desc {
+            color: variables.$text-secondary;
+          }
+        }
+      }
+    }
+    .not-active {
+      gap: 12px;
+      .friend-content-title {
+        margin-left: 0;
+      }
+      .friend-content {
+        gap: 5px;
+      }
+      .friend-content-activity {
+        gap: 10px;
+      }
+    }
+    .active-now {
+      .friend-content-activity {
+        gap: 3px;
+        div {
+          display: flex;
+          gap: 10px;
+        }
+      }
+    }
+  }
+}
+
+.friends-section.active {
+  flex: 0 0 358px;
+  border: 1px solid #202020;
+  padding: 20px 21px;
+  margin-left: 5px;
+}

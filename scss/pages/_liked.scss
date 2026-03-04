@@ -10,7 +10,7 @@
   display: flex;
   justify-content: space-between;
 
-  &-left {
+  &-right {
     display: flex;
     gap: 35px;
     &-first {
@@ -18,6 +18,7 @@
       gap: 10px;
     }
   }
+
   button {
     display: flex;
     align-items: center;
@@ -25,13 +26,4 @@
     color: variables.$text-secondary;
     font-size: 14px;
   }
-}
-
-.pinned {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: variables.$background-primary;
-  border-radius: 50%;
-  cursor: pointer;
 }

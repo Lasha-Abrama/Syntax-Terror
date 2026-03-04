@@ -1,6 +1,6 @@
-<div class="card <%= type %>"
-     <%= type === 'podcasts' ? `data-colour="${item['border-color']}"` : '' %>
-     <%= type === 'browse' ? `data-colour="${item.color}"` : '' %>>
+<div class="card <%= type %>" 
+  <%= type === 'podcasts' ? `data-colour="${item['border-color']}"` : '' %> 
+  <%= type === 'browse' ? `data-colour="${item.color}"` : '' %>>
 
   <% if (item.pinned && page === "library") { %>
     <%- include("card-pin")  %>
@@ -19,6 +19,11 @@
 
       <% if (type === "album") { %>
         <p class="card-quantity">13</p>
+      <% } %>
+      <% if (type === "playlist") { %>
+        <p class="card-quantity <%= isLiked ? 'card-quantity-liked' : '' %>">
+          <%= item.quantity %>
+        </p>
       <% } %>
     </div>
 

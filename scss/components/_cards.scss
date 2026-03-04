@@ -35,7 +35,8 @@
   }
 }
 .mix,
-.album {
+.album,
+.playlist {
   .card-content-top {
     justify-content: space-between;
   }
@@ -83,6 +84,9 @@
     .card-quantity {
       font-size: 14px;
       color: variables.$text-secondary;
+    }
+    .card-quantity-liked {
+      color: variables.$accent-green;
     }
 
     .card-description {
