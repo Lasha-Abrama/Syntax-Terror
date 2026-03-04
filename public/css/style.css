@@ -611,4 +611,29 @@ h4 {
   border-radius: 44px;
 }
 
+.library .card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section-actions {
+  display: flex;
+  justify-content: space-between;
+}
+.section-actions-right {
+  display: flex;
+  gap: 35px;
+}
+.section-actions-right-first {
+  display: flex;
+  gap: 10px;
+}
+.section-actions button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #898989;
+  font-size: 14px;
+}
+
 /*# sourceMappingURL=style.css.map */

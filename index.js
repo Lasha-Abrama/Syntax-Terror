@@ -80,6 +80,10 @@ app.get("/about", (req, res) => {
   });
 });
 
+app.get("/liked", (req, res) => {
+  res.render("liked", { data, page: "liked"});
+});
+
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
