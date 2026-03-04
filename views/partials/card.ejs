@@ -1,6 +1,10 @@
-<div class="card <%= type %>" 
+<div class="card <%= type %>"
      <%= type === 'podcasts' ? `data-colour="${item['border-color']}"` : '' %>
      <%= type === 'browse' ? `data-colour="${item.color}"` : '' %>>
+
+  <% if (item.pinned && page === "library") { %>
+    <%- include("card-pin")  %>
+  <% } %>
   <div class="card-image">
     <img src="/<%= item.image %>" alt="<%= item.title || item.name %>" />
   </div>

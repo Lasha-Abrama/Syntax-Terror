@@ -1,0 +1,17 @@
+@use "../abstracts/_variables";
+.library {
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.pinned {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: variables.$background-primary;
+  border-radius: 50%;
+  cursor: pointer;
+}

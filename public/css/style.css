@@ -483,6 +483,20 @@ h4 {
   cursor: pointer;
 }
 
+.library .card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pinned {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #111111;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
 .hero-section {
   flex: 1;
   display: flex;
