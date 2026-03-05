@@ -22,26 +22,36 @@
   tbody tr:first-child td {
     border-top: 32px solid transparent;
   }
-  th { 
+  th {
     font-weight: 400;
   }
- 
+
   td {
     padding: 8px 0;
   }
+  th:first-child,
+  td:first-child {
+    padding-right: 30px;
+    text-align: center;
+  }
 }
+
 .songs-table thead::after {
   content: "";
   position: absolute;
   left: 0;
-  top: calc(100% + 12px);  
-  width: calc(100% + 50px);
-  height: 1px;
-  background: #444;
+  top: calc(100% + 12px);
+  width: calc(100% + 600px);
+  height: 2px;
+  background: #89898915;
 }
 .song-content {
   display: flex;
   gap: 10px;
+  img {
+    width: 51px;
+    border-radius: 3px;
+  }
   .song-info {
     display: flex;
     flex-direction: column;

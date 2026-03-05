@@ -112,15 +112,17 @@ document.querySelectorAll(".cancel").forEach((btn) => {
 });
 //friends activity
 const toggleBtn = document.getElementById("friendsToggle");
+const closeBtn = document.getElementById("friends-close");
+const panel = document.getElementById("friendsPanel");
 
 toggleBtn?.addEventListener("click", (e) => {
   e.preventDefault();
 
-  const panel = document.getElementById("friendsPanel");
-
-  if (panel) {
-    panel.classList.toggle("active");
-  }
-
+  panel?.classList.toggle("active");
   toggleBtn.classList.toggle("active");
+});
+
+closeBtn?.addEventListener("click", () => {
+  panel?.classList.remove("active");
+  toggleBtn?.classList.remove("active");
 });

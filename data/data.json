@@ -427,42 +427,42 @@
 
   "playlists": [
     {
-      "image":"assets/images/library/playlists/liked.png",
+      "image": "assets/images/library/playlists/liked.png",
       "title": "Liked Songs",
       "quantity": 8,
       "pinned": true,
       "description": "Numb, Crawling, In the End, and more"
     },
     {
-      "image":"assets/images/library/playlists/songs.png",
+      "image": "assets/images/library/playlists/songs.png",
       "title": "Chill Stuff",
       "quantity": 152,
       "pinned": true,
       "description": "Simon and Garfunkel, Daft Punk, and more"
     },
     {
-      "image":"assets/images/library/playlists/songs.png",
+      "image": "assets/images/library/playlists/songs.png",
       "title": "The Jux Box",
       "quantity": 50,
       "pinned": true,
       "description": "Simon and Garfunkel, Daft Punk, and more"
     },
     {
-      "image":"assets/images/library/playlists/songs.png",
+      "image": "assets/images/library/playlists/songs.png",
       "title": "Vibe",
       "quantity": 30,
       "pinned": true,
       "description": "Blue Skies, No Heaven"
     },
     {
-      "image":"assets/images/library/playlists/songs.png",
+      "image": "assets/images/library/playlists/songs.png",
       "title": "Selected Linkin Park",
       "quantity": 8,
       "pinned": true,
       "description": "Numb, Crawling, In the End, and more"
     },
     {
-      "image":"assets/images/library/playlists/bands.png",
+      "image": "assets/images/library/playlists/bands.png",
       "title": "Fav bands",
       "quantity": 6,
       "pinned": true,
@@ -472,7 +472,8 @@
   "songs": [
     {
       "cover": "assets/images/discover/covers/get_lucky.png",
-      "image": "assets/images/library/songs/Rectangle 6.png",
+      "image": "assets/images/library/songs/punk.jpg",
+      "audio": "assets/audio/Get Lucky.mp3",
       "title": "Get Lucky",
       "author": "Daft Punk",
       "album": "Random Access Memories",
@@ -482,7 +483,8 @@
     },
     {
       "cover": "assets/images/discover/covers/instant_crush.jpg",
-      "image": "assets/images/library/songs/Rectangle 6-1.png",
+      "image": "assets/images/library/songs/punk.jpg",
+      "audio": "assets/audio/Instant Crush.mp3",
       "title": "Instant Crush",
       "author": "Daft Punk, Julian Casablancas",
       "album": "Random Access Memories",
@@ -492,7 +494,8 @@
     },
     {
       "cover": "assets/images/discover/covers/plastic_beach.jpg",
-      "image": "assets/images/library/songs/Rectangle 6-2.png",
+      "image": "assets/images/library/songs/plastic_beach.jpg",
+      "audio": "assets/audio/On Melancholy Hill.mp3",
       "title": "On Melancholy Hill",
       "author": "Gorillaz",
       "album": "Plastic Beach",
@@ -502,7 +505,8 @@
     },
     {
       "cover": "assets/images/discover/covers/SoftCell_TaintedLove40.webp",
-      "image": "assets/images/library/songs/Rectangle 6-3.png",
+      "image": "assets/images/library/songs/tainted love.jpg",
+      "audio": "assets/audio/Tainted Love.mp3",
       "title": "Tainted Love",
       "author": "Soft Cell",
       "album": "Non-Stop Erotic Cabaret",
@@ -511,8 +515,9 @@
       "duration": "2:33"
     },
     {
-      "cover": "assets/images/discover/covers/one_more_time.jpg",
-      "image": "assets/images/library/songs/Rectangle 6-4.png",
+      "cover": "assets/images/discover/covers/one more time.png",
+      "image": "assets/images/library/songs/one more time.png",
+      "audio": "assets/audio/One More Time.mp3",
       "title": "One More Time",
       "author": "Daft Punk",
       "album": "Discovery",
@@ -522,7 +527,8 @@
     },
     {
       "cover": "assets/images/discover/covers/electric_feel.jpg",
-      "image": "assets/images/library/songs/Rectangle 6-5.png",
+      "image": "assets/images/library/songs/electric feel.jpg",
+      "audio": "assets/audio/Electric Feel.mp3",
       "title": "Electric Feel",
       "author": "MGMT",
       "album": "Oracular Spectacular",
@@ -531,8 +537,9 @@
       "duration": "3:49"
     },
     {
-      "cover": "assets/images/discover/covers/Give_Life_Back.jpg",
-      "image": "assets/images/library/songs/Rectangle 6-6.png",
+      "cover": "assets/images/discover/covers/instant_crush.jpg",
+      "image": "assets/images/library/songs/punk.jpg",
+      "audio": "assets/audio/Give Life Back to Music.mp3",
       "title": "Give Life Back to Music",
       "author": "Daft Punk",
       "album": "Random Access Memories",

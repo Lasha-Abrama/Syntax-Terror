@@ -34,7 +34,7 @@ main {
   -ms-overflow-style: none; /* IE 10+ */
 }
 
-.main::-webkit-scrollbar {
+body:-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
 }
 .active {
@@ -42,11 +42,12 @@ main {
   background-color: variables.$background-primary;
   border-radius: 10px;
 }
-.sidebar, .header {
+.sidebar,
+.header {
   .active {
     svg {
-       stroke: variables.$text-primary !important;
-    fill: variables.$text-primary;
+      stroke: variables.$text-primary !important;
+      fill: variables.$text-primary;
     }
   }
 }
@@ -54,6 +55,7 @@ svg {
   width: 41px;
   height: 41px;
   fill: none;
+  cursor: pointer;
 }
 .sidebar,
 .header svg {
