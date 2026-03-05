@@ -68,12 +68,14 @@ app.get("/library", (req, res) => {
   });
 });
 
+app.get("/liked", (req, res) => {
+  res.render("liked", { data, page: "liked"});
+});
 app.get("/pins", (req, res) => {
   res.render("pins", {
     page: "pins"
   });
 });
-
 app.get("/about", (req, res) => {
   res.render("about", {
     page: "about"

@@ -11,9 +11,8 @@
 
       <div class="right">
         <%- include('partials/header') %>
-
+        <div class="content-wrapper">
         <main class="main-content">
-          <%- include('friends') %>
           <!-- Top Buttons -->
           <div class="filter-buttons">
             <button class="filter-btn active" data-filter="music">Music</button>
@@ -174,9 +173,12 @@
               </div>
             </div>
           </div>
-        </main>
+         
+        </main> <%- include('partials/friends') %>
+      </div>
         <%- include('partials/player') %>
       </div>
     </div>
+    <script src="/js/script.js"></script>
   </body>
 </html>

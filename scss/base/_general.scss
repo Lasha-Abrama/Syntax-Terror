@@ -41,9 +41,13 @@ main {
   color: variables.$text-primary;
   background-color: variables.$background-primary;
   border-radius: 10px;
-  svg {
-    stroke: variables.$text-primary !important;
+}
+.sidebar, .header {
+  .active {
+    svg {
+       stroke: variables.$text-primary !important;
     fill: variables.$text-primary;
+    }
   }
 }
 svg {

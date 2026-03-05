@@ -121,4 +121,6 @@ toggleBtn?.addEventListener("click", (e) => {
   if (panel) {
     panel.classList.toggle("active");
   }
+
+  toggleBtn.classList.toggle("active");
 });

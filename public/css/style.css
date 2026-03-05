@@ -85,7 +85,8 @@ main {
   background-color: #111111;
   border-radius: 10px;
 }
-.active svg {
+
+.sidebar .active svg, .header .active svg {
   stroke: #e0e0e0 !important;
   fill: #e0e0e0;
 }
@@ -723,15 +724,6 @@ h4 {
   border-radius: 44px;
 }
 
-.library .card-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.section-actions {
-  display: flex;
-  justify-content: space-between;
-}
 .section-actions-right {
   display: flex;
   gap: 35px;
@@ -740,12 +732,49 @@ h4 {
   display: flex;
   gap: 10px;
 }
-.section-actions button {
-  display: flex;
-  align-items: center;
-  gap: 5px;
+
+.songs-table {
   color: #898989;
   font-size: 14px;
+  border-collapse: separate;
+  text-align: left;
+  max-width: 800px;
+}
+.songs-table thead {
+  position: relative;
+}
+.songs-table tbody tr:first-child td {
+  border-top: 32px solid transparent;
+}
+.songs-table th {
+  font-weight: 400;
+}
+.songs-table td {
+  padding: 8px 0;
+}
+
+.songs-table thead::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: calc(100% + 12px);
+  width: calc(100% + 50px);
+  height: 1px;
+  background: #444;
+}
+
+.song-content {
+  display: flex;
+  gap: 10px;
+}
+.song-content .song-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.song-content .song-info .title {
+  font-size: 16px;
+  color: #e0e0e0;
 }
 
 /*# sourceMappingURL=style.css.map */
