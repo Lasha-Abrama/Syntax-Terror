@@ -11,121 +11,23 @@
 
       <div class="right">
         <%- include('partials/header') %>
-        <div class="content-wrapper"> 
-        <main class="main-content">
-          <section class="section">
-            <div class="section-actions">
-              <div class="section-actions-left">
-                <div class="section-actions-left-first">
-                  <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16.584 26.3298H28.584" stroke="#898989" stroke-width="2" stroke-linecap="round" />
-                    <path d="M11 26.3298H12" stroke="#898989" stroke-width="2" stroke-linecap="round" />
-                    <path d="M16.584 20.3298H28.584" stroke="#898989" stroke-width="2" stroke-linecap="round" />
-                    <path d="M11 20.3298H12" stroke="#898989" stroke-width="2" stroke-linecap="round" />
-                    <path d="M16.584 14.3298H28.584" stroke="#898989" stroke-width="2" stroke-linecap="round" />
-                    <path d="M11 14.3298H12" stroke="#898989" stroke-width="2" stroke-linecap="round" />
-                  </svg>
-
-                  <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="40.4108" height="40.4108" rx="5" fill="#898989" fill-opacity="0.1" />
-                    <rect
-                      width="8.18182"
-                      height="8.18182"
-                      rx="2"
-                      transform="matrix(1 0 0 -1 10.335 30.3298)"
-                      stroke="#E0E0E0"
-                      stroke-width="2"
-                    />
-                    <rect
-                      width="8.18182"
-                      height="8.18182"
-                      rx="2"
-                      transform="matrix(1 0 0 -1 10.335 18.5116)"
-                      stroke="#E0E0E0"
-                      stroke-width="2"
-                    />
-                    <rect
-                      width="8.18182"
-                      height="8.18182"
-                      rx="2"
-                      transform="matrix(1 0 0 -1 22.1533 30.3298)"
-                      stroke="#E0E0E0"
-                      stroke-width="2"
-                    />
-                    <rect
-                      width="8.18182"
-                      height="8.18182"
-                      rx="2"
-                      transform="matrix(1 0 0 -1 22.1533 18.5116)"
-                      stroke="#E0E0E0"
-                      stroke-width="2"
-                    />
-                  </svg>
-                </div>
-
-                <button>
-                  <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M13.4327 26.8049V13.5287M13.4327 13.5287L18.0759 18.1718M13.4327 13.5287L8.78962 18.1718"
-                      stroke="#898989"
-                      stroke-width="2.02054"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M26.4328 13.8049L26.4328 27.081M26.4328 27.081L21.7897 22.4379M26.4328 27.081L31.076 22.4379"
-                      stroke="#898989"
-                      stroke-width="2.02054"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <span>Recent</span>
-                </button>
-
-                <button>
-                  <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M29.3351 14.081L11.3351 14.081" stroke="#898989" stroke-width="2" stroke-linecap="round" />
-                    <path d="M25.8273 20.081H15.8273" stroke="#898989" stroke-width="2" stroke-linecap="round" />
-                    <path d="M22.8273 26.081H18.8273" stroke="#898989" stroke-width="2" stroke-linecap="round" />
-                  </svg>
-                  <span>Group</span>
-                </button>
-
-                <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M24.7357 24.361C26.2733 22.7925 27.2214 20.644 27.2214 18.274C27.2214 13.4715 23.3282 9.57837 18.5257 9.57837C13.7233 9.57837 9.83008 13.4715 9.83008 18.274C9.83008 23.0765 13.7233 26.9697 18.5257 26.9697C20.9582 26.9697 23.1575 25.9709 24.7357 24.361ZM24.7357 24.361L29.8301 29.5784"
-                    stroke="#898989"
-                    stroke-width="2.02054"
-                    stroke-linecap="round"
-                  />
-                </svg>
-              </div>
-              <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M20.2052 13.0618V20.2054M20.2052 27.3491V20.2054M20.2052 20.2054L13.0615 20.2054M20.2052 20.2054H27.3489"
-                  stroke="#898989"
-                  stroke-width="2.02054"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
-          </section>
-          <section class="section">
-            <div class="library">
-              <div class="cards-viewport">
-                <div class="card-container">
-                  <% audiobooks.forEach(item => { %>
+        <div class="content-wrapper">
+          <main class="main-content">
+            <%- include('partials/library-icons') %>
+            <section class="section">
+              <div class="library">
+                <div class="cards-viewport">
+                  <div class="card-container">
+                    <% audiobooks.forEach(item => { %>
                     <%- include('partials/card', { item: item, type: "audiobook"}) %>
-                  <% }) %>
+                    <% }) %>
+                  </div>
                 </div>
               </div>
-            </div>
-          </section>
-        </main>
-        <%- include('partials/friends') %>
-      </div>
+            </section>
+          </main>
+          <%- include('partials/friends') %>
+        </div>
         <%- include('partials/player') %>
       </div>
     </div>

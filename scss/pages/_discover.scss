@@ -22,13 +22,16 @@
 .hero-section {
   display: flex;
   flex-direction: column;
-  gap: 50px;
   align-items: center;
-  padding-top: 50px;
 
   .hero-slide {
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 80px;
+    background-color: rgba(var(--colour-r), var(--colour-g), var(--colour-b), 0.2);
+    padding: 100px 0;
+    width: 100%;
   }
   .hero-left {
     .hero-image-wrapper {

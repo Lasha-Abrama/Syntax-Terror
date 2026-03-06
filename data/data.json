@@ -481,7 +481,8 @@
       "album": "Random Access Memories",
       "year": 2013,
       "genres": ["Disco", "Funk"],
-      "duration": "4:35"
+      "duration": "4:35",
+      "color": "#DF6D2F"
     },
     {
       "cover": "assets/images/discover/covers/instant_crush.jpg",
@@ -492,7 +493,8 @@
       "album": "Random Access Memories",
       "year": 2013,
       "genres": ["Synth-pop", "Indie Pop"],
-      "duration": "5:37"
+      "duration": "5:37",
+      "color": "#8495C7"
     },
     {
       "cover": "assets/images/discover/covers/plastic_beach.jpg",
@@ -503,7 +505,8 @@
       "album": "Plastic Beach",
       "year": 2010,
       "genres": ["Synth-pop", "Alternative"],
-      "duration": "3:53"
+      "duration": "3:53",
+      "color": "#AE241A"
     },
     {
       "cover": "assets/images/discover/covers/SoftCell_TaintedLove40.webp",
@@ -514,7 +517,8 @@
       "album": "Non-Stop Erotic Cabaret",
       "year": 1981,
       "genres": ["Synth-pop", "New Wave"],
-      "duration": "2:33"
+      "duration": "2:33",
+      "color": "#F39FC5"
     },
     {
       "cover": "assets/images/discover/covers/one more time.png",
@@ -525,7 +529,8 @@
       "album": "Discovery",
       "year": 2000,
       "genres": ["House", "Dance"],
-      "duration": "5:20"
+      "duration": "5:20",
+      "color": "#47AB4A"
     },
     {
       "cover": "assets/images/discover/covers/electric_feel.jpg",
@@ -536,7 +541,8 @@
       "album": "Oracular Spectacular",
       "year": 2007,
       "genres": ["Psychedelic Pop", "Indie Electronic"],
-      "duration": "3:49"
+      "duration": "3:49",
+      "color": "#F2E954"
     },
     {
       "cover": "assets/images/discover/covers/instant_crush.jpg",
@@ -547,8 +553,8 @@
       "album": "Random Access Memories",
       "year": 2013,
       "genres": ["Disco", "Funk"],
-      "duration": "4:35"
+      "duration": "4:35",
+      "color": "#8495C7"
     }
   ]
 }
-

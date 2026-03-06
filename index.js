@@ -30,16 +30,14 @@ app.get("/discover", (req, res) => {
 app.get("/search", (req, res) => {
   res.render("search", { data, page: "search" });
 });
+// 1. Liked playlist
+const likedPlaylist = data.playlists.find((p) => p.title === "Liked Songs");
+// 3. Rest playlists
+const otherPlaylists = data.playlists.filter((p) => p.title !== "Liked Songs");
 
 app.get("/library", (req, res) => {
-  // 1. Liked playlist
-  const likedPlaylist = data.playlists.find((p) => p.title === "Liked Songs");
-
   // 2. Only Daft Punk and David Bowie
   const selectedArtists = data.artists.filter((a) => a.name === "Daft Punk" || a.name === "David Bowie");
-
-  // 3. Rest playlists
-  const otherPlaylists = data.playlists.filter((p) => p.title !== "Liked Songs");
 
   // 4. Folders
   const folders = data.folders.filter((p) => p.title === "Fav bands");
@@ -67,15 +65,15 @@ app.get("/liked", (req, res) => {
 app.get("/pins", (req, res) => {
   const pinnedItems = [];
 
-  Object.keys(data).forEach(type => {
+  Object.keys(data).forEach((type) => {
     const section = data[type];
 
     if (Array.isArray(section)) {
-      section.forEach(item => {
+      section.forEach((item) => {
         if (item.pinned) {
           pinnedItems.push({
             ...item,
-            type
+            type,
           });
         }
       });
@@ -84,7 +82,7 @@ app.get("/pins", (req, res) => {
 
   res.render("pins", {
     items: pinnedItems,
-    page: "pins"
+    page: "pins",
   });
 });
 
@@ -95,7 +93,7 @@ app.get("/about", (req, res) => {
 });
 
 app.get("/liked", (req, res) => {
-  res.render("liked", { data, page: "liked"});
+  res.render("liked", { data, page: "liked" });
 });
 
 app.get("/saves", (req, res) => {
@@ -106,16 +104,16 @@ app.get("/saves", (req, res) => {
 
 app.get("/playlists", (req, res) => {
   res.render("playlists", {
-    playlists: data.playlists,
-    type: "playlist",
-    page: "library"
+    likedPlaylist,
+    otherPlaylists,
+    page: "library",
   });
 });
 
 app.get("/albums", (req, res) => {
   res.render("albums", {
     albums: data.albums,
-    page: "albums"
+    page: "albums",
   });
 });
 
@@ -123,7 +121,7 @@ app.get("/folders", (req, res) => {
   res.render("folders", {
     folders: data.folders,
     type: "folder",
-    page: "library"
+    page: "library",
   });
 });
 
@@ -131,7 +129,7 @@ app.get("/podcasts", (req, res) => {
   res.render("podcasts", {
     podcasts: data.podcasts,
     type: "podcast",
-    page: "podcasts"
+    page: "podcasts",
   });
 });
 
@@ -139,7 +137,7 @@ app.get("/audiobooks", (req, res) => {
   res.render("audiobooks", {
     audiobooks: data.audiobooks,
     type: "audiobook",
-    page: "audiobooks"
+    page: "audiobooks",
   });
 });
 
@@ -148,7 +146,7 @@ app.get("/artists", (req, res) => {
   res.render("artists", {
     artists: data.artists,
     type: "artist",
-    page: "artists"
+    page: "artists",
   });
 });
 

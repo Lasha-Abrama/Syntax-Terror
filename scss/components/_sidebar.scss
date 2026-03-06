@@ -16,7 +16,7 @@
         justify-content: space-between;
         a.nav-btn {
           @include mixins.flex-link();
-
+          width: 100%;
           span {
             color: variables.$text-secondary;
           }

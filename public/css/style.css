@@ -156,6 +156,9 @@ h4 {
 .sidebar .sidebar-nav ul.sidebar-menu li a.nav-btn:hover {
   color: #e0e0e0;
 }
+.sidebar .sidebar-nav ul.sidebar-menu li a.nav-btn {
+  width: 100%;
+}
 .sidebar .sidebar-nav ul.sidebar-menu li a.nav-btn span {
   color: #898989;
 }
@@ -506,6 +509,7 @@ h4 {
 }
 
 .friends-section.active {
+  background-color: transparent;
   flex: 0 0 358px;
   border: 1px solid #202020;
   padding: 20px 21px;
@@ -636,13 +640,16 @@ h4 {
 .hero-section {
   display: flex;
   flex-direction: column;
-  gap: 50px;
   align-items: center;
-  padding-top: 50px;
 }
 .hero-section .hero-slide {
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 80px;
+  background-color: rgba(var(--colour-r), var(--colour-g), var(--colour-b), 0.2);
+  padding: 100px 0;
+  width: 100%;
 }
 .hero-section .hero-left .hero-image-wrapper {
   position: relative;
