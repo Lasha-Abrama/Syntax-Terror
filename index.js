@@ -41,6 +41,9 @@ app.get("/library", (req, res) => {
   // 3. Rest playlists
   const otherPlaylists = data.playlists.filter((p) => p.title !== "Liked Songs");
 
+  // 4. Folders
+  const folders = data.folders.filter((p) => p.title === "Fav bands");
+
   // 4. Selected mixes
   const selectedMixes = data.mixes.filter((m) =>
     ["Daily Mix 1", "Daily Mix 2", "Daily Mix 3", "Rock Mix", "Chill Mix", "Pop Mix"].includes(m.title),
@@ -50,6 +53,7 @@ app.get("/library", (req, res) => {
     likedPlaylist,
     selectedArtists,
     otherPlaylists,
+    folders,
     albums: data.albums,
     selectedMixes,
     page: "library",
@@ -59,11 +63,31 @@ app.get("/library", (req, res) => {
 app.get("/liked", (req, res) => {
   res.render("liked", { data, page: "liked" });
 });
+
 app.get("/pins", (req, res) => {
+  const pinnedItems = [];
+
+  Object.keys(data).forEach(type => {
+    const section = data[type];
+
+    if (Array.isArray(section)) {
+      section.forEach(item => {
+        if (item.pinned) {
+          pinnedItems.push({
+            ...item,
+            type
+          });
+        }
+      });
+    }
+  });
+
   res.render("pins", {
-    page: "pins",
+    items: pinnedItems,
+    page: "pins"
   });
 });
+
 app.get("/about", (req, res) => {
   res.render("about", {
     page: "about",
@@ -72,6 +96,60 @@ app.get("/about", (req, res) => {
 
 app.get("/liked", (req, res) => {
   res.render("liked", { data, page: "liked"});
+});
+
+app.get("/saves", (req, res) => {
+  res.render("saves", {
+    page: "saves",
+  });
+});
+
+app.get("/playlists", (req, res) => {
+  res.render("playlists", {
+    playlists: data.playlists,
+    type: "playlist",
+    page: "library"
+  });
+});
+
+app.get("/albums", (req, res) => {
+  res.render("albums", {
+    albums: data.albums,
+    page: "albums"
+  });
+});
+
+app.get("/folders", (req, res) => {
+  res.render("folders", {
+    folders: data.folders,
+    type: "folder",
+    page: "library"
+  });
+});
+
+app.get("/podcasts", (req, res) => {
+  res.render("podcasts", {
+    podcasts: data.podcasts,
+    type: "podcast",
+    page: "podcasts"
+  });
+});
+
+app.get("/audiobooks", (req, res) => {
+  res.render("audiobooks", {
+    audiobooks: data.audiobooks,
+    type: "audiobook",
+    page: "audiobooks"
+  });
+});
+
+// Artists page
+app.get("/artists", (req, res) => {
+  res.render("artists", {
+    artists: data.artists,
+    type: "artist",
+    page: "artists"
+  });
 });
 
 app.listen(PORT, () => {

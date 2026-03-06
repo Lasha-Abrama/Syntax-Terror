@@ -15,17 +15,8 @@
         <main class="main-content">
           <section class="section">
             <div class="section-actions">
-                <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M20.2052 13.0618V20.2054M20.2052 27.3491V20.2054M20.2052 20.2054L13.0615 20.2054M20.2052 20.2054H27.3489"
-                      stroke="#898989"
-                      stroke-width="2.02054"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-              <div class="section-actions-right">
-                <div class="section-actions-right-first">
+              <div class="section-actions-left">
+                <div class="section-actions-left-first">
                   <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
                     <path d="M16.584 26.3298H28.584" stroke="#898989" stroke-width="2" stroke-linecap="round" />
                     <path d="M11 26.3298H12" stroke="#898989" stroke-width="2" stroke-linecap="round" />
@@ -98,7 +89,7 @@
                     <path d="M25.8273 20.081H15.8273" stroke="#898989" stroke-width="2" stroke-linecap="round" />
                     <path d="M22.8273 26.081H18.8273" stroke="#898989" stroke-width="2" stroke-linecap="round" />
                   </svg>
-                  <span>Filter All</span>
+                  <span>Group</span>
                 </button>
 
                 <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
@@ -110,45 +101,28 @@
                   />
                 </svg>
               </div>
+              <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20.2052 13.0618V20.2054M20.2052 27.3491V20.2054M20.2052 20.2054L13.0615 20.2054M20.2052 20.2054H27.3489"
+                  stroke="#898989"
+                  stroke-width="2.02054"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
             </div>
           </section>
-          <table class="songs-table">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Title</th>
-                <th>Album</th>
-                <th>Duration</th>
-                <th class="col-like"></th>
-              </tr>
-            </thead>
-        
-             <tbody>
-              <% data.songs.forEach((song, index) => { %>
-                <tr>
-                  <td><%= index + 1 %></td>
-          
-                  <td class="song-content">
-                    <img src="<%= song.image %>" alt="<%= song.title %> image">
-                    <div class="song-info">
-                      <p class="title"><%= song.title %></p>
-                      <p class="info"><%= song.author %></p>
-                    </div>
-          
-                    </div>
-                  </td>
-          
-                  <td class="info"><%= song.album %></td>
-                  <td class="info"><%= song.duration %></td>
-                  <td><svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22.0693 13.5678L20.2054 15.3738L18.3416 13.5678C16.3872 11.6741 13.2521 11.7787 11.4282 13.7984C9.65847 15.7581 9.41482 18.6936 11.0174 20.7923C11.2143 21.0502 11.408 21.2972 11.5922 21.5232C12.7587 22.9542 15.3037 25.4531 16.5788 26.7942C17.5209 27.785 18.3677 28.6113 19.0057 29.2132C19.6794 29.8488 20.7194 29.835 21.3944 29.2007C22.5707 28.0954 24.3747 26.3736 25.6453 25.0372C26.9205 23.6961 27.6522 22.9542 28.8186 21.5232C29.0029 21.2972 29.1965 21.0502 29.3935 20.7923C30.996 18.6936 30.7524 15.7581 28.9826 13.7984C27.1588 11.7787 24.0236 11.6741 22.0693 13.5678Z" fill="#1ED760" stroke="#1ED760" stroke-width="2.02054" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    </td>
-                </tr>
-              <% }) %>
-            </tbody>
-          </table>
-         
+          <section class="section">
+            <div class="library">
+              <div class="cards-viewport">
+                <div class="card-container">
+                  <% podcasts.forEach(item => { %>
+                    <%- include('partials/card', { item: item, type: "podcast"}) %>
+                  <% }) %>
+                </div>
+              </div>
+            </div>
+          </section>
         </main>
         <%- include('partials/friends') %>
       </div>

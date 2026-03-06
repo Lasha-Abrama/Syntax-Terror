@@ -2,8 +2,8 @@
   <%= type === 'podcasts' ? `data-colour="${item['border-color']}"` : '' %> 
   <%= type === 'browse' ? `data-colour="${item.color}"` : '' %>>
 
-  <% if (item.pinned && page === "library") { %>
-    <%- include("card-pin")  %>
+  <% if (item.pinned && (page === "library" || page === "pins" || page === "artists")) { %>
+    <%- include("card-pin") %>
   <% } %>
   <div class="card-image">
     <img src="/<%= item.image %>" alt="<%= item.title || item.name %>" />

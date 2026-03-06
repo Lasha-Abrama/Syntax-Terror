@@ -122,7 +122,11 @@
                   <% }) %>
 
                   <% otherPlaylists.forEach(item => { %>
-                  <%- include('partials/card', { item, type: 'playlist'  , isLiked: false}) %>
+                  <%- include('partials/card', { item, type: 'playlist', isLiked: false}) %>
+                  <% }) %>
+
+                  <% folders.forEach(item => { %>
+                  <%- include('partials/card', { item: item, type: "folder" }) %>
                   <% }) %>
 
                   <% albums.forEach(item => { %>

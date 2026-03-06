@@ -460,7 +460,9 @@
       "quantity": 8,
       "pinned": true,
       "description": "Numb, Crawling, In the End, and more"
-    },
+    }
+  ],
+  "folders": [
     {
       "image": "assets/images/library/playlists/bands.png",
       "title": "Fav bands",
