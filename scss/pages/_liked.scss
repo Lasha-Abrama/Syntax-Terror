@@ -1,0 +1,64 @@
+@use "../abstracts/_variables";
+
+.section-actions {
+  &-right {
+    display: flex;
+    gap: 35px;
+    &-first {
+      display: flex;
+      gap: 10px;
+    }
+  }
+}
+.songs-table {
+  color: variables.$text-secondary;
+  font-size: 14px;
+  border-collapse: separate;
+  text-align: left;
+  max-width: 800px;
+  thead {
+    position: relative;
+  }
+  tbody tr:first-child td {
+    border-top: 32px solid transparent;
+  }
+  th {
+    font-weight: 400;
+  }
+
+  td {
+    padding: 8px 0;
+  }
+  th:first-child,
+  td:first-child {
+    padding-right: 30px;
+    text-align: center;
+  }
+}
+
+.songs-table thead::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: calc(100% + 12px);
+  width: calc(100% + 600px);
+  height: 2px;
+  background: #89898915;
+}
+.song-content {
+  display: flex;
+  gap: 10px;
+  img {
+    width: 51px;
+    border-radius: 3px;
+  }
+  .song-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    .title {
+      font-size: 16px;
+      color: variables.$text-primary;
+    }
+  }
+}

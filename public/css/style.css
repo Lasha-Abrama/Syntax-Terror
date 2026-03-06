@@ -76,7 +76,7 @@ main {
   -ms-overflow-style: none; /* IE 10+ */
 }
 
-.main::-webkit-scrollbar {
+body:-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
 }
 
@@ -85,7 +85,9 @@ main {
   background-color: #111111;
   border-radius: 10px;
 }
-.active svg {
+
+.sidebar .active svg,
+.header .active svg {
   stroke: #e0e0e0 !important;
   fill: #e0e0e0;
 }
@@ -94,6 +96,7 @@ svg {
   width: 41px;
   height: 41px;
   fill: none;
+  cursor: pointer;
 }
 
 .sidebar,
@@ -609,22 +612,60 @@ h4 {
   cursor: pointer;
 }
 
-.hero-section {
-  flex: 1;
+.hero-wrapper {
   display: flex;
+  flex-direction: column;
+}
+
+.hero-section {
+  height: 100vh; /* fixed height */
+  overflow-y: auto; /* make it scrollable */
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.hero-section:-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.hero-slide {
+  height: 100vh; /* so each slide fills the container */
+}
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
   gap: 50px;
   align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 2rem;
-  border-radius: 1rem;
-  background-color: rgba(140, 216, 204, 0.1411764706);
+  padding-top: 50px;
+}
+.hero-section .hero-slide {
+  display: flex;
+  gap: 80px;
 }
 .hero-section .hero-left .hero-image-wrapper {
   position: relative;
 }
+.hero-section .hero-left .hero-image-wrapper .progress-bar {
+  width: calc(100% - 34px);
+  height: 6px;
+  background: rgba(219, 219, 219, 0.2);
+  border-radius: 16px;
+  overflow: hidden;
+  position: absolute;
+  bottom: 12px;
+  left: 17px;
+  cursor: pointer;
+}
+.hero-section .hero-left .hero-image-wrapper .progress {
+  width: 0%;
+  height: 100%;
+  background: #e0e0e0;
+}
 .hero-section .hero-left .hero-image-wrapper .hero-image {
-  max-width: 400px;
+  width: 400px;
+  height: 612px;
   border-radius: 10px;
 }
 .hero-section .hero-left .hero-image-wrapper .slider-timer {
@@ -723,15 +764,6 @@ h4 {
   border-radius: 44px;
 }
 
-.library .card-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.section-actions {
-  display: flex;
-  justify-content: space-between;
-}
 .section-actions-right {
   display: flex;
   gap: 35px;
@@ -740,12 +772,58 @@ h4 {
   display: flex;
   gap: 10px;
 }
-.section-actions button {
-  display: flex;
-  align-items: center;
-  gap: 5px;
+
+.songs-table {
   color: #898989;
   font-size: 14px;
+  border-collapse: separate;
+  text-align: left;
+  max-width: 800px;
+}
+.songs-table thead {
+  position: relative;
+}
+.songs-table tbody tr:first-child td {
+  border-top: 32px solid transparent;
+}
+.songs-table th {
+  font-weight: 400;
+}
+.songs-table td {
+  padding: 8px 0;
+}
+.songs-table th:first-child,
+.songs-table td:first-child {
+  padding-right: 30px;
+  text-align: center;
+}
+
+.songs-table thead::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: calc(100% + 12px);
+  width: calc(100% + 600px);
+  height: 2px;
+  background: rgba(137, 137, 137, 0.0823529412);
+}
+
+.song-content {
+  display: flex;
+  gap: 10px;
+}
+.song-content img {
+  width: 51px;
+  border-radius: 3px;
+}
+.song-content .song-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.song-content .song-info .title {
+  font-size: 16px;
+  color: #e0e0e0;
 }
 
 /*# sourceMappingURL=style.css.map */

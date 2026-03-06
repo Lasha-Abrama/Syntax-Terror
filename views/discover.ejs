@@ -11,172 +11,302 @@
 
       <div class="right">
         <%- include('partials/header') %>
+        <div class="content-wrapper">
+          <main class="main-content">
+            <!-- Top Buttons -->
+            <div class="filter-buttons">
+              <button class="filter-btn active" data-filter="music">Music</button>
+              <button class="filter-btn" data-filter="edm">EDM</button>
+              <button class="filter-btn" data-filter="indie">Indie</button>
+              <button class="filter-btn" data-filter="pop">Pop</button>
+              <button class="filter-btn" data-filter="rock">Rock</button>
+              <button class="filter-btn" data-filter="alt-rock">Alt Rock</button>
+              <button class="filter-btn" data-filter="country">Country</button>
+              <button class="filter-btn" data-filter="r&b">R&B</button>
+              <button class="filter-btn" data-filter="hip-hop">Hip-Hop</button>
+              <button class="filter-btn" data-filter="podcasts">Podcast</button>
+              <button class="filter-btn" data-filter="audiobooks">Audiobooks</button>
+            </div>
+            <section class="hero-section">
+              <% data.songs.forEach((song, index) => { %>
+              <div class="hero-slide" data-index="<%= index %>" data-src="<%= song.audio || '' %>">
+                <div class="hero-left">
+                  <div class="hero-image-wrapper">
+                    <img src="<%= song.cover %>" alt="<%= song.title %>" class="hero-image" />
 
-        <main class="main-content">
-          <%- include('friends') %>
-          <!-- Top Buttons -->
-          <div class="filter-buttons">
-            <button class="filter-btn active" data-filter="music">Music</button>
-            <button class="filter-btn" data-filter="edm">EDM</button>
-            <button class="filter-btn" data-filter="indie">Indie</button>
-            <button class="filter-btn" data-filter="pop">Pop</button>
-            <button class="filter-btn" data-filter="rock">Rock</button>
-            <button class="filter-btn" data-filter="alt-rock">Alt Rock</button>
-            <button class="filter-btn" data-filter="country">Country</button>
-            <button class="filter-btn" data-filter="r&b">R&B</button>
-            <button class="filter-btn" data-filter="hip-hop">Hip-Hop</button>
-            <button class="filter-btn" data-filter="podcasts">Podcast</button>
-            <button class="filter-btn" data-filter="audiobooks">Audiobooks</button>
-          </div>
-          <div class="hero-section">
-            <div class="hero-left">
-              <div class="hero-image-wrapper">
-                <img src="assets/images/discoverBig.png" alt="Album Cover" class="hero-image" />
-                <div class="discover-action-btn">
-                  <button class="arrow arrow-left">
-                    <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
-                      <g opacity="0.5">
-                        <path
-                          d="M21.8892 15.1543L16.8379 20.2056L21.8892 25.257"
-                          stroke="#898989"
-                          stroke-width="2.3573"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </g>
-                    </svg>
-                  </button>
-                  <button class="arrow arrow-right">
-                    <svg viewBox="0 0 40 41" xmlns="http://www.w3.org/2000/svg">
-                      <g opacity="0.5">
-                        <path
-                          d="M18.5209 25.2578L23.5723 20.2065L18.5209 15.1551"
-                          stroke="#898989"
-                          stroke-width="2.3573"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </g>
-                    </svg>
-                  </button>
+                    <div class="progress-bar">
+                      <div class="progress"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="hero-right">
+                  <div class="info-card">
+                    <div class="info-left">
+                      <img src="<%= song.image %>" alt="<%= song.author %>" class="artist-image" />
+                    </div>
+
+                    <div class="info-right">
+                      <h2 class="title"><%= song.title %></h2>
+
+                      <div class="info-right-desc">
+                        <p>By <span class="Spotify"><%= song.author %></span></p>
+                        <p>·</p>
+                        <p class="info-right-year"><%= song.year %></p>
+                        <p>·</p>
+                        <p class="info-right-Duration"><%= song.duration %></p>
+                      </div>
+
+                      <div class="player-controls">
+                        <svg class="player-icon play-icon" viewBox="0 0 39 39" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx="19.0085" cy="19.0085" r="19.0085" fill="#1ED760" />
+                          <path
+                            d="M24.6336 17.6825C25.6541 18.2716 25.6541 19.7446 24.6336 20.3337L17.3454 24.5416C16.325 25.1308 15.0494 24.3943 15.0494 23.2159L15.0494 14.8003C15.0494 13.6219 16.325 12.8855 17.3454 13.4746L24.6336 17.6825Z"
+                            fill="black"
+                          />
+                        </svg>
+
+                        <svg
+                          class="player-icon pause-icon"
+                          viewBox="0 0 39 39"
+                          xmlns="http://www.w3.org/2000/svg"
+                          style="display: none"
+                        >
+                          <circle cx="19.0085" cy="19.0085" r="19.0085" fill="#1ED760" />
+                          <path
+                            d="M15.8398 14.2559V23.7601"
+                            stroke="black"
+                            stroke-width="3.16809"
+                            stroke-linecap="round"
+                          />
+                          <path
+                            d="M22.1758 14.2559V23.7601"
+                            stroke="black"
+                            stroke-width="3.16809"
+                            stroke-linecap="round"
+                          />
+                        </svg>
+                        <button class="favorite">
+                          <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M12.3242 12.4017V28.7055C12.3242 29.6489 13.3906 30.1977 14.1582 29.6493L19.0949 26.1232C19.9014 25.5471 20.9849 25.5471 21.7915 26.1232L26.7281 29.6493C27.4958 30.1977 28.5621 29.6489 28.5621 28.7055V12.4017C28.5621 11.1206 27.5236 10.082 26.2424 10.082H14.6439C13.3628 10.082 12.3242 11.1206 12.3242 12.4017Z"
+                              stroke="#898989"
+                              stroke-width="2.3197"
+                            />
+                          </svg>
+                          <p>500k</p></button
+                        ><svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                          <rect
+                            width="20"
+                            height="20"
+                            rx="3"
+                            transform="matrix(1 0 0 -1 9.82715 31.3301)"
+                            stroke="#898989"
+                            stroke-width="2"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M11.8271 11.3301H27.8271C27.8271 9.67322 26.484 8.33008 24.8271 8.33008H14.8271C13.1703 8.33008 11.8271 9.67322 11.8271 11.3301Z"
+                            stroke="#898989"
+                            stroke-width="1.5"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M15.8271 21.3301H19.8271M23.8271 21.3301H19.8271M19.8271 21.3301V17.3301M19.8271 21.3301V25.3301"
+                            stroke="#898989"
+                            stroke-width="2.02054"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                        <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M19.3632 11.7871H14.5924C13.0426 11.7871 11.7861 13.0435 11.7861 14.5934C11.7861 16.1433 13.0426 17.3997 14.5924 17.3997H19.3632"
+                            stroke="#898989"
+                            stroke-width="2.3573"
+                            stroke-linecap="round"
+                          />
+                          <path
+                            d="M11.7861 23.0117L28.624 23.0117"
+                            stroke="#898989"
+                            stroke-width="2.3573"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M11.7861 28.625L28.624 28.625"
+                            stroke="#898989"
+                            stroke-width="2.3573"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M23.5732 14.3128H26.0989M28.6246 14.3128H26.0989M26.0989 14.3128V11.7871M26.0989 14.3128V16.8385"
+                            stroke="#898989"
+                            stroke-width="2.02054"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                        <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M20.6897 22.0162V10.7401M20.6897 10.7401L16.0466 15.3832M20.6897 10.7401L25.3328 15.3832M28.981 20.358V25.0011C28.981 26.4664 27.7931 27.6543 26.3278 27.6543L15.0516 27.6543C13.5863 27.6543 12.3984 26.4664 12.3984 25.0011V20.358"
+                            stroke="#898989"
+                            stroke-width="2.02054"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                        <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx="11.7863" cy="20.2072" r="1.68378" fill="#898989" />
+                          <circle cx="20.2053" cy="20.2072" r="1.68378" fill="#898989" />
+                          <circle cx="28.6242" cy="20.2072" r="1.68378" fill="#898989" />
+                        </svg>
+                      </div>
+
+                      <div class="genre-buttons">
+                        <% song.genres.forEach(genre => { %>
+                        <button class="genre-btn"><%= genre %></button>
+                        <% }) %>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <div class="hero-right">
-              <div class="info-card">
-                <div class="info-left">
-                  <img src="assets/images/home/mixes/Frame 124-1.png" alt="Artist" class="artist-image" />
-                </div>
-                <div class="info-right">
-                  <h2 class="title">Album Title</h2>
-                  <div class="info-right-desc">
-                    <p>By <span class="Spotify">Spotify</span></p>
-                    <p>·</p>
-                    <p class="info-right-year">2023</p>
-                    <p>·</p>
-                    <p class="info-right-amount">12 Songs</p>
-                    <p>·</p>
-                    <p class="info-right-Duration">1 hr 14 min</p>
-                  </div>
-
-                  <div class="player-controls">
-                    <svg class="player-icon pause-icon" viewBox="0 0 39 39" xmlns="http://www.w3.org/2000/svg">
-                      <circle cx="19.0085" cy="19.0085" r="19.0085" fill="#1ED760" />
-                      <path
-                        d="M24.6336 17.6825C25.6541 18.2716 25.6541 19.7446 24.6336 20.3337L17.3454 24.5416C16.325 25.1308 15.0494 24.3943 15.0494 23.2159L15.0494 14.8003C15.0494 13.6219 16.325 12.8855 17.3454 13.4746L24.6336 17.6825Z"
-                        fill="black"
-                      />
-                    </svg>
-                    <button class="favorite">
-                      <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M12.3242 12.4017V28.7055C12.3242 29.6489 13.3906 30.1977 14.1582 29.6493L19.0949 26.1232C19.9014 25.5471 20.9849 25.5471 21.7915 26.1232L26.7281 29.6493C27.4958 30.1977 28.5621 29.6489 28.5621 28.7055V12.4017C28.5621 11.1206 27.5236 10.082 26.2424 10.082H14.6439C13.3628 10.082 12.3242 11.1206 12.3242 12.4017Z"
-                          stroke="#898989"
-                          stroke-width="2.3197"
-                        />
-                      </svg>
-                      <p>500k</p></button
-                    ><svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                      <rect
-                        width="20"
-                        height="20"
-                        rx="3"
-                        transform="matrix(1 0 0 -1 9.82715 31.3301)"
-                        stroke="#898989"
-                        stroke-width="2"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M11.8271 11.3301H27.8271C27.8271 9.67322 26.484 8.33008 24.8271 8.33008H14.8271C13.1703 8.33008 11.8271 9.67322 11.8271 11.3301Z"
-                        stroke="#898989"
-                        stroke-width="1.5"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M15.8271 21.3301H19.8271M23.8271 21.3301H19.8271M19.8271 21.3301V17.3301M19.8271 21.3301V25.3301"
-                        stroke="#898989"
-                        stroke-width="2.02054"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M19.3632 11.7871H14.5924C13.0426 11.7871 11.7861 13.0435 11.7861 14.5934C11.7861 16.1433 13.0426 17.3997 14.5924 17.3997H19.3632"
-                        stroke="#898989"
-                        stroke-width="2.3573"
-                        stroke-linecap="round"
-                      />
-                      <path
-                        d="M11.7861 23.0117L28.624 23.0117"
-                        stroke="#898989"
-                        stroke-width="2.3573"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M11.7861 28.625L28.624 28.625"
-                        stroke="#898989"
-                        stroke-width="2.3573"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M23.5732 14.3128H26.0989M28.6246 14.3128H26.0989M26.0989 14.3128V11.7871M26.0989 14.3128V16.8385"
-                        stroke="#898989"
-                        stroke-width="2.02054"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M20.6897 22.0162V10.7401M20.6897 10.7401L16.0466 15.3832M20.6897 10.7401L25.3328 15.3832M28.981 20.358V25.0011C28.981 26.4664 27.7931 27.6543 26.3278 27.6543L15.0516 27.6543C13.5863 27.6543 12.3984 26.4664 12.3984 25.0011V20.358"
-                        stroke="#898989"
-                        stroke-width="2.02054"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
-                      <circle cx="11.7863" cy="20.2072" r="1.68378" fill="#898989" />
-                      <circle cx="20.2053" cy="20.2072" r="1.68378" fill="#898989" />
-                      <circle cx="28.6242" cy="20.2072" r="1.68378" fill="#898989" />
-                    </svg>
-                  </div>
-
-                  <div class="genre-buttons">
-                    <button class="genre-btn">Pop</button>
-                    <button class="genre-btn">Rock</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </main>
+              <% }) %>
+            </section>
+          </main>
+          <%- include('partials/friends') %>
+        </div>
         <%- include('partials/player') %>
       </div>
     </div>
+    <script src="/js/script.js"></script>
+    <script>
+      (function () {
+        const slides = document.querySelectorAll(".hero-slide");
+        const heroSection = document.querySelector(".hero-section");
+        const SONG_DURATION = 15; // seconds
+        let audio = new Audio();
+        let interval = null;
+        let currentSlide = null;
+        let time = 0;
+
+        function resetSlide(slide) {
+          if (!slide) return;
+          const progress = slide.querySelector(".progress");
+          const playIcon = slide.querySelector(".play-icon");
+          const pauseIcon = slide.querySelector(".pause-icon");
+          if (progress) progress.style.width = "0%";
+          if (playIcon) playIcon.style.display = "block";
+          if (pauseIcon) pauseIcon.style.display = "none";
+        }
+
+        function stopCurrent() {
+          if (interval) clearInterval(interval);
+          audio.pause();
+          audio.currentTime = 0;
+          if (currentSlide) resetSlide(currentSlide);
+        }
+
+        function scrollToSlide(slide) {
+          if (!slide) return;
+          // Scroll relative to container
+          const top = slide.offsetTop - 20; // optional offset
+          heroSection.scrollTo({
+            top: top,
+            behavior: "smooth",
+          });
+        }
+
+        function playSlide(slide) {
+          stopCurrent();
+          if (!slide) return;
+
+          currentSlide = slide;
+          time = 0;
+
+          const progress = slide.querySelector(".progress");
+          const playIcon = slide.querySelector(".play-icon");
+          const pauseIcon = slide.querySelector(".pause-icon");
+          const src = slide.dataset.src;
+          if (!src) return;
+
+          audio.src = src;
+          audio.muted = false;
+
+          function updateProgress() {
+            time += 0.1;
+            if (time > SONG_DURATION) time = SONG_DURATION;
+            const percent = (time / SONG_DURATION) * 100;
+            if (progress) progress.style.width = `${percent}%`;
+
+            if (time >= SONG_DURATION) {
+              nextSlide();
+            }
+          }
+
+          function play() {
+            if (playIcon) playIcon.style.display = "none";
+            if (pauseIcon) pauseIcon.style.display = "block";
+            audio.play();
+            interval = setInterval(updateProgress, 100);
+            scrollToSlide(slide);
+          }
+
+          function pause() {
+            if (playIcon) playIcon.style.display = "block";
+            if (pauseIcon) pauseIcon.style.display = "none";
+            audio.pause();
+            clearInterval(interval);
+          }
+
+          const toggleBtn = slide.querySelector(".play-icon, .pause-icon")?.parentElement;
+          if (toggleBtn) {
+            toggleBtn.onclick = (e) => {
+              e.stopPropagation();
+              if (audio.paused) play();
+              else pause();
+            };
+          }
+
+          const progressWrapper = progress?.parentElement;
+          if (progressWrapper) {
+            progressWrapper.onclick = (e) => {
+              const rect = progressWrapper.getBoundingClientRect();
+              const clickX = e.clientX - rect.left;
+              const width = rect.width;
+              const percent = clickX / width;
+              audio.currentTime = percent * SONG_DURATION;
+              time = audio.currentTime;
+              progress.style.width = `${percent * 100}%`;
+            };
+          }
+
+          play();
+        }
+
+        function nextSlide() {
+          const currentIndex = Array.from(slides).indexOf(currentSlide);
+          const nextIndex = (currentIndex + 1) % slides.length;
+          const next = slides[nextIndex];
+
+          // Delay slightly to allow scroll animation
+          setTimeout(() => playSlide(next), 200);
+        }
+
+        slides.forEach((slide) => {
+          const toggleBtn = slide.querySelector(".play-icon, .pause-icon")?.parentElement;
+          if (toggleBtn) {
+            toggleBtn.onclick = () => playSlide(slide);
+          }
+        });
+
+        document.addEventListener("click", function initFirst() {
+          playSlide(slides[0]);
+          document.removeEventListener("click", initFirst);
+        });
+      })();
+    </script>
   </body>
 </html>

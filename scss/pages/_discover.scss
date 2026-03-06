@@ -1,23 +1,59 @@
 @use "../abstracts/_variables";
 @use "../abstracts/_mixins";
-
-.hero-section {
-  flex: 1;
+.hero-wrapper {
   display: flex;
+  flex-direction: column;
+}
+.hero-section {
+  height: 100vh; /* fixed height */
+  overflow-y: auto; /* make it scrollable */
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.hero-section:-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.hero-slide {
+  height: 100vh; /* so each slide fills the container */
+}
+.hero-section {
+  display: flex;
+  flex-direction: column;
   gap: 50px;
   align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 2rem;
-  border-radius: 1rem;
-  background-color: #8cd8cc24;
+  padding-top: 50px;
 
+  .hero-slide {
+    display: flex;
+    gap: 80px;
+  }
   .hero-left {
     .hero-image-wrapper {
       position: relative;
+      .progress-bar {
+        width: calc(100% - 34px);
+        height: 6px;
+        background: #dbdbdb33;
+        border-radius: 16px;
+        overflow: hidden;
+        position: absolute;
+        bottom: 12px;
+        left: 17px;
+        cursor: pointer;
+      }
+
+      .progress {
+        width: 0%;
+        height: 100%;
+        background: variables.$text-primary;
+      }
 
       .hero-image {
-        max-width: 400px;
+        width: 400px;
+        height: 612px;
         border-radius: 10px;
       }
 
