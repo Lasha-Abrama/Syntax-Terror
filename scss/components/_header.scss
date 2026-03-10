@@ -15,6 +15,10 @@
       display: flex;
       align-items: center;
       gap: 25px;
+      .header-library,
+      .header-profile {
+        display: none;
+      }
 
       a.nav-btn {
         @include mixins.flex-link();
@@ -63,6 +67,43 @@
         height: 32px;
         border-radius: 50%;
         background-color: variables.$background-player;
+      }
+    }
+  }
+}
+@media (max-width: 420px) {
+  .header {
+    position: fixed;
+    z-index: 13;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(17, 17, 17, 1) 0%, rgba(17, 17, 17, 1) 43%, rgba(17, 17, 17, 0.85) 100%);
+    .navigation {
+      height: 95px;
+      background: transparent;
+      .nav-right {
+        display: none;
+      }
+      .nav-left {
+        display: flex;
+        align-items: center;
+        gap: 31px;
+        width: 100%;
+        .header-library,
+        .header-profile {
+          display: block;
+        }
+        a.nav-btn {
+          flex-direction: column;
+          width: auto;
+          gap: 0;
+          span {
+            font-size: 12px;
+          }
+        }
       }
     }
   }

@@ -1,12 +1,12 @@
 @use "../abstracts/_variables";
 body {
   font-family: variables.$font-primary;
+  background-color: variables.$background-main;
 }
 .wrapper {
   display: flex;
-  height: 100vh;
+  height: 100%;
   padding: 0 7px;
-  background-color: variables.$background-main;
 }
 .right {
   display: flex;
@@ -84,4 +84,24 @@ h4 {
   font-size: 18px;
   font-weight: 500;
   color: variables.$text-primary;
+}
+@media (max-width: 420px) {
+  .sidebar {
+    display: none;
+  }
+  .right {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .wrapper {
+    padding: 0;
+  }
+  .content-wrapper {
+    height: auto;
+    flex-direction: column;
+  }
+  .main-content {
+    margin-bottom: 155px;
+  }
 }

@@ -149,7 +149,11 @@ app.get("/artists", (req, res) => {
     page: "artists",
   });
 });
-
+app.get("/library-mobile", (req, res) => {
+  res.render("library-mobile", {
+    page: "library-mobile",
+  });
+});
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
