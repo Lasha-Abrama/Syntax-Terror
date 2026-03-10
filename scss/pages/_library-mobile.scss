@@ -1,0 +1,13 @@
+@use "../abstracts/_variables";
+.library-filter {
+  display: flex;
+  gap: 32px;
+  button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    span {
+      color: variables.$text-secondary;
+    }
+  }
+}

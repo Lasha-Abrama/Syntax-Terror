@@ -95,3 +95,10 @@
     }
   }
 }
+@media (max-width: 420px) {
+  .card-container {
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+  }
+}

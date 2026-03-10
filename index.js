@@ -92,6 +92,12 @@ app.get("/about", (req, res) => {
   });
 });
 
+app.get("/profile", (req, res) => {
+  res.render("profile", {
+    page: "profile",
+  });
+});
+
 app.get("/liked", (req, res) => {
   res.render("liked", { data, page: "liked" });
 });
@@ -147,6 +153,12 @@ app.get("/artists", (req, res) => {
     artists: data.artists,
     type: "artist",
     page: "artists",
+  });
+});
+
+app.get("/library-mobile", (req, res) => {
+  res.render("library-mobile", {
+    page: "library-mobile",
   });
 });
 

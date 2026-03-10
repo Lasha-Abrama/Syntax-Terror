@@ -185,7 +185,7 @@
         </div>
         <%- include('partials/player') %>
       </div>
-    </div>
+    </div> 
     <script src="/js/script.js"></script>
     <script>
       (function () {
@@ -316,11 +316,6 @@
           if (toggleBtn) {
             toggleBtn.onclick = () => playSlide(slide);
           }
-        });
-
-        document.addEventListener("click", function initFirst() {
-          playSlide(slides[0]);
-          document.removeEventListener("click", initFirst);
         });
       })();
     </script>

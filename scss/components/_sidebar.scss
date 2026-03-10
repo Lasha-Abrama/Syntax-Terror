@@ -5,7 +5,7 @@
   padding: 7px 0;
 
   .sidebar-nav {
-    ul.sidebar-menu {
+    .sidebar-menu {
       display: flex;
       flex-direction: column;
       gap: 11px; // gap between li elements
@@ -28,6 +28,33 @@
 
           span {
             color: variables.$text-primary;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 420px) {
+  .mobile-sidebar {
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      &-nav {
+        .sidebar-menu {
+          width: 100%;
+          li {
+            a.nav-btn {
+              padding: 20px 0;
+              border-bottom: 2px solid #202020;
+              span {
+                color: variables.$text-primary;
+                font-size: 20px;
+                font-weight: bold;
+              }
+              svg {
+                display: none;
+              }
+            }
           }
         }
       }

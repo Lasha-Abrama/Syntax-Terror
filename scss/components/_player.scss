@@ -10,6 +10,10 @@
   position: fixed;
   bottom: 0;
   width: calc(100% - 260px);
+  .mobile-player,
+  .mobile-progress {
+    display: none;
+  }
   svg {
     stroke: none;
   }
@@ -79,4 +83,41 @@
   border-radius: 3px;
   width: 0%;
   pointer-events: none; /* so clicks go to wrapper */
+}
+@media (max-width: 420px) {
+  .player {
+    left: 7px;
+    right: 7px;
+    width: auto;
+    padding: 11px;
+    height: 61px;
+    bottom: 95px;
+    &-right,
+    &-left-actions {
+      display: none;
+    }
+    .mobile-progress {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 11px;
+      right: 11px;
+      width: auto;
+    }
+    .music-player-progress-wrapper {
+      height: 2px;
+    }
+    .mobile-player {
+      display: flex;
+    }
+    .song {
+      .album {
+        display: none;
+      }
+      .song-image {
+        width: 43px;
+        height: 43px;
+      }
+    }
+  }
 }

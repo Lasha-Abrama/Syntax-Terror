@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile - Spotify</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <%- include('partials/sidebar') %>
+
+    <div class="right">
+      <%- include('partials/header') %>
+      <div class="content-wrapper">
+        <main class="main-content">
+          <div class="profile-page">
+            <!-- Profile Header -->
+            <div class="profile-header">
+              <div class="profile-info">
+                <img src="/assets/images/profiles/profile.png" alt="Profile Picture" class="profile-pic"/>
+                <div class="profile-text">
+                  <h2>Jux</h2>
+                  <div class="profile-text-desc">
+                    <div class="first-row">
+                      <p>3 <span>followers</span></p>
+                      <p>•</p> 
+                      <p>30 <span>following</span></p>
+                    </div>
+                    <p>2 <span>public playlists</span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="profile-actions">
+                <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none">
+                  <mask id="path-1-inside-1_1_1728" fill="white">
+                  <path d="M17.2345 26.4272C16.8439 26.8177 16.2108 26.8177 15.8202 26.4272L13.6989 24.3059C13.3084 23.9153 13.3084 23.2822 13.6989 22.8916L27.4875 9.10305C28.4638 8.12674 30.0467 8.12674 31.023 9.10305C31.9993 10.0794 31.9993 11.6623 31.023 12.6386L17.2345 26.4272Z"/>
+                  </mask>
+                  <path d="M17.2345 26.4272C16.8439 26.8177 16.2108 26.8177 15.8202 26.4272L13.6989 24.3059C13.3084 23.9153 13.3084 23.2822 13.6989 22.8916L27.4875 9.10305C28.4638 8.12674 30.0467 8.12674 31.023 9.10305C31.9993 10.0794 31.9993 11.6623 31.023 12.6386L17.2345 26.4272Z" stroke="#898989" stroke-width="4" mask="url(#path-1-inside-1_1_1728)"/>
+                  <path d="M12.5811 26.0162L14.1099 27.545L11.2048 28.9213L12.5811 26.0162Z" stroke="#E0E0E0" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none">
+                  <path d="M20.6902 22.0167V10.7406M20.6902 10.7406L16.0471 15.3837M20.6902 10.7406L25.3333 15.3837M28.9815 20.3585V25.0016C28.9815 26.4669 27.7936 27.6548 26.3283 27.6548L15.0521 27.6548C13.5868 27.6548 12.3989 26.4669 12.3989 25.0016V20.3585" stroke="#898989" stroke-width="2.02054" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+
+            <%- include('partials/friends', { title: "Friends" }) %>
+
+            <!-- Current Plan -->
+            <div class="current-plan">
+              <span>Current Plan</span>
+              <h4>Premium - Individual</h4>
+              <p>$10.99 / month</p>
+            </div>
+
+            <!-- Menu Options -->
+            <div class="menu-options">
+              <div class="menu-item">
+                <i class="fa-regular fa-clock"></i>
+                <span>Listening history</span>
+                <i class="fa-solid fa-chevron-right"></i>
+              </div>
+              <div class="menu-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings and privacy</span>
+                <i class="fa-solid fa-chevron-right"></i>
+              </div>
+              <div class="menu-item">
+                <i class="fa-regular fa-bell"></i>
+                <span>What's new</span>
+                <i class="fa-solid fa-chevron-right"></i>
+              </div>
+            </div>
+
+            <!-- Mini Player -->
+            <div class="mini-player">
+              <div class="player-info">
+                <img src="/images/track.png" alt="Track" />
+                <div class="track-info">
+                  <span>Get Lucky (feat. Pharrell Williams)</span>
+                  <small>Daft Punk</small>
+                </div>
+              </div>
+              <div class="player-actions">
+                <i class="fa-solid fa-plus"></i>
+                <i class="fa-solid fa-play"></i>
+              </div>
+            </div>
+
+            <!-- Bottom Navigation -->
+            <div class="bottom-nav">
+              <i class="fa-solid fa-house"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <i class="fa-solid fa-book"></i>
+              <i class="fa-solid fa-user active"></i>
+            </div>
+          </div>
+        </main>
+        <%- include('partials/friends') %>
+      </div>
+      <%- include('partials/player') %>
+    </div>
+  </div>
+  <script src="/js/script.js"></script>
+</body>
+</html>

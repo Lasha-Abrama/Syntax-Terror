@@ -17,11 +17,13 @@
             <div class="filter-buttons">
               <button class="filter-btn active" data-filter="all">All</button>
               <button class="filter-btn" data-filter="music">Music</button>
-              <button class="filter-btn" data-filter="podcasts">Podcasts</button>
+              <button class="filter-btn" data-filter="artists">Artists</button>
               <button class="filter-btn" data-filter="audiobooks">Audiobooks</button>
+              <button class="filter-btn" data-filter="podcasts">Podcasts</button>
+              <button class="filter-btn" data-filter="episodes">Episodes</button>
             </div>
             <!-- Made For You Section -->
-            <section class="section">
+            <section class="section" data-category="music">
               <div class="section-title">
                 <h3>Made for you</h3>
                 <%- include('partials/actions', {type : 'homepage'}) %>
@@ -35,7 +37,7 @@
               </div>
             </section>
             <!-- Your Top Mixes Section -->
-            <section class="section">
+            <section class="section" data-category="music">
               <div class="section-title">
                 <h3>Your top mixes</h3>
                 <%- include('partials/actions', {type : 'homepage'}) %>
@@ -50,7 +52,7 @@
               </div>
             </section>
             <!-- Your Favorite Artists Section -->
-            <section class="section">
+            <section class="section" data-category="artists">
               <div class="section-title">
                 <h3>Your favorite artists</h3>
                 <%- include('partials/actions', {type : 'homepage'}) %>
@@ -64,7 +66,7 @@
               </div>
             </section>
             <!-- Your Albums Section -->
-            <section class="section">
+            <section class="section" data-category="music">
               <div class="section-title">
                 <h3>Albums for You</h3>
                 <%- include('partials/actions', {type : 'homepage'}) %>
@@ -78,7 +80,7 @@
               </div>
             </section>
             <!-- Your Audiobooks Section -->
-            <section class="section">
+            <section class="section" data-category="audiobooks">
               <div class="section-title">
                 <h3>Audiobooks for you</h3>
                 <%- include('partials/actions', {type : 'homepage'}) %>
@@ -92,7 +94,7 @@
               </div>
             </section>
             <!-- Your Podcasts Section -->
-            <section class="section">
+            <section class="section" data-category="podcasts">
               <div class="section-title">
                 <h3>Podcasts for you</h3>
                 <%- include('partials/actions', {type : 'homepage'}) %>
@@ -106,7 +108,7 @@
               </div>
             </section>
             <!-- Your Episodes Section -->
-            <section class="section">
+            <section class="section" data-category="episodes">
               <div class="section-title">
                 <h3>Episodes for you</h3>
                 <%- include('partials/actions', {type : 'homepage'}) %>
