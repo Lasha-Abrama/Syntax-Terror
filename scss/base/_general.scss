@@ -23,12 +23,15 @@ body {
   display: flex;
 }
 main {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 12px 25px;
   flex: 1;
   min-width: 0;
   border-radius: 10px;
   border: 1px solid #202020;
   overflow-y: auto;
-
   /* hide scrollbar for WebKit browsers (Chrome, Safari) */
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE 10+ */
@@ -103,5 +106,6 @@ h4 {
   }
   .main-content {
     margin-bottom: 155px;
+    padding: 12px 15px;
   }
 }

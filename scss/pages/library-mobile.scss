@@ -1,4 +1,41 @@
 @use "../abstracts/_variables";
+.search {
+  display: flex;
+  gap: 19px;
+  .search-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 10px;
+    padding: 0 8px;
+    background-color: #20202080;
+    .small-svg {
+      height: 36px;
+      width: 36px;
+    }
+    input {
+      border: none;
+      outline: none;
+      background: transparent;
+      font-size: 14px;
+
+      &::placeholder {
+        color: #888;
+      }
+    }
+
+    .search-icon {
+      display: flex;
+      align-items: center;
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}
 .library-filter {
   display: flex;
   gap: 32px;

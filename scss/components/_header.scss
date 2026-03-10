@@ -15,10 +15,6 @@
       display: flex;
       align-items: center;
       gap: 25px;
-      .header-library,
-      .header-profile {
-        display: none;
-      }
 
       a.nav-btn {
         @include mixins.flex-link();
@@ -35,7 +31,10 @@
           font-size: 14px;
         }
       }
-
+      a.header-library,
+      a.header-profile {
+        display: none;
+      }
       .search-box {
         @include mixins.flex-link(8px);
 
@@ -92,9 +91,9 @@
         align-items: center;
         gap: 31px;
         width: 100%;
-        .header-library,
-        .header-profile {
-          display: block;
+        a.header-library,
+        a.header-profile {
+          display: flex;
         }
         a.nav-btn {
           flex-direction: column;

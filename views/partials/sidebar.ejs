@@ -4,7 +4,7 @@
       <li>
         <a
           href="/library"
-          class="nav-btn <%= ['/library','/pins','/playlists','/liked','/saves','/albums','/folders','/podcasts','/audiobooks','/artists'].includes(currentPage) ? 'active' : '' %>"
+          class="nav-btn sidebar-library <%= ['/library','/pins','/playlists','/liked','/saves','/albums','/folders','/podcasts','/audiobooks','/artists'].includes(currentPage) ? 'active' : '' %>"
         >
           <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_2_4292)">
@@ -49,7 +49,7 @@
           </svg>
           <span>Pins</span>
         </a>
-        <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg" class="sidebar-arrow">
           <path
             d="M18.5229 25.2578L23.5742 20.2065L18.5229 15.1551"
             stroke-width="2.3573"
@@ -79,7 +79,7 @@
           </svg>
           <span>Playlists</span>
         </a>
-        <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
+        <svg class="sidebar-arrow" viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M18.5229 25.2578L23.5742 20.2065L18.5229 15.1551"
             stroke-width="2.3573"
@@ -100,6 +100,14 @@
           </svg>
           <span>Liked songs</span></a
         >
+        <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg" class="mobile-arrow">
+          <path
+            d="M18.5229 25.2578L23.5742 20.2065L18.5229 15.1551"
+            stroke-width="2.3573"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
       </li>
       <li>
         <a href="/saves" class="nav-btn <%= currentPage === '/saves' ? 'active' : '' %>">
@@ -111,6 +119,14 @@
           </svg>
           <span>Saves</span></a
         >
+        <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg" class="mobile-arrow">
+          <path
+            d="M18.5229 25.2578L23.5742 20.2065L18.5229 15.1551"
+            stroke-width="2.3573"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
       </li>
       <li>
         <a href="/albums" class="nav-btn <%= currentPage === '/albums' ? 'active' : '' %>">
@@ -132,6 +148,14 @@
           </svg>
           <span>Albums</span></a
         >
+        <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg" class="mobile-arrow">
+          <path
+            d="M18.5229 25.2578L23.5742 20.2065L18.5229 15.1551"
+            stroke-width="2.3573"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
       </li>
       <li>
         <a href="/folders" class="nav-btn <%= currentPage === '/folders' ? 'active' : '' %>">
@@ -144,6 +168,14 @@
           </svg>
           <span>Folders</span></a
         >
+        <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg" class="mobile-arrow">
+          <path
+            d="M18.5229 25.2578L23.5742 20.2065L18.5229 15.1551"
+            stroke-width="2.3573"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
       </li>
       <li>
         <a href="/podcasts" class="nav-btn <%= currentPage === '/podcasts' ? 'active' : '' %>">
@@ -165,6 +197,14 @@
 
           <span>Podcasts</span></a
         >
+        <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg" class="mobile-arrow">
+          <path
+            d="M18.5229 25.2578L23.5742 20.2065L18.5229 15.1551"
+            stroke-width="2.3573"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
       </li>
       <li>
         <a href="/audiobooks" class="nav-btn <%= currentPage === '/audiobooks' ? 'active' : '' %>">
@@ -179,6 +219,14 @@
           </svg>
           <span>Audiobooks</span></a
         >
+        <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg" class="mobile-arrow">
+          <path
+            d="M18.5229 25.2578L23.5742 20.2065L18.5229 15.1551"
+            stroke-width="2.3573"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
       </li>
       <li>
         <a href="/artists" class="nav-btn <%= currentPage === '/artists' ? 'active' : '' %>">
@@ -191,6 +239,14 @@
           </svg>
           <span>Artists</span></a
         >
+        <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg" class="mobile-arrow">
+          <path
+            d="M18.5229 25.2578L23.5742 20.2065L18.5229 15.1551"
+            stroke-width="2.3573"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
       </li>
     </ul>
   </nav>

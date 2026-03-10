@@ -24,6 +24,26 @@
               <button class="filter-btn" data-filter="podcasts">Podcasts</button>
               <button class="filter-btn" data-filter="episodes">Episodes</button>
             </div>
+            <section class="mobile-section">
+              <% let combined = []; let maxLength = Math.min(6, data.songs.length + data.mixes.length); let songsCopy =
+              [...data.songs]; let mixCopy = [...data.mixes]; while (combined.length < maxLength && (songsCopy.length >
+              0 || mixCopy.length > 0)) { if (songsCopy.length > 0) { combined.push({ type: 'song', item:
+              songsCopy.shift() }); } if (combined.length >= maxLength) break; if (mixCopy.length > 0) { combined.push({
+              type: 'mix', item: mixCopy.shift() }); } } %> <% combined.forEach(card => { %>
+              <div class="mobile-card">
+                <img src="<%= card.item.image %>" alt="<%= card.item.title %>" />
+                <% if (card.type === 'song') { %>
+                <div class="mobile-card-info">
+                  <p class="title"><%= card.item.title %></p>
+                  <p class="author"><%= card.item.author %></p>
+                </div>
+                <% } else { %>
+                <p class="mobile-title-center"><%= card.item.title %></p>
+                <% } %>
+              </div>
+              <% }) %>
+            </section>
+
             <!-- Made For You Section -->
             <section class="section" data-category="music">
               <div class="section-title">
