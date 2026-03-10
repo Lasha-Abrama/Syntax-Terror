@@ -43,10 +43,12 @@ ol {
 body {
   font-family: "Satoshi", sans-serif;
   background-color: #060606;
+  background-color: #060606;
 }
 
 .wrapper {
   display: flex;
+  height: 100%;
   height: 100%;
   padding: 0 7px;
 }
@@ -155,17 +157,17 @@ h4 {
 .sidebar {
   padding: 7px 0;
 }
-.sidebar .sidebar-nav .sidebar-menu {
+.sidebar .sidebar-nav .sidebar-menu .sidebar-menu {
   display: flex;
   flex-direction: column;
   gap: 11px;
   width: 260px;
 }
-.sidebar .sidebar-nav .sidebar-menu li {
+.sidebar .sidebar-nav .sidebar-menu .sidebar-menu li {
   display: flex;
   justify-content: space-between;
 }
-.sidebar .sidebar-nav .sidebar-menu li a.nav-btn {
+.sidebar .sidebar-nav .sidebar-menu .sidebar-menu li a.nav-btn {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -174,44 +176,44 @@ h4 {
   font-family: "Satoshi", sans-serif;
   transition: color 0.2s ease;
 }
-.sidebar .sidebar-nav .sidebar-menu li a.nav-btn:hover {
+.sidebar .sidebar-nav .sidebar-menu .sidebar-menu li a.nav-btn:hover {
   color: #e0e0e0;
 }
-.sidebar .sidebar-nav .sidebar-menu li a.nav-btn {
+.sidebar .sidebar-nav .sidebar-menu .sidebar-menu li a.nav-btn {
   width: 100%;
 }
-.sidebar .sidebar-nav .sidebar-menu li a.nav-btn span {
+.sidebar .sidebar-nav .sidebar-menu .sidebar-menu li a.nav-btn span {
   color: #898989;
 }
-.sidebar .sidebar-nav .sidebar-menu li.active a.nav-btn {
+.sidebar .sidebar-nav .sidebar-menu .sidebar-menu li.active a.nav-btn {
   border-radius: 4px;
   font-weight: 700;
 }
-.sidebar .sidebar-nav .sidebar-menu li.active a.nav-btn span {
+.sidebar .sidebar-nav .sidebar-menu .sidebar-menu li.active a.nav-btn span {
   color: #e0e0e0;
 }
-
 @media (max-width: 420px) {
-  .mobile-sidebar .sidebar {
+  .sidebar .mobile-sidebar .sidebar {
     display: flex;
     flex-direction: column;
   }
-  .mobile-sidebar .sidebar-nav .sidebar-menu {
+  .sidebar .mobile-sidebar .sidebar-nav .sidebar-menu {
     width: 100%;
   }
-  .mobile-sidebar .sidebar-nav .sidebar-menu li a.nav-btn {
+  .sidebar .mobile-sidebar .sidebar-nav .sidebar-menu li a.nav-btn {
     padding: 20px 0;
     border-bottom: 2px solid #202020;
   }
-  .mobile-sidebar .sidebar-nav .sidebar-menu li a.nav-btn span {
+  .sidebar .mobile-sidebar .sidebar-nav .sidebar-menu li a.nav-btn span {
     color: #e0e0e0;
     font-size: 20px;
     font-weight: bold;
   }
-  .mobile-sidebar .sidebar-nav .sidebar-menu li a.nav-btn svg {
+  .sidebar .mobile-sidebar .sidebar-nav .sidebar-menu li a.nav-btn svg {
     display: none;
   }
 }
+
 .header {
   flex-shrink: 0;
 }
@@ -227,6 +229,10 @@ h4 {
   display: flex;
   align-items: center;
   gap: 25px;
+}
+.header .navigation .nav-left .header-library,
+.header .navigation .nav-left .header-profile {
+  display: none;
 }
 .header .navigation .nav-left .header-library,
 .header .navigation .nav-left .header-profile {
@@ -352,6 +358,10 @@ h4 {
   position: fixed;
   bottom: 0;
   width: calc(100% - 260px);
+}
+.player .mobile-player,
+.player .mobile-progress {
+  display: none;
 }
 .player .mobile-player,
 .player .mobile-progress {
@@ -649,6 +659,44 @@ h4 {
   flex-direction: column;
   gap: 30px;
   padding: 12px 25px;
+}
+.main-content .mobile-section {
+  flex-wrap: wrap;
+  gap: 10px;
+  display: none;
+}
+.main-content .mobile-card {
+  width: 175px;
+  padding: 8px;
+  border-radius: 10px;
+  background-color: #202020;
+  color: #e0e0e0;
+  display: flex;
+  gap: 8px;
+}
+.main-content .mobile-card img {
+  width: 43px;
+  height: 43px;
+}
+.main-content .mobile-card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.main-content .mobile-card-author {
+  color: #898989;
+}
+.main-content .mobile-card .mobile-title-center {
+  display: flex;
+  align-items: center;
+}
+.main-content .home-buttons {
+  display: flex;
+  justify-content: space-between;
 }
 .main-content .mobile-section {
   flex-wrap: wrap;
@@ -1024,82 +1072,157 @@ h4 {
 }
 
 @media (max-width: 420px) {
-  .profile-page {
+  main {
+    display: flex;
+    flex-direction: column;
     font-family: "Abhaya Libre", serif;
     background-color: #111111;
     color: #e0e0e0;
-    padding-bottom: 60px; /* for bottom nav */
-    padding: 16px;
+    padding: 15px;
+    gap: 15px;
   }
-  .profile-page .profile-header {
+  main .profile {
     position: relative;
     display: flex;
     justify-content: space-between;
     background: linear-gradient(to bottom, #8a354a -92%, #111111 92%);
     align-items: center;
     border-radius: 12px;
-    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.15);
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.082);
   }
-  .profile-page .profile-header .profile-info {
+  main .profile .profile-info {
     display: flex;
     align-items: center;
   }
-  .profile-page .profile-header .profile-info .profile-text {
+  main .profile .profile-info .profile-text {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 20px;
+    gap: 14px;
   }
-  .profile-page .profile-header .profile-info .profile-text h2 {
+  main .profile .profile-info .profile-text h2 {
     font-size: 20px;
     font-weight: bold;
     font-family: "Satoshi", sans-serif;
   }
-  .profile-page .profile-header .profile-info .profile-text p {
+  main .profile .profile-info .profile-text p {
     font-size: 14px;
   }
-  .profile-page .profile-header .profile-info .profile-text-desc {
+  main .profile .profile-info .profile-text-desc {
     display: flex;
     flex-direction: column;
     gap: 10px;
   }
-  .profile-page .profile-header .profile-info .profile-text-desc .first-row {
+  main .profile .profile-info .profile-text-desc .first-row {
     display: flex;
     gap: 10px;
   }
-  .profile-page .profile-header .profile-info .profile-text-desc span {
+  main .profile .profile-info .profile-text-desc span {
     color: #898989;
   }
-  .profile-page .profile-header .profile-info .profile-pic {
+  main .profile .profile-info .profile-pic {
     width: 95px;
     height: 95px;
     border-radius: 50%;
     margin: 19px;
-    margin-right: 24px;
+    margin-right: 16px;
   }
-  .profile-page .profile-actions {
+  main .profile .profile-actions {
     position: absolute;
     display: flex;
-    gap: 7;
+    gap: 7px;
     top: 6px;
     right: 6px;
   }
-  .profile-page .friends-section {
+  main .friends-mobile .friends-section {
+    flex: unset;
+    overflow: visible;
     max-height: 165px;
     gap: 0;
     border-radius: 12px;
-    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.15);
+    padding: 6px 6px 16px 21px;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.082);
+    border: 1px solid #202020;
   }
-  .profile-page .friend-activity {
+  main .friends-mobile .friends-section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  main .friends-mobile .friends-section-title p {
+    font-family: "ABeeZee", sans-serif;
+    font-size: 12px;
+    margin: 0;
+    padding-top: 7px;
+  }
+  main .friends-mobile .friends-section-title-icons #friends-close {
+    display: none;
+  }
+  main .friends-mobile .friends-section .friend-activity {
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-  .profile-page .friend-activity::-webkit-scrollbar {
+  main .friends-mobile .friends-section .friend-activity::-webkit-scrollbar {
     display: none;
+  }
+  main .profile-plan {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #10301b 0%, #111111 100%);
+    border-radius: 12px;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.082);
+    padding: 16px 0 26px 21px;
+    gap: 20px;
+  }
+  main .profile-plan .current-plan {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+  }
+  main .profile-plan .current-plan img {
+    width: 20px;
+    height: 20px;
+  }
+  main .profile-plan .current-plan p {
+    font-family: "ABeeZee", sans-serif;
+    font-size: 12px;
+  }
+  main .profile-plan .current-plan-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  main .profile-plan .current-plan-info h3 {
+    font-family: "ABeeZee", sans-serif;
+    font-size: 18px;
+    color: #1ed760;
+  }
+  main .profile-plan .current-plan-info p {
+    font-size: 14px;
+  }
+  main .menu-options .menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3.5px 5px;
+    border-bottom: 2px solid #202020;
+    gap: auto;
+  }
+  main .menu-options .menu-item svg {
+    color: #898989;
+  }
+  main .menu-options .menu-item h4 {
+    font-family: "ABeeZee", sans-serif;
+    font-size: 16px;
+  }
+  main .menu-options .menu-item-info {
+    display: flex;
+    align-items: center;
+    gap: 11px;
   }
 }
 
