@@ -10,9 +10,7 @@
       flex-direction: column;
       gap: 11px; // gap between li elements
       width: 260px; // fixed desktop width
-      .mobile-arrow {
-        display: none;
-      }
+
       li {
         display: flex;
         justify-content: space-between;
@@ -34,20 +32,28 @@
           }
         }
       }
+      .mobile-arrow {
+        display: none;
+      }
     }
   }
 }
 @media (max-width: 420px) {
+  .sidebar {
+    display: none;
+  }
   .mobile-sidebar {
     .sidebar {
       display: flex;
       flex-direction: column;
+      padding-top: 6px;
       &-nav {
         .sidebar-menu {
           width: 100%;
-
-          .mobile-arrow {
-            display: block;
+          > :nth-child(2) {
+            a.nav-btn {
+              padding-top: 0;
+            }
           }
           li {
             a.sidebar-library {
@@ -65,6 +71,9 @@
                 display: none;
               }
             }
+          }
+          .mobile-arrow {
+            display: block;
           }
         }
       }

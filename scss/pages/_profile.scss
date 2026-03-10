@@ -1,0 +1,167 @@
+@use "../abstracts/_variables";
+
+@media (max-width: 420px) {
+  .profile-page {
+    color: variables.$text-primary;
+
+    .profile {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      background: linear-gradient(to bottom, #8a354a -92%, #111111 92%);
+      align-items: center;
+      border-radius: 12px;
+      box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.082);
+
+      .profile-info {
+        display: flex;
+        align-items: center;
+
+        .profile-text {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          gap: 14px;
+
+          h2 {
+            font-size: 20px;
+            font-weight: bold;
+          }
+
+          p {
+            font-size: 14px;
+          }
+
+          &-desc {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .first-row {
+              display: flex;
+              gap: 10px;
+            }
+
+            span {
+              color: variables.$text-secondary;
+            }
+          }
+        }
+
+        .profile-pic {
+          width: 95px;
+          height: 95px;
+          border-radius: 50%;
+          margin: 19px;
+          margin-right: 16px;
+        }
+      }
+
+      .profile-actions {
+        position: absolute;
+        display: flex;
+        gap: 7px;
+        top: 6px;
+        right: 6px;
+      }
+    }
+
+    .friends-mobile {
+      .friends-section {
+        max-height: 165px;
+        gap: 0;
+        border-radius: 12px;
+        padding: 6px 6px 16px 21px;
+        box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.082);
+        border: 1px solid variables.$background-secondary;
+
+        &-title {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+
+          p {
+            font-size: 12px;
+            padding-top: 7px;
+          }
+
+          &-icons {
+            #friends-close {
+              display: none;
+            }
+          }
+        }
+        .friend-activity {
+          overflow-y: auto;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+
+        .friend-activity::-webkit-scrollbar {
+          display: none;
+        }
+      }
+    }
+    .profile-plan {
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(to bottom, #10301b 0%, #111111 100%);
+      border-radius: 12px;
+      box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.082);
+      padding: 16px 0 26px 21px;
+      gap: 20px;
+
+      .current-plan {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+
+        img {
+          width: 20px;
+          height: 20px;
+        }
+
+        p {
+          font-size: 12px;
+        }
+
+        &-info {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          h3 {
+            font-size: 18px;
+            color: variables.$accent-green;
+          }
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    .menu-options {
+      .menu-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 3.5px 5px;
+        border-bottom: 2px solid variables.$background-secondary;
+        gap: auto;
+        svg {
+          color: variables.$text-secondary;
+        }
+        h4 {
+          font-size: 16px;
+        }
+        &-info {
+          display: flex;
+          align-items: center;
+          gap: 11px;
+        }
+      }
+    }
+  }
+}

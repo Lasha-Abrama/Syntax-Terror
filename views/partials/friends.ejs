@@ -1,8 +1,10 @@
+<% const sectionTitle = typeof title !== 'undefined' ? title : "Friends Activity"; %>
+
 <section class="friends-section" id="friendsPanel">
   <div class="friends-section-title">
-    <p>Friends Activity</p>
+    <p><%= sectionTitle %></p>
     <div class="friends-section-title-icons">
-      <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg" id="friends-add">
         <path
           d="M23.5711 13.4691C23.5711 15.329 22.0634 16.8367 20.2035 16.8367C18.3436 16.8367 16.8359 15.329 16.8359 13.4691C16.8359 11.6093 18.3436 10.1016 20.2035 10.1016C22.0634 10.1016 23.5711 11.6093 23.5711 13.4691Z"
           stroke="#898989"
@@ -40,7 +42,7 @@
       <div class="friend-content">
         <p class="friend-content-title">FriendlyMusicListener</p>
         <div class="friend-content-activity">
-          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg class="listening-svg" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M10.418 20.323V16.24M14.8722 20.323V9.55859M19.3265 20.323V13.6417"
               stroke="#1ED760"
@@ -61,7 +63,7 @@
       <div class="friend-content">
         <p class="friend-content-title">AverageMusicEnjoyer</p>
         <div class="friend-content-activity">
-          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg class="listening-svg" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M10.418 20.323V16.24M14.8722 20.323V9.55859M19.3265 20.323V13.6417"
               stroke="#1ED760"

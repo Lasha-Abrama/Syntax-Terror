@@ -5,10 +5,8 @@
   display: flex;
   flex-direction: column;
   gap: 44px;
-  flex: 0 0 0; // initial width = 0
+  flex: 0 0 0;
   overflow: hidden; // hide inner content
-  padding: 0; // remove padding when hidden
-  border: 0; // optional: remove border if you want fully hidden
   transition:
     flex-basis 0.3s ease,
     padding 0.3s ease,
@@ -70,6 +68,10 @@
       }
     }
     .active-now {
+      .listening-svg {
+        width: 30px;
+        height: 30px;
+      }
       .friend-content-activity {
         gap: 3px;
         div {

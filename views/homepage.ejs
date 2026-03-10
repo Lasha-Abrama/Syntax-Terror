@@ -15,14 +15,49 @@
         <%- include('partials/header') %>
         <div class="content-wrapper">
           <main class="main-content">
-            <!-- Top Buttons -->
-            <div class="filter-buttons">
-              <button class="filter-btn active" data-filter="all">All</button>
-              <button class="filter-btn" data-filter="music">Music</button>
-              <button class="filter-btn" data-filter="artists">Artists</button>
-              <button class="filter-btn" data-filter="audiobooks">Audiobooks</button>
-              <button class="filter-btn" data-filter="podcasts">Podcasts</button>
-              <button class="filter-btn" data-filter="episodes">Episodes</button>
+            <div class="home-buttons">
+              <!-- Top Buttons -->
+              <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="music">Music</button>
+                <button class="filter-btn" data-filter="artists">Artists</button>
+                <button class="filter-btn" data-filter="audiobooks">Audiobooks</button>
+                <button class="filter-btn" data-filter="podcasts">Podcasts</button>
+                <button class="filter-btn" data-filter="episodes">Episodes</button>
+              </div>
+              <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M19.8262 13.0859H12.8262C11.7216 13.0859 10.8262 13.9814 10.8262 15.0859C10.8262 16.1905 11.7216 17.0859 12.8262 17.0859H19.8262"
+                  stroke="#898989"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+                <rect
+                  x="23.5957"
+                  y="12.0859"
+                  width="6.23077"
+                  height="6.23077"
+                  rx="3.11538"
+                  stroke="#898989"
+                  stroke-width="2"
+                />
+                <path
+                  d="M20.8262 27.3164L27.8262 27.3164C28.9307 27.3164 29.8262 26.421 29.8262 25.3164C29.8262 24.2118 28.9307 23.3164 27.8262 23.3164L20.8262 23.3164"
+                  stroke="#898989"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+                <rect
+                  x="17.0566"
+                  y="28.3164"
+                  width="6.23077"
+                  height="6.23077"
+                  rx="3.11538"
+                  transform="rotate(-180 17.0566 28.3164)"
+                  stroke="#898989"
+                  stroke-width="2"
+                />
+              </svg>
             </div>
             <section class="mobile-section">
               <% let combined = []; let maxLength = Math.min(6, data.songs.length + data.mixes.length); let songsCopy =
@@ -35,7 +70,7 @@
                 <% if (card.type === 'song') { %>
                 <div class="mobile-card-info">
                   <p class="title"><%= card.item.title %></p>
-                  <p class="author"><%= card.item.author %></p>
+                  <p class="mobile-card-author"><%= card.item.author %></p>
                 </div>
                 <% } else { %>
                 <p class="mobile-title-center"><%= card.item.title %></p>

@@ -126,3 +126,29 @@ closeBtn?.addEventListener("click", () => {
   panel?.classList.remove("active");
   toggleBtn?.classList.remove("active");
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const sections = document.querySelectorAll("section.section");
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      // Remove 'active' from all buttons
+      filterButtons.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const filter = btn.dataset.filter;
+
+      sections.forEach((section) => {
+        const category = section.dataset.category;
+
+        if (filter === "all") {
+          section.style.display = "block";
+        } else {
+          // Show only matching categories
+          section.style.display = category === filter ? "block" : "none";
+        }
+      });
+    });
+  });
+});

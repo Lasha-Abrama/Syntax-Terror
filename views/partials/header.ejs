@@ -37,10 +37,7 @@
 
         <span>Search</span>
       </a>
-      <a
-        href="/library-mobile"
-        class="nav-btn header-library <%= ['/library','/pins','/playlists','/liked','/saves','/albums','/folders','/podcasts','/audiobooks','/artists'].includes(currentPage) ? 'active' : '' %>"
-      >
+      <a href="/library-mobile" class="nav-btn header-library <%= currentPage === '/library-mobile' ? 'active' : '' %>">
         <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0_2_4292)">
             <path d="M11.5605 11.5625V28.8493" stroke-width="2.02054" stroke-linecap="round" stroke-linejoin="round" />
@@ -65,12 +62,10 @@
         <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M23.573 13.4691C23.573 15.329 22.0653 16.8367 20.2055 16.8367C18.3456 16.8367 16.8379 15.329 16.8379 13.4691C16.8379 11.6093 18.3456 10.1016 20.2055 10.1016C22.0653 10.1016 23.573 11.6093 23.573 13.4691Z"
-            stroke="#898989"
             stroke-width="2.02054"
           />
           <path
             d="M13.2847 22.571L14.0345 22.0711C15.8616 20.8531 18.0083 20.2031 20.2041 20.2031C22.3999 20.2031 24.5466 20.8531 26.3736 22.0711L27.1234 22.571C28.0603 23.1955 28.623 24.247 28.623 25.373V27.0505C28.623 27.9184 27.9194 28.622 27.0515 28.622H20.2041H13.3567C12.4888 28.622 11.7852 27.9184 11.7852 27.0505V25.373C11.7852 24.247 12.3479 23.1955 13.2847 22.571Z"
-            stroke="#898989"
             stroke-width="2.02054"
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -149,7 +144,7 @@
         </svg>
       </a>
       <a href="#" class="profile-circle">
-        <img src="./assets/images/profiles/profile.png" alt="" />
+        <img src="./assets/images/profiles/profile.png" alt="profile" />
       </a>
     </div>
   </div>
