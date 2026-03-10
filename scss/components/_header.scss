@@ -19,6 +19,10 @@
       .header-profile {
         display: none;
       }
+      .header-library,
+      .header-profile {
+        display: none;
+      }
 
       a.nav-btn {
         @include mixins.flex-link();

@@ -44,6 +44,45 @@
     display: flex;
     justify-content: space-between;
   }
+  .mobile-section {
+    flex-wrap: wrap;
+    gap: 10px;
+    display: none;
+  }
+  .mobile-card {
+    width: 175px;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: #202020;
+    color: variables.$text-primary;
+    display: flex;
+    gap: 8px;
+
+    img {
+      width: 43px;
+      height: 43px;
+    }
+    &-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 14px;
+      white-space: nowrap; // don’t wrap to next line
+      overflow: hidden; // hide overflowing text
+      text-overflow: ellipsis; // show "..."
+    }
+    &-author {
+      color: variables.$text-secondary;
+    }
+    .mobile-title-center {
+      display: flex;
+      align-items: center;
+    }
+  }
+  .home-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
   .filter-buttons {
     display: flex;
     gap: 10px; // gap between buttons
