@@ -53,35 +53,6 @@
         height: 612px;
         border-radius: 10px;
       }
-
-      .slider-timer {
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        gap: 5px;
-        align-items: center;
-
-        .slider-line {
-          width: 60px;
-          height: 4px;
-          background-color: rgba(255, 255, 255, 0.5);
-          border-radius: 2px;
-
-          &.active {
-            background-color: #1db954; // Spotify green
-          }
-        }
-
-        .slider-arrow {
-          background: none;
-          border: none;
-          color: white;
-          font-size: 1rem;
-          cursor: pointer;
-        }
-      }
     }
   }
   .discover-action-btn {
@@ -98,10 +69,7 @@
 
     .info-card {
       display: flex;
-      gap: 1rem;
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 1rem;
-      border-radius: 1rem;
+      gap: 18px;
 
       .info-left {
         img.artist-image {
@@ -115,6 +83,9 @@
         flex-direction: column;
         justify-content: center;
         gap: 20px;
+        .profile-icon-mobile {
+          display: none;
+        }
         p {
           color: variables.$text-secondary;
           display: inline-block;
@@ -154,6 +125,160 @@
           }
         }
       }
+    }
+  }
+}
+@media (max-width: 420px) {
+  .discover-page {
+    main {
+      margin-bottom: 100px;
+    }
+    .player {
+      display: none;
+    }
+    .filter-buttons {
+      background: linear-gradient(to bottom, rgba(17, 17, 17, 0) 0%, rgba(17, 17, 17, 1) 100%);
+      gap: 40px;
+      align-items: center;
+      overflow-x: auto;
+      padding-bottom: 16px;
+      .filter-btn {
+        background-color: transparent;
+        padding: 0;
+        &.active {
+          font-weight: bold;
+          position: relative;
+          background-color: transparent;
+          color: variables.$text-primary;
+        }
+        &.active::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -16px;
+          width: 100%;
+          height: 2px;
+          background-color: variables.$accent-green;
+          border-radius: 14px;
+        }
+      }
+    }
+  }
+
+  .hero-section {
+    .hero-slide {
+      position: relative;
+      height: 100vh;
+      padding: 0;
+      justify-content: flex-start;
+      .hero-right {
+        position: absolute;
+        bottom: 25px;
+        width: 100%;
+
+        .info-card {
+          background-color: transparent;
+          border: none;
+          margin-left: 17px;
+          gap: 11px;
+          .info-right {
+            gap: 3px;
+          }
+          .profile-icon-mobile {
+            display: block;
+            position: relative;
+            height: 41px;
+            width: 41px;
+            img {
+              width: 100%;
+              border-radius: 50%;
+            }
+            svg {
+              position: absolute;
+              bottom: -12px;
+              width: 24px;
+              height: 24px;
+              left: 50%;
+              transform: translateX(-50%);
+            }
+          }
+          .info-right-desc {
+            font-size: 14px;
+            > * {
+              display: none;
+            }
+            > :first-child {
+              display: block;
+              .by-text {
+                display: none;
+              }
+            }
+          }
+          .info-right .title {
+            font-size: 14px;
+          }
+          .genre-buttons {
+            position: absolute;
+            left: 14px;
+            bottom: 70px;
+          }
+          .info-left {
+            img.artist-image {
+              width: 51px;
+              height: 51px;
+            }
+          }
+        }
+      }
+      .hero-left {
+        width: 100%;
+        .hero-image-wrapper {
+          height: calc(100vh - 135px);
+          width: 100%;
+          .hero-image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        .hero-image-wrapper::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(to bottom, rgba(17, 17, 17, 0) 0%, rgba(17, 17, 17, 1) 100%);
+          pointer-events: none; /* lets clicks pass through */
+        }
+      }
+    }
+  }
+
+  .progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: auto; /* ensure it can receive clicks */
+    z-index: 10;
+  }
+
+  .player-controls {
+    position: absolute;
+    right: 6px;
+    bottom: 0;
+    flex-direction: column;
+    gap: 18px;
+    .player-icon {
+      display: none;
+    }
+    .favorite {
+      flex-direction: column;
+    }
+    .adjust {
+      display: none;
     }
   }
 }

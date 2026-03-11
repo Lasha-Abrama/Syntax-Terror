@@ -885,31 +885,6 @@ h4 {
   height: 612px;
   border-radius: 10px;
 }
-.hero-section .hero-left .hero-image-wrapper .slider-timer {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 5px;
-  align-items: center;
-}
-.hero-section .hero-left .hero-image-wrapper .slider-timer .slider-line {
-  width: 60px;
-  height: 4px;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 2px;
-}
-.hero-section .hero-left .hero-image-wrapper .slider-timer .slider-line.active {
-  background-color: #1db954;
-}
-.hero-section .hero-left .hero-image-wrapper .slider-timer .slider-arrow {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-}
 .hero-section .discover-action-btn {
   position: absolute;
   bottom: 50%;
@@ -924,10 +899,7 @@ h4 {
 }
 .hero-section .hero-right .info-card {
   display: flex;
-  gap: 1rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 1rem;
-  border-radius: 1rem;
+  gap: 18px;
 }
 .hero-section .hero-right .info-card .info-left img.artist-image {
   width: 184px;
@@ -938,6 +910,9 @@ h4 {
   flex-direction: column;
   justify-content: center;
   gap: 20px;
+}
+.hero-section .hero-right .info-card .info-right .profile-icon-mobile {
+  display: none;
 }
 .hero-section .hero-right .info-card .info-right p {
   color: #898989;
@@ -981,6 +956,150 @@ h4 {
   border-radius: 44px;
 }
 
+@media (max-width: 420px) {
+  .discover-page main {
+    margin-bottom: 100px;
+  }
+  .discover-page .player {
+    display: none;
+  }
+  .discover-page .filter-buttons {
+    background: linear-gradient(to bottom, rgba(17, 17, 17, 0) 0%, rgb(17, 17, 17) 100%);
+    gap: 40px;
+    align-items: center;
+    overflow-x: auto;
+    padding-bottom: 16px;
+  }
+  .discover-page .filter-buttons .filter-btn {
+    background-color: transparent;
+    padding: 0;
+  }
+  .discover-page .filter-buttons .filter-btn.active {
+    font-weight: bold;
+    position: relative;
+    background-color: transparent;
+    color: #e0e0e0;
+  }
+  .discover-page .filter-buttons .filter-btn.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -16px;
+    width: 100%;
+    height: 2px;
+    background-color: #1ed760;
+    border-radius: 14px;
+  }
+  .hero-section .hero-slide {
+    position: relative;
+    height: 100vh;
+    padding: 0;
+    justify-content: flex-start;
+  }
+  .hero-section .hero-slide .hero-right {
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+  }
+  .hero-section .hero-slide .hero-right .info-card {
+    background-color: transparent;
+    border: none;
+    margin-left: 17px;
+    gap: 11px;
+  }
+  .hero-section .hero-slide .hero-right .info-card .info-right {
+    gap: 3px;
+  }
+  .hero-section .hero-slide .hero-right .info-card .profile-icon-mobile {
+    display: block;
+    position: relative;
+    height: 41px;
+    width: 41px;
+  }
+  .hero-section .hero-slide .hero-right .info-card .profile-icon-mobile img {
+    width: 100%;
+    border-radius: 50%;
+  }
+  .hero-section .hero-slide .hero-right .info-card .profile-icon-mobile svg {
+    position: absolute;
+    bottom: -12px;
+    width: 24px;
+    height: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .hero-section .hero-slide .hero-right .info-card .info-right-desc {
+    font-size: 14px;
+  }
+  .hero-section .hero-slide .hero-right .info-card .info-right-desc > * {
+    display: none;
+  }
+  .hero-section .hero-slide .hero-right .info-card .info-right-desc > :first-child {
+    display: block;
+  }
+  .hero-section .hero-slide .hero-right .info-card .info-right-desc > :first-child .by-text {
+    display: none;
+  }
+  .hero-section .hero-slide .hero-right .info-card .info-right .title {
+    font-size: 14px;
+  }
+  .hero-section .hero-slide .hero-right .info-card .genre-buttons {
+    position: absolute;
+    left: 14px;
+    bottom: 70px;
+  }
+  .hero-section .hero-slide .hero-right .info-card .info-left img.artist-image {
+    width: 51px;
+    height: 51px;
+  }
+  .hero-section .hero-slide .hero-left {
+    width: 100%;
+  }
+  .hero-section .hero-slide .hero-left .hero-image-wrapper {
+    height: calc(100vh - 135px);
+    width: 100%;
+  }
+  .hero-section .hero-slide .hero-left .hero-image-wrapper .hero-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .hero-section .hero-slide .hero-left .hero-image-wrapper::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(17, 17, 17, 0) 0%, rgb(17, 17, 17) 100%);
+    pointer-events: none; /* lets clicks pass through */
+  }
+  .progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: auto; /* ensure it can receive clicks */
+    z-index: 10;
+  }
+  .player-controls {
+    position: absolute;
+    right: 6px;
+    bottom: 0;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .player-controls .player-icon {
+    display: none;
+  }
+  .player-controls .favorite {
+    flex-direction: column;
+  }
+  .player-controls .adjust {
+    display: none;
+  }
+}
 .section-actions-right {
   display: flex;
   gap: 35px;
