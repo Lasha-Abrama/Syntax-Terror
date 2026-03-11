@@ -11,7 +11,7 @@
     <div class="wrapper">
       <%- include('partials/sidebar') %>
 
-      <div class="right">
+      <div class="right discover-page">
         <%- include('partials/header') %>
         <div class="content-wrapper">
           <main class="main-content">
@@ -57,7 +57,7 @@
                       <h2 class="title"><%= song.title %></h2>
 
                       <div class="info-right-desc">
-                        <p>By <span class="Spotify"><%= song.author %></span></p>
+                        <p><span class="by-text">By </span><span class="Spotify"><%= song.author %></span></p>
                         <p>·</p>
                         <p class="info-right-year"><%= song.year %></p>
                         <p>·</p>
@@ -93,6 +93,18 @@
                             stroke-linecap="round"
                           />
                         </svg>
+                        <div class="profile-icon-mobile">
+                          <img src="<%= song.image %>" alt="<%= song.author %>" />
+                          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="5.5" fill="#E0E0E0" stroke="#E0E0E0" />
+                            <path
+                              d="M14.5515 11.991H11.9902M9.42895 11.991H11.9902M11.9902 11.991L11.9902 9.42969M11.9902 11.991V14.5523"
+                              stroke="#060606"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </div>
                         <button class="favorite">
                           <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -126,7 +138,7 @@
                             stroke-linejoin="round"
                           />
                         </svg>
-                        <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="adjust" viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
                           <path
                             d="M19.3632 11.7871H14.5924C13.0426 11.7871 11.7861 13.0435 11.7861 14.5934C11.7861 16.1433 13.0426 17.3997 14.5924 17.3997H19.3632"
                             stroke="#898989"
@@ -187,10 +199,11 @@
         </div>
         <%- include('partials/player') %>
       </div>
-    </div> 
+    </div>
     <script src="/js/script.js"></script>
     <script>
       (function () {
+        if (window.innerWidth <= 420) return;
         document.querySelectorAll(".hero-slide").forEach((el) => {
           let hex = el.dataset.colour;
           hex = hex.replace(/"/g, "").trim();
@@ -319,6 +332,151 @@
             toggleBtn.onclick = () => playSlide(slide);
           }
         });
+      })();
+      (function () {
+        if (window.innerWidth > 420) return;
+
+        const slides = document.querySelectorAll(".hero-slide");
+        const heroSection = document.querySelector(".hero-section");
+        const SONG_DURATION = 15;
+        const audio = new Audio();
+        let intervalId = null;
+        let currentSlide = null;
+        let time = 0;
+        let isDragging = false;
+
+        function resetSlide(slide) {
+          if (!slide) return;
+          const progress = slide.querySelector(".progress");
+          if (progress) progress.style.width = "0%";
+        }
+
+        function stopCurrent() {
+          clearInterval(intervalId);
+          intervalId = null;
+          audio.pause();
+          audio.currentTime = 0;
+          if (currentSlide) resetSlide(currentSlide);
+        }
+
+        function nextSlide() {
+          const currentIndex = Array.from(slides).indexOf(currentSlide);
+          const nextIndex = (currentIndex + 1) % slides.length;
+          setTimeout(() => playSlide(slides[nextIndex], true), 300);
+        }
+
+        function startInterval() {
+          clearInterval(intervalId);
+          intervalId = setInterval(() => {
+            if (isDragging) return;
+            time += 0.1;
+            if (time > SONG_DURATION) time = SONG_DURATION;
+            const progress = currentSlide?.querySelector(".progress");
+            if (progress) progress.style.width = `${(time / SONG_DURATION) * 100}%`;
+            if (time >= SONG_DURATION) {
+              clearInterval(intervalId);
+              intervalId = null;
+              nextSlide();
+            }
+          }, 100);
+        }
+
+        // scroll is optional — only used when tapping another slide
+        function playSlide(slide, scroll = false) {
+          stopCurrent();
+          if (!slide) return;
+
+          currentSlide = slide;
+          time = 0;
+
+          const src = slide.dataset.src;
+          if (!src) return;
+
+          audio.src = src;
+          audio.load();
+          audio.play().catch(() => {});
+          startInterval();
+
+          if (scroll) {
+            heroSection.scrollTo({ top: slide.offsetTop, behavior: "smooth" });
+          }
+        }
+
+        // ── Draggable progress bar (attached once per slide) ──────────
+        slides.forEach((slide) => {
+          const progressBar = slide.querySelector(".progress-bar");
+          const progress = slide.querySelector(".progress");
+          if (!progressBar) return;
+
+          function seekTo(clientX) {
+            if (slide !== currentSlide) return;
+            const rect = progressBar.getBoundingClientRect();
+            const percent = Math.min(Math.max((clientX - rect.left) / rect.width, 0), 1);
+            time = percent * SONG_DURATION;
+            audio.currentTime = time;
+            if (progress) progress.style.width = `${percent * 100}%`;
+          }
+
+          progressBar.addEventListener(
+            "touchstart",
+            (e) => {
+              isDragging = true;
+              seekTo(e.touches[0].clientX);
+            },
+            { passive: true },
+          );
+
+          progressBar.addEventListener(
+            "touchmove",
+            (e) => {
+              if (!isDragging) return;
+              seekTo(e.touches[0].clientX);
+            },
+            { passive: true },
+          );
+
+          progressBar.addEventListener("touchend", () => {
+            isDragging = false;
+          });
+
+          progressBar.addEventListener("mousedown", (e) => {
+            isDragging = true;
+            seekTo(e.clientX);
+            function onMove(e) {
+              seekTo(e.clientX);
+            }
+            function onUp() {
+              isDragging = false;
+              window.removeEventListener("mousemove", onMove);
+              window.removeEventListener("mouseup", onUp);
+            }
+            window.addEventListener("mousemove", onMove);
+            window.addEventListener("mouseup", onUp);
+          });
+        });
+
+        // ── Tap-to-toggle ─────────────────────────────────────────────
+        slides.forEach((slide) => {
+          slide.addEventListener("click", (e) => {
+            if (e.target.closest(".progress-bar, button")) return;
+
+            if (currentSlide === slide) {
+              if (audio.paused) {
+                audio.play().catch(() => {});
+                startInterval();
+              } else {
+                audio.pause();
+                clearInterval(intervalId);
+                intervalId = null;
+              }
+            } else {
+              playSlide(slide, true); // scroll only when switching slides
+            }
+          });
+        });
+
+        // Auto-start first slide (no scroll)
+        if (slides.length > 0) playSlide(slides[0], false);
       })();
     </script>
   </body>
