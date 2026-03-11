@@ -62,3 +62,35 @@
     }
   }
 }
+
+@media(max-width: 420px) {
+  .liked-mobile{
+    overflow-x: hidden;
+
+    .section-actions-right {
+      gap: 5px;
+    }
+    .songs-table{
+      img {
+        height: 51px;
+      }
+      font-size: 12px;
+    }
+    .song-content {
+      align-items: center;
+  
+      .song-info{
+        .title {
+          font-size: 14px;
+          padding-right: 5px;
+        }
+      }
+    }
+    .song-duration {
+      padding-left: 10px !important;
+    }
+    .group-action, .recent-action {
+      display: none;
+    }
+  }
+}

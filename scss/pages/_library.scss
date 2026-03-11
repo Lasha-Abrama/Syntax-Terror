@@ -35,3 +35,19 @@
   border-radius: 50%;
   cursor: pointer;
 }
+
+@media(max-width: 420px) {
+  .library {
+    .card-container{
+    justify-content: center;
+    gap: 20px;
+  }
+  .group-action, .recent-action {
+    display: none;
+  }
+  .section-actions-left {
+    gap: 5px;
+  }
+  }
+  
+}

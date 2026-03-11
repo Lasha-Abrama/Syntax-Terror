@@ -1,3 +1,6 @@
+<% const recentAction = typeof title !== 'undefined' ? title : null; %>
+<% const groupAction = typeof title !== 'undefined' ? title : null %>
+
 <section class="section">
   <div class="section-actions">
     <div class="section-actions-left">
@@ -12,7 +15,7 @@
         </svg>
 
         <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
-          <rect width="40.4108" height="40.4108" rx="5" fill="#898989" fill-opacity="0.1" />
+          <rect width="41" height="41" rx="5" fill="#898989" fill-opacity="0.1" />
           <rect
             width="8.18182"
             height="8.18182"
@@ -65,7 +68,7 @@
             stroke-linejoin="round"
           />
         </svg>
-        <span>Recent</span>
+        <span class="recent-action">Recent</span>
       </button>
 
       <button>
@@ -74,7 +77,7 @@
           <path d="M25.8273 20.081H15.8273" stroke="#898989" stroke-width="2" stroke-linecap="round" />
           <path d="M22.8273 26.081H18.8273" stroke="#898989" stroke-width="2" stroke-linecap="round" />
         </svg>
-        <span>Group</span>
+        <span class="group-action">Group</span>
       </button>
 
       <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">

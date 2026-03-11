@@ -152,6 +152,7 @@ h4 {
     margin-bottom: 155px;
     padding: 12px 15px;
     gap: 15px;
+    border: none;
   }
 }
 .sidebar {
@@ -454,6 +455,7 @@ h4 {
 
 @media (max-width: 420px) {
   .player {
+    z-index: 3;
     left: 7px;
     right: 7px;
     width: auto;
@@ -794,6 +796,52 @@ h4 {
   cursor: pointer;
 }
 
+.search {
+  display: none;
+}
+
+@media (max-width: 420px) {
+  .search-mobile .search {
+    display: flex;
+    gap: 14px;
+  }
+  .search-mobile .search-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .search-mobile .search-box input {
+    flex: 1;
+    min-width: 0;
+  }
+  .search-mobile .recent-search {
+    display: none;
+  }
+  .search-mobile .card-container {
+    overflow-x: unset;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .search-mobile .card-container .card {
+    position: relative;
+    overflow: hidden;
+    width: calc(50% - 10px);
+    margin-bottom: -8px;
+  }
+  .search-mobile .card-container .card-title-search {
+    z-index: 2;
+  }
+  .search-mobile .card-container .card-image-search {
+    top: 22px;
+    left: 58px;
+    z-index: 1;
+  }
+  .search-mobile .search-card {
+    height: 100px;
+  }
+}
 .library .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -828,6 +876,18 @@ h4 {
   cursor: pointer;
 }
 
+@media (max-width: 420px) {
+  .library .card-container {
+    justify-content: center;
+    gap: 20px;
+  }
+  .library .group-action, .library .recent-action {
+    display: none;
+  }
+  .library .section-actions-left {
+    gap: 5px;
+  }
+}
 .hero-wrapper {
   display: flex;
   flex-direction: column;
@@ -1043,54 +1103,81 @@ h4 {
   color: #e0e0e0;
 }
 
-.search {
-  display: flex;
-  gap: 19px;
+@media (max-width: 420px) {
+  .liked-mobile {
+    overflow-x: hidden;
+  }
+  .liked-mobile .section-actions-right {
+    gap: 5px;
+  }
+  .liked-mobile .songs-table img {
+    height: 51px;
+  }
+  .liked-mobile .songs-table {
+    font-size: 12px;
+  }
+  .liked-mobile .song-content {
+    align-items: center;
+  }
+  .liked-mobile .song-content .song-info .title {
+    font-size: 14px;
+    padding-right: 5px;
+  }
+  .liked-mobile .song-duration {
+    padding-left: 10px !important;
+  }
+  .liked-mobile .group-action, .liked-mobile .recent-action {
+    display: none;
+  }
 }
-.search .search-box {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  border-radius: 10px;
-  padding: 0 8px;
-  background-color: rgba(32, 32, 32, 0.5019607843);
+@media (max-width: 420px) {
+  .search {
+    display: flex;
+    gap: 19px;
+  }
+  .search .search-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 10px;
+    padding: 0 8px;
+    background-color: rgba(32, 32, 32, 0.5019607843);
+  }
+  .search .search-box .small-svg {
+    height: 36px;
+    width: 36px;
+  }
+  .search .search-box input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+  }
+  .search .search-box input::placeholder {
+    color: #888;
+  }
+  .search .search-box .search-icon {
+    display: flex;
+    align-items: center;
+  }
+  .search .search-box .search-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+  .library-filter {
+    display: flex;
+    gap: 32px;
+  }
+  .library-filter button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .library-filter button span {
+    color: #898989;
+  }
 }
-.search .search-box .small-svg {
-  height: 36px;
-  width: 36px;
-}
-.search .search-box input {
-  border: none;
-  outline: none;
-  background: transparent;
-  font-size: 14px;
-}
-.search .search-box input::placeholder {
-  color: #888;
-}
-.search .search-box .search-icon {
-  display: flex;
-  align-items: center;
-}
-.search .search-box .search-icon svg {
-  width: 16px;
-  height: 16px;
-}
-
-.library-filter {
-  display: flex;
-  gap: 32px;
-}
-.library-filter button {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-.library-filter button span {
-  color: #898989;
-}
-
 @media (max-width: 420px) {
   .profile-page {
     color: #e0e0e0;
@@ -1229,6 +1316,11 @@ h4 {
     display: flex;
     align-items: center;
     gap: 11px;
+  }
+}
+@media (max-width: 420px) {
+  .folder-mobile .card-container {
+    justify-content: unset;
   }
 }
 

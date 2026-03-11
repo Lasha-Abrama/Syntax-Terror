@@ -1,3 +1,6 @@
+@use "../abstracts/_variables";
+@use "../abstracts/_mixins";
+
 .card {
   &-title-search {
     color: white;
@@ -22,4 +25,54 @@
   right: 0;
   z-index: 13;
   cursor: pointer;
+}
+.search {
+  display: none;
+}
+
+@media (max-width: 420px) {
+  .search-mobile {
+    .search {
+      display: flex;
+      gap: 14px;
+      &-box {
+        display: flex;
+        align-items: center;
+        gap: 8px;   // better than space-between
+
+        input {
+          flex: 1;
+          min-width: 0;
+        }
+      }
+    }
+    .recent-search{
+      display: none;
+    }
+    .card-container {
+      overflow-x: unset;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+
+      .card {
+        position: relative;
+        overflow: hidden;
+        width: calc(50% - 10px);
+        margin-bottom: -8px;
+        &-title-search {
+          z-index: 2;
+        }
+        &-image-search {
+          top: 22px;
+          left: 58px;
+          z-index: 1;
+        }
+      }
+    }
+    .search-card {
+      height: 100px;
+    }
+  }
 }
