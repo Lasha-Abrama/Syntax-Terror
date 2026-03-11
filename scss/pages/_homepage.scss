@@ -37,12 +37,16 @@
 .home-buttons {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  .filter-buttons {
+    overflow-x: auto;
+  }
 }
 .filter-buttons {
   display: flex;
   gap: 10px; // gap between buttons
-  overflow-x: auto;
   @include mixins.hide-scrollbar();
+
   .filter-btn {
     background-color: rgba(32, 32, 32, 0.5);
     color: variables.$text-primary;

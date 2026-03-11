@@ -711,12 +711,15 @@ h4 {
 .home-buttons {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+.home-buttons .filter-buttons {
+  overflow-x: auto;
 }
 
 .filter-buttons {
   display: flex;
   gap: 10px;
-  overflow-x: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
