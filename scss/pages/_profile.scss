@@ -1,5 +1,5 @@
 @use "../abstracts/_variables";
-
+@use "../abstracts/_mixins";
 @media (max-width: 420px) {
   .profile-page {
     color: variables.$text-primary;
@@ -96,12 +96,7 @@
           display: flex;
           flex-direction: column;
           gap: 10px;
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-
-        .friend-activity::-webkit-scrollbar {
-          display: none;
+          @include mixins.hide-scrollbar();
         }
       }
     }

@@ -1,5 +1,5 @@
 @use "../abstracts/_variables";
-
+@use "../abstracts/_mixins";
 .mobile-section {
   flex-wrap: wrap;
   gap: 10px;
@@ -37,12 +37,12 @@
 .home-buttons {
   display: flex;
   justify-content: space-between;
-  overflow-x: auto;
 }
 .filter-buttons {
   display: flex;
   gap: 10px; // gap between buttons
-
+  overflow-x: auto;
+  @include mixins.hide-scrollbar();
   .filter-btn {
     background-color: rgba(32, 32, 32, 0.5);
     color: variables.$text-primary;
