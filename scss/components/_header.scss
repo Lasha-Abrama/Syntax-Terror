@@ -22,11 +22,6 @@
         border-radius: 10px;
         width: 210px;
 
-        &.active {
-          color: variables.$text-primary;
-          background-color: variables.$background-primary;
-        }
-
         span {
           font-size: 14px;
         }

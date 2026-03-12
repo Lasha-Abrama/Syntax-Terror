@@ -154,6 +154,9 @@ h4 {
     gap: 15px;
     border: none;
   }
+  .active {
+    background-color: transparent;
+  }
 }
 .sidebar {
   padding: 7px 0;
@@ -264,10 +267,6 @@ h4 {
   padding: 7px 0;
   border-radius: 10px;
   width: 210px;
-}
-.header .navigation .nav-left a.nav-btn.active {
-  color: #e0e0e0;
-  background-color: #111111;
 }
 .header .navigation .nav-left a.nav-btn span {
   font-size: 14px;
