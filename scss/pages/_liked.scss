@@ -1,12 +1,10 @@
 @use "../abstracts/_variables";
-
+@use "../abstracts/_mixins";
 .section-actions {
   &-right {
-    display: flex;
-    gap: 35px;
+    @include mixins.flex-row(35px);
     &-first {
-      display: flex;
-      gap: 10px;
+      @include mixins.flex-row(10px);
     }
   }
 }
@@ -46,16 +44,13 @@
   background: #89898915;
 }
 .song-content {
-  display: flex;
-  gap: 10px;
+  @include mixins.flex-row(10px);
   img {
-    width: 51px;
+    @include mixins.square(51px);
     border-radius: 3px;
   }
   .song-info {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+    @include mixins.flex-column(4px);
     .title {
       font-size: 16px;
       color: variables.$text-primary;
@@ -63,23 +58,20 @@
   }
 }
 
-@media(max-width: 420px) {
-  .liked-mobile{
+@media (max-width: 420px) {
+  .liked-mobile {
     overflow-x: hidden;
 
     .section-actions-right {
       gap: 5px;
     }
-    .songs-table{
-      img {
-        height: 51px;
-      }
+    .songs-table {
       font-size: 12px;
     }
     .song-content {
       align-items: center;
-  
-      .song-info{
+
+      .song-info {
         .title {
           font-size: 14px;
           padding-right: 5px;
@@ -89,7 +81,8 @@
     .song-duration {
       padding-left: 10px !important;
     }
-    .group-action, .recent-action {
+    .group-action,
+    .recent-action {
       display: none;
     }
   }

@@ -33,12 +33,9 @@
 @media (max-width: 420px) {
   .search-mobile {
     .search {
-      display: flex;
-      gap: 14px;
+      @include mixins.flex-row(14px);
       &-box {
-        display: flex;
-        align-items: center;
-        gap: 8px;   // better than space-between
+        @include mixins.flex-row(8px, center);
 
         input {
           flex: 1;
@@ -46,15 +43,13 @@
         }
       }
     }
-    .recent-search{
+    .recent-search {
       display: none;
     }
     .card-container {
       overflow-x: unset;
-      display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
+      @include mixins.flex-row(20px, null, center);
 
       .card {
         position: relative;

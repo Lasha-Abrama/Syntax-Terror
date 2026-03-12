@@ -1,4 +1,6 @@
 @use "../abstracts/_variables";
+@use "../abstracts/_mixins";
+
 .library {
   .card-container {
     display: flex;
@@ -7,21 +9,16 @@
 }
 
 .section-actions {
-  display: flex;
-  justify-content: space-between;
+  @include mixins.flex-row(null, null, space-between);
 
   &-left {
-    display: flex;
-    gap: 35px;
+    @include mixins.flex-row(35px);
     &-first {
-      display: flex;
-      gap: 10px;
+      @include mixins.flex-row(10px);
     }
   }
   button {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+    @include mixins.flex-row(5px, center);
     color: variables.$text-secondary;
     font-size: 14px;
   }
@@ -36,18 +33,18 @@
   cursor: pointer;
 }
 
-@media(max-width: 420px) {
+@media (max-width: 420px) {
   .library {
-    .card-container{
-    justify-content: center;
-    gap: 20px;
+    .card-container {
+      justify-content: center;
+      gap: 20px;
+    }
+    .group-action,
+    .recent-action {
+      display: none;
+    }
+    .section-actions-left {
+      gap: 5px;
+    }
   }
-  .group-action, .recent-action {
-    display: none;
-  }
-  .section-actions-left {
-    gap: 5px;
-  }
-  }
-  
 }

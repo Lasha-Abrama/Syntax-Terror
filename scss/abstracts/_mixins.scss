@@ -12,6 +12,15 @@
 
   &:hover {
     color: $hover-color;
+    span,
+    svg {
+      color: $hover-color;
+      fill: $hover-color;
+      stroke: variables.$text-primary;
+      transition:
+        color 0.3s ease,
+        fill 0.3s ease;
+    }
   }
 }
 
@@ -31,4 +40,45 @@
   &::-webkit-scrollbar {
     display: none; // Chrome / Safari
   }
+}
+@mixin flex-column($gap: null, $justify: null) {
+  display: flex;
+  flex-direction: column;
+  @if $justify {
+    justify-content: $justify;
+  }
+
+  @if $gap {
+    gap: $gap;
+  }
+}
+@mixin image-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@mixin text-ellipsis($width: 100%) {
+  width: $width; // defaults to 100% of container
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@mixin flex-row($gap: null, $align: null, $justify: null) {
+  display: flex;
+
+  @if $gap {
+    gap: $gap;
+  }
+
+  @if $align {
+    align-items: $align;
+  }
+
+  @if $justify {
+    justify-content: $justify;
+  }
+}
+@mixin square($size) {
+  width: $size;
+  height: $size;
 }

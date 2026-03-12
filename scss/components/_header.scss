@@ -5,23 +5,18 @@
   flex-shrink: 0;
   .navigation {
     height: 54px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include mixins.flex-row(null, center, space-between);
     color: variables.$text-secondary;
     background-color: variables.$background-main;
 
     .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 25px;
+      @include mixins.flex-row(25px, center);
 
       a.nav-btn {
         @include mixins.flex-link();
         padding: 7px 0;
         border-radius: 10px;
         width: 210px;
-
         span {
           font-size: 14px;
         }
@@ -47,9 +42,7 @@
     }
 
     .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 13px;
+      @include mixins.flex-row(13px, center);
 
       a {
         @include mixins.flex-link();
@@ -57,8 +50,7 @@
       }
 
       .profile-circle {
-        width: 32px;
-        height: 32px;
+        @include mixins.square(32px);
         border-radius: 50%;
         background-color: variables.$background-player;
       }
@@ -82,9 +74,7 @@
         display: none;
       }
       .nav-left {
-        display: flex;
-        align-items: center;
-        gap: 31px;
+        @include mixins.flex-row(31px, center);
         width: 100%;
         a.header-library,
         a.header-profile {

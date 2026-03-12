@@ -5,8 +5,7 @@
   width: 100%;
 }
 .card-container {
-  display: flex;
-  gap: 11px;
+  @include mixins.flex-row(11px);
   .podcasts-content {
     position: relative;
     padding: 10px 0 10px 12px;
@@ -24,49 +23,20 @@
     background-color: rgba(var(--colour-r), var(--colour-g), var(--colour-b), 0.6);
   }
 }
-.artist {
-  .card-content-top {
-    justify-content: center;
-  }
-  .card-image img {
-    border-radius: 50%;
-  }
-  .card-title {
-    text-align: center;
-  }
-}
-.mix,
-.album,
-.playlist {
-  .card-content-top {
-    justify-content: space-between;
-  }
-}
+
 .card {
-  display: flex;
-  flex-direction: column;
+  @include mixins.flex-column(6px);
   flex: 0 0 170px; /* fixed width */
-  gap: 6px;
   position: relative;
 
   .card-image {
     width: 170px;
     img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .card-image img {
-      border-radius: 50%;
-    }
-    .card-title {
-      text-align: center;
+      @include mixins.image-cover();
     }
   }
   .card-content {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+    @include mixins.flex-column(8px);
 
     &-top {
       display: flex;
@@ -75,10 +45,7 @@
     .card-title {
       font-size: 14px;
       font-weight: 500;
-      width: 140px; // max width
-      white-space: nowrap; // don’t wrap to next line
-      overflow: hidden; // hide overflowing text
-      text-overflow: ellipsis; // show "..."
+      @include mixins.text-ellipsis(140px);
       color: variables.$text-primary;
     }
 
@@ -96,6 +63,27 @@
     }
   }
 }
+// specific card styles
+.artist {
+  gap: 12px;
+  .card-content-top {
+    justify-content: center;
+  }
+  .card-image img {
+    border-radius: 50%;
+  }
+  .card-title {
+    text-align: center;
+  }
+}
+.mix,
+.album,
+.playlist {
+  .card-content-top {
+    justify-content: space-between;
+  }
+}
+
 @media (max-width: 420px) {
   .card-container {
     overflow-x: auto;

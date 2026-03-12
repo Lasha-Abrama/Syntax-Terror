@@ -1,31 +1,20 @@
 @use "../abstracts/_variables";
 @use "../abstracts/_mixins";
 .hero-wrapper {
-  display: flex;
-  flex-direction: column;
+  @include mixins.flex-column();
 }
 .hero-section {
+  @include mixins.flex-column(null);
+  align-items: center;
   height: 100vh; /* fixed height */
   overflow-y: auto; /* make it scrollable */
   @include mixins.hide-scrollbar();
-}
-
-.hero-slide {
-  height: 100vh; /* so each slide fills the container */
-}
-.hero-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
   .hero-slide {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 80px;
+    @include mixins.flex-row(80px, center, center);
     background-color: rgba(var(--colour-r), var(--colour-g), var(--colour-b), 0.2);
     padding: 100px 0;
     width: 100%;
+    height: 100vh;
   }
   .hero-left {
     .hero-image-wrapper {
@@ -68,21 +57,17 @@
     align-items: center;
 
     .info-card {
-      display: flex;
-      gap: 18px;
+      @include mixins.flex-row(18px);
 
       .info-left {
         img.artist-image {
-          width: 184px;
-          height: 192px;
+          @include mixins.square(185px);
         }
       }
 
       .info-right {
-        display: flex;
-        flex-direction: column;
+        @include mixins.flex-column(20px);
         justify-content: center;
-        gap: 20px;
         .profile-icon-mobile {
           display: none;
         }
@@ -97,9 +82,7 @@
           color: variables.$text-primary;
         }
         .player-controls {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
+          @include mixins.flex-row(14px, center);
 
           button {
             background: none;
@@ -117,9 +100,7 @@
         }
 
         .genre-buttons {
-          display: flex;
-          gap: 10px;
-
+          @include mixins.flex-row(10px);
           .genre-btn {
             @include mixins.genre-button();
           }
@@ -224,8 +205,7 @@
           }
           .info-left {
             img.artist-image {
-              width: 51px;
-              height: 51px;
+              @include mixins.square(51px);
             }
           }
         }
@@ -237,9 +217,7 @@
           width: 100%;
           .hero-image {
             display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            @include mixins.image-cover();
           }
         }
         .hero-image-wrapper::after {

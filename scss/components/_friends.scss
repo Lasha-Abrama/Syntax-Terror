@@ -1,10 +1,9 @@
 @use "../abstracts/_variables";
+@use "../abstracts/_mixins";
 .friends-section {
   border-radius: 10px;
   color: variables.$text-primary;
-  display: flex;
-  flex-direction: column;
-  gap: 44px;
+  @include mixins.flex-column(44px);
   flex: 0 0 0;
   overflow: hidden; // hide inner content
   transition:
@@ -14,41 +13,31 @@
   height: calc(100vh - 60px - 90px);
   z-index: 13;
   &-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include mixins.flex-row(null, center, space-between);
     p {
       font-size: 14px;
     }
     &-icons {
-      display: flex;
-      gap: 5px;
+      @include mixins.flex-row(5px);
     }
   }
   .friend-activity {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+    @include mixins.flex-column(24px);
 
     .friend {
-      display: flex;
-      gap: 4px;
+      @include mixins.flex-row(4px);
       img {
-        width: 40px;
-        height: 40px;
+        @include mixins.square(40px);
       }
       &-content {
-        display: flex;
-        flex-direction: column;
+        @include mixins.flex-column();
         &-title {
           font-size: 12px;
           margin-left: 8px;
         }
         &-activity {
-          display: flex;
-
+          @include mixins.flex-row(null, center);
           font-size: 14px;
-          align-items: center;
           &-desc {
             color: variables.$text-secondary;
           }
@@ -69,14 +58,12 @@
     }
     .active-now {
       .listening-svg {
-        width: 30px;
-        height: 30px;
+        @include mixins.square(30px);
       }
       .friend-content-activity {
         gap: 3px;
         div {
-          display: flex;
-          gap: 10px;
+          @include mixins.flex-row(10px);
         }
       }
     }

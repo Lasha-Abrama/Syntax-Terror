@@ -15,29 +15,21 @@
   gap: 8px;
   font-size: 14px;
   img {
-    width: 43px;
-    height: 43px;
+    @include mixins.square(43px);
   }
   &-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    white-space: nowrap; // don’t wrap to next line
-    overflow: hidden; // hide overflowing text
-    text-overflow: ellipsis; // show "..."
+    @include mixins.flex-column(null, space-between);
+    @include mixins.text-ellipsis();
   }
   &-author {
     color: variables.$text-secondary;
   }
   .mobile-title-center {
-    display: flex;
-    align-items: center;
+    @include mixins.flex-row(null, center);
   }
 }
 .home-buttons {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include mixins.flex-row(null, center, space-between);
   .filter-buttons {
     overflow-x: auto;
   }
@@ -63,22 +55,17 @@
       color: variables.$background-primary;
       font-weight: bold;
     }
-
     &:hover {
-      opacity: 0.8;
+      background-color: variables.$background-secondary;
     }
   }
 }
 
 .section {
-  display: flex;
-  flex-direction: column;
-  gap: 15px; // gap between h3 and cards container
+  @include mixins.flex-column(15px);
 
   &-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include mixins.flex-row(null, center, space-between);
   }
 }
 

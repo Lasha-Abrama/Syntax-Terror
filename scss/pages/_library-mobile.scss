@@ -1,39 +1,35 @@
 @use "../abstracts/_variables";
+@use "../abstracts/_mixins";
 
-@media(max-width: 420px){
+@media (max-width: 420px) {
   .search {
     display: flex;
     gap: 19px;
     .search-box {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      @include mixins.flex-row(null, center, space-between);
       width: 100%;
       border-radius: 10px;
       padding: 0 8px;
       background-color: #20202080;
       .small-svg {
-        height: 36px;
-        width: 36px;
+        @include mixins.square(36px);
       }
       input {
         border: none;
         outline: none;
         background: transparent;
         font-size: 14px;
-  
+
         &::placeholder {
           color: #888;
         }
       }
-  
+
       .search-icon {
-        display: flex;
-        align-items: center;
-  
+        @include mixins.flex-row(null, center);
+
         svg {
-          width: 16px;
-          height: 16px;
+          @include mixins.square(16px);
         }
       }
     }
@@ -42,9 +38,7 @@
     display: flex;
     gap: 32px;
     button {
-      display: flex;
-      align-items: center;
-      gap: 5px;
+      @include mixins.flex-row(5px, center);
       span {
         color: variables.$text-secondary;
       }

@@ -1,7 +1,8 @@
+@use "../abstracts/_mixins";
 @media (max-width: 420px) {
   .folder-mobile {
-    .card-container{
-      justify-content: unset;
+    .card-container {
+      @include mixins.flex-row();
     }
   }
 }
