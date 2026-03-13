@@ -217,18 +217,22 @@ h4 {
   .mobile-sidebar .sidebar {
     display: flex;
     flex-direction: column;
-    padding-top: 6px;
+    padding-top: 0;
   }
   .mobile-sidebar .sidebar-nav .sidebar-menu {
     width: 100%;
+    gap: 0;
+  }
+  .mobile-sidebar .sidebar-nav .sidebar-menu > :nth-child(2) {
+    padding-top: 11px;
   }
   .mobile-sidebar .sidebar-nav .sidebar-menu > :nth-child(2) a.nav-btn {
     padding-top: 0;
   }
-  .mobile-sidebar .sidebar-nav .sidebar-menu li a.sidebar-library {
+  .mobile-sidebar .sidebar-nav .sidebar-menu .sidebar-library {
     display: none;
   }
-  .mobile-sidebar .sidebar-nav .sidebar-menu li a.nav-btn {
+  .mobile-sidebar .sidebar-nav .sidebar-menu li {
     padding: 20px 0;
     border-bottom: 2px solid #202020;
   }

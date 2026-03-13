@@ -41,22 +41,25 @@
   .mobile-sidebar {
     .sidebar {
       @include mixins.flex-column();
-      padding-top: 6px;
+      padding-top: 0;
       &-nav {
         .sidebar-menu {
           width: 100%;
+          gap: 0;
           > :nth-child(2) {
+            padding-top: 11px;
             a.nav-btn {
               padding-top: 0;
             }
           }
+          .sidebar-library {
+            display: none;
+          }
           li {
-            a.sidebar-library {
-              display: none;
-            }
+            padding: 20px 0;
+            border-bottom: 2px solid #202020;
+
             a.nav-btn {
-              padding: 20px 0;
-              border-bottom: 2px solid #202020;
               span {
                 color: variables.$text-primary;
                 font-size: 20px;
