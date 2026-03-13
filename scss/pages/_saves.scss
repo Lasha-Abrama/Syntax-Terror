@@ -1,0 +1,24 @@
+@use "../abstracts/_variables";
+
+.empty-saves .card-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  .empty-state {
+    text-align: center;
+    max-width: 360px;
+    color: variables.$text-secondary;
+
+    h3 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  }
+}
