@@ -47,23 +47,22 @@ a.header-profile {
       color: variables.$text-secondary;
     }
   }
+}
+/* =====================
+    Navigation Right
+  ===================== */
+.nav-right {
+  @include mixins.flex-row(13px, center);
 
-  /* =====================
-      Navigation Right
-    ===================== */
-  .nav-right {
-    @include mixins.flex-row(13px, center);
+  a {
+    @include mixins.flex-link();
+    font-size: 16px;
+  }
 
-    a {
-      @include mixins.flex-link();
-      font-size: 16px;
-    }
-
-    .profile-circle {
-      @include mixins.square(32px);
-      border-radius: variables.$radius-circle;
-      background-color: variables.$background-player;
-    }
+  .profile-circle {
+    @include mixins.square(32px);
+    border-radius: variables.$radius-circle;
+    background-color: variables.$background-player;
   }
 }
 @media (max-width: 420px) {
