@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Page metadata and global styles -->
     <title>Spotify</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   </head>
   <body>
     <div class="wrapper">
+      <%# Sidebar navigation (shared across pages) %>
       <%- include('partials/sidebar') %>
       <div class="right">
+        <%# Top header with navigation and actions %>
         <%- include('partials/header') %>
         <div class="content-wrapper">
+          <%# Main content area for homepage %>
           <main class="main-content">
+            <%# Search bar section %>
             <div class="search">
               <div class="search-box">
                 <input type="text" placeholder="Search Library" />
@@ -27,10 +32,10 @@
                   />
                 </svg>
               </div>
+              <%# Add button (plus icon) %>
               <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
                 <path
-                  d="M20.5 11V30
-       M11 20.5H30"
+                  d="M20.5 11V30 M11 20.5H30"
                   stroke="#898989"
                   stroke-width="2"
                   stroke-linecap="round"
@@ -38,8 +43,10 @@
                 />
               </svg>
             </div>
+            <%# Mobile library filter buttons %>
             <div class="mobile-library-wrapper">
               <div class="library-filter">
+                <%# Group button %>
                 <button>
                   <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
                     <path d="M29.3351 14.081L11.3351 14.081" stroke="#898989" stroke-width="2" stroke-linecap="round" />
@@ -48,6 +55,7 @@
                   </svg>
                   <span>Group</span>
                 </button>
+                <%# Recents button %>
                 <button>
                   <span>Recents</span>
                   <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
@@ -61,13 +69,16 @@
                 </button>
               </div>
 
+              <%# Mobile sidebar %>
               <section class="mobile-sidebar"><%- include('partials/sidebar') %></section>
             </div>
           </main>
         </div>
       </div>
+      <%# Bottom music player %>
       <%- include('partials/player') %>
     </div>
+    <%# Main client-side JavaScript %>
     <script src="/js/script.js"></script>
   </body>
 </html>

@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Page metadata and global styles -->
     <title>Spotify</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   </head>
   <body>
     <div class="wrapper">
+      <%# Sidebar navigation (shared across pages) %>
       <%- include('partials/sidebar') %>
 
       <div class="right">
+        <%# Top header with navigation and actions %>
         <%- include('partials/header') %>
         <div class="content-wrapper">
           <main class="main-content search-mobile">
+            <%# Search input section %>
             <div class="search">
               <div class="search-box">
+                <!-- Search input -->
                 <input type="text" placeholder="What do you want to play?" />
+                <!-- Search icon -->
                 <svg class="small-svg" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M22.1492 21.8208C23.4966 20.4463 24.3274 18.5637 24.3274 16.4869C24.3274 12.2787 20.9159 8.86719 16.7076 8.86719C12.4994 8.86719 9.08789 12.2787 9.08789 16.4869C9.08789 20.6952 12.4994 24.1067 16.7076 24.1067C18.8392 24.1067 20.7663 23.2314 22.1492 21.8208ZM22.1492 21.8208L26.6133 26.3926"
@@ -28,14 +34,18 @@
                   />
                 </svg>
               </div>
+
+              <%# Additional search option icon (camera-style icon) %>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 41">
                 <path d="M7.57837 16.8337V26.3244C7.57837 27.8585 8.82202 29.1022 10.3561 29.1022H29.8006C31.3347 29.1022 32.5784 27.8585 32.5784 26.3244V16.8337C32.5784 15.2995 31.3347 14.0559 29.8006 14.0559H28.3507C27.8169 14.0559 27.3091 13.8256 26.9575 13.424L25.0236 11.2155C24.6719 10.814 24.1641 10.5837 23.6304 10.5837H16.1885C15.6548 10.5837 15.147 10.814 14.7953 11.2155L12.8614 13.424C12.5098 13.8256 12.002 14.0559 11.4682 14.0559H10.3561C8.82202 14.0559 7.57837 15.2995 7.57837 16.8337Z" stroke="#898989" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 <circle cx="20.0783" cy="20.306" r="4.16667" stroke="#898989" stroke-width="2"/>
               </svg>
             </div>
+            <%# recent searches section %>
             <section class="section recent-search">
               <div class="section-title">
                 <h3>Recent searches</h3>
+                <!-- Options menu icon -->
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="11.7853" cy="20.2072" r="1.68378" fill="#898989" />
                   <circle cx="20.2053" cy="20.2072" r="1.68378" fill="#898989" />
@@ -44,9 +54,11 @@
               </div>
               <div class="cards-viewport">
                 <div class="card-container">
+                  <%# Render specific artists as recent searches %>
                   <% data.artists.filter(a => a.name === "Daft Punk" || a.name === "David Bowie").forEach(a => { %>
 
                   <div class="card artist">
+                    <!-- Remove-from-recent icon -->
                     <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" class="cancel">
                       <rect y="-0.410156" width="40.4108" height="40.4108" rx="20.2054" fill="#111111" />
                       <path
@@ -57,10 +69,12 @@
                         stroke-linejoin="round"
                       />
                     </svg>
+                    <%# Artist image %>
                     <div class="card-image">
                       <img src="/<%= a.image %>" alt="<%= a.name %>" />
                     </div>
 
+                    <%# Artist name %>
                     <div class="card-content">
                       <div class="card-content-top">
                         <div class="card-title"><%= a.name %></div>
@@ -70,9 +84,11 @@
 
                   <% }) %>
 
+                  <%# Render specific album as a recent search %>
                   <% data.albums.filter(alb => alb.title === "Black Holes and Revelations").forEach(alb => { %>
 
                   <div class="card album">
+                    <!-- Remove icon -->
                     <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" class="cancel">
                       <rect y="-0.410156" width="40.4108" height="40.4108" rx="20.2054" fill="#111111" />
                       <path
@@ -83,11 +99,11 @@
                         stroke-linejoin="round"
                       />
                     </svg>
-
+                    <%# Album image %>
                     <div class="card-image">
                       <img src="/<%= alb.image %>" alt="<%= alb.title %>" />
                     </div>
-
+                    <%# Album information %>
                     <div class="card-content">
                       <div class="card-content-top">
                         <div class="card-title"><%= alb.title %></div>
@@ -101,12 +117,14 @@
               </div>
             </section>
 
-            <!-- ✅ BROWSE ALL -->
+            <!-- browse all music categories -->
             <h3>Browse all</h3>
+            <%# Loop through browse sections (Discover, Genres, etc.) %>
             <% data.browse.forEach(section => { %>
             <section class="section">
               <div class="section-title">
                 <h4><%= section.category %></h4>
+                <%# Show additional actions only for specific categories %>
                 <% if (
           section.category === "Discover" ||
           section.category === "Genres" ||
@@ -115,12 +133,14 @@
                 <%- include('partials/actions', { type: 'search' }) %>
                 <% } %>
               </div>
-
+              <%# Category cards (genres, moods, etc.) %>
               <div class="cards-viewport">
                 <div class="card-container">
                   <% section.items.forEach(item => { %>
                   <div class="card mix search-card" data-color="<%= item.color %>">
+                    <%# Category title %>
                     <div class="card-title-search"><%= item.title %></div>
+                    <%# Category image %>
                     <img class="card-image-search" src="/<%= item.image %>" alt="<%= item.title %>" />
                   </div>
                   <% }) %>
@@ -129,12 +149,14 @@
             </section>
             <% }) %>
           </main>
+          <%# Friends activity sidebar %>
           <%- include('partials/friends') %>
         </div>
+        <%# Bottom music player %>
         <%- include('partials/player') %>
       </div>
     </div>
-
+    <%# Main client-side JavaScript %>
     <script src="/js/script.js"></script>
   </body>
 </html>

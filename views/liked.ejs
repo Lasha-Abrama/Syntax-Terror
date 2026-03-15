@@ -1,32 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Page metadata and global styles -->
     <title>Spotify</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   </head>
   <body>
     <div class="wrapper">
+      <%# Sidebar navigation (shared across pages) %>
       <%- include('partials/sidebar') %>
 
       <div class="right">
+        <%# Top header with navigation and actions %>
         <%- include('partials/header') %>
-        <div class="content-wrapper"> 
+        <div class="content-wrapper">
+          <%# Main content area for liked songs page %> 
         <main class="main-content liked-mobile">
+          <%# Top actions section %>
           <section class="section">
             <div class="section-actions">
-                <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M20.2052 13.0618V20.2054M20.2052 27.3491V20.2054M20.2052 20.2054L13.0615 20.2054M20.2052 20.2054H27.3489"
-                      stroke="#898989"
-                      stroke-width="2.02054"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
+              <%# Add / create icon %>
+              <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20.2052 13.0618V20.2054M20.2052 27.3491V20.2054M20.2052 20.2054L13.0615 20.2054M20.2052 20.2054H27.3489"
+                  stroke="#898989"
+                  stroke-width="2.02054"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
               <div class="section-actions-right">
+                <%# Layout toggle %>
                 <div class="section-actions-right-first">
                   <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
                     <path d="M16.584 26.3298H28.584" stroke="#898989" stroke-width="2" stroke-linecap="round" />
@@ -74,6 +81,7 @@
                   </svg>
                 </div>
 
+                <%# Sort button (Recent) %>
                 <button>
                   <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -94,6 +102,7 @@
                   <span class="recent-action">Recent</span>
                 </button>
 
+                <%# Filter button (Filter All) %>
                 <button>
                   <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
                     <path d="M29.3351 14.081L11.3351 14.081" stroke="#898989" stroke-width="2" stroke-linecap="round" />
@@ -103,6 +112,7 @@
                   <span class="group-action">Filter All</span>
                 </button>
 
+                <%# Search icon %>
                 <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M24.7357 24.361C26.2733 22.7925 27.2214 20.644 27.2214 18.274C27.2214 13.4715 23.3282 9.57837 18.5257 9.57837C13.7233 9.57837 9.83008 13.4715 9.83008 18.274C9.83008 23.0765 13.7233 26.9697 18.5257 26.9697C20.9582 26.9697 23.1575 25.9709 24.7357 24.361ZM24.7357 24.361L29.8301 29.5784"
@@ -114,22 +124,26 @@
               </div>
             </div>
           </section>
+          <%# Table displaying liked songs %>
           <table class="songs-table">
+            <%# Table column headers %>
             <thead>
               <tr>
                 <th>#</th>
                 <th>Title</th>
                 <th>Album</th>
                 <th>Duration</th>
-                <th class="col-like"></th>
               </tr>
             </thead>
         
-             <tbody>
+            <%# Songs list rendered dynamically %> 
+            <tbody>
               <% data.songs.forEach((song, index) => { %>
                 <tr>
+                  <%# Song index number %>
                   <td><%= index + 1 %></td>
           
+                  <%# Song title, image, and artist info %>
                   <td class="song-content">
                     <img src="<%= song.image %>" alt="<%= song.title %> image">
                     <div class="song-info">
@@ -140,8 +154,11 @@
                     </div>
                   </td>
           
+                  <%# Album name %>
                   <td class="info song-album"><%= song.album %></td>
+                  <%# Song duration %>
                   <td class="info song-duration"><%= song.duration %></td>
+                  <%# Like icon (indicates the song is liked) %>
                   <td><svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
                     <path d="M22.0693 13.5678L20.2054 15.3738L18.3416 13.5678C16.3872 11.6741 13.2521 11.7787 11.4282 13.7984C9.65847 15.7581 9.41482 18.6936 11.0174 20.7923C11.2143 21.0502 11.408 21.2972 11.5922 21.5232C12.7587 22.9542 15.3037 25.4531 16.5788 26.7942C17.5209 27.785 18.3677 28.6113 19.0057 29.2132C19.6794 29.8488 20.7194 29.835 21.3944 29.2007C22.5707 28.0954 24.3747 26.3736 25.6453 25.0372C26.9205 23.6961 27.6522 22.9542 28.8186 21.5232C29.0029 21.2972 29.1965 21.0502 29.3935 20.7923C30.996 18.6936 30.7524 15.7581 28.9826 13.7984C27.1588 11.7787 24.0236 11.6741 22.0693 13.5678Z" fill="#1ED760" stroke="#1ED760" stroke-width="2.02054" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -152,11 +169,14 @@
           </table>
          
         </main>
+        <%# Friends activity sidebar %>
         <%- include('partials/friends') %>
       </div>
+        <%# Bottom music player %>
         <%- include('partials/player') %>
       </div>
     </div>
+    <%# Main client-side JavaScript %>
     <script src="/js/script.js"></script>
   </body>
 </html>

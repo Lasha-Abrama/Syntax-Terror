@@ -1,42 +1,54 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Page metadata and global styles -->
     <title>Spotify</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   </head>
   <body>
     <div class="wrapper">
+      <%# Sidebar navigation (shared across pages) %>
       <%- include('partials/sidebar') %>
 
       <div class="right">
+        <%# Top header with navigation and actions %>
         <%- include('partials/header') %>
         <div class="content-wrapper">
+          <%# Main content area for Library page %>
           <main class="main-content">
+            <%# Library icons or shortcuts at the top %>
             <%- include('partials/library-icons') %>
             <section class="section">
               <div class="library">
                 <div class="cards-viewport">
                   <div class="card-container">
-                    <%- include('partials/card', { item: likedPlaylist, type: 'playlist', isLiked: true }) %><%
-                    selectedArtists.forEach(item => { %>
-                    <%- include('partials/card', { item, type: 'artist'}) %>
+                    <%# Liked playlist (always first, marked as liked) %>
+                    <%- include('partials/card', { item: likedPlaylist, type: 'playlist', isLiked: true }) %>
+
+                    <%# Selected artists cards %>
+                    <% selectedArtists.forEach(item => { %>
+                      <%- include('partials/card', { item, type: 'artist'}) %>
                     <% }) %>
 
+                    <%# Other playlists (not liked) %>
                     <% otherPlaylists.forEach(item => { %>
                     <%- include('partials/card', { item, type: 'playlist', isLiked: false}) %>
                     <% }) %>
 
+                    <%# Folders in library %>
                     <% folders.forEach(item => { %>
                     <%- include('partials/card', { item: item, type: "folder" }) %>
                     <% }) %>
 
+                    <%# Albums in library %>
                     <% albums.forEach(item => { %>
                     <%- include('partials/card', { item, type: 'album' }) %>
                     <% }) %>
 
+                    <%# Selected mixes in library %>
                     <% selectedMixes.forEach(item => { %>
                     <%- include('partials/card', { item, type: 'mix' }) %>
                     <% }) %>
@@ -45,11 +57,14 @@
               </div>
             </section>
           </main>
+          <%# Friends activity sidebar %>
           <%- include('partials/friends') %>
         </div>
+        <%# Bottom music player %>
         <%- include('partials/player') %>
       </div>
     </div>
+    <%# Main client-side JavaScript %>
     <script src="/js/script.js"></script>
   </body>
 </html>

@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Page metadata and global styles -->
     <title>Spotify</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   </head>
   <body>
     <div class="wrapper">
+      <%# Sidebar navigation (shared across pages) %>
       <%- include('partials/sidebar') %>
 
       <div class="right">
+        <%# Top header with navigation and actions %>
         <%- include('partials/header') %>
         <div class="content-wrapper">
+          <%# Main content area for Homepage %>
           <main class="main-content">
+            <%# Top filter buttons for content categories %>
             <div class="home-buttons">
               <!-- Top Buttons -->
               <div class="filter-buttons">
@@ -25,6 +30,7 @@
                 <button class="filter-btn" data-filter="podcasts">Podcasts</button>
                 <button class="filter-btn" data-filter="episodes">Episodes</button>
               </div>
+              <%# Filter-related SVG icon %>
               <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M19.8262 13.0859H12.8262C11.7216 13.0859 10.8262 13.9814 10.8262 15.0859C10.8262 16.1905 11.7216 17.0859 12.8262 17.0859H19.8262"
@@ -59,41 +65,48 @@
                 />
               </svg>
             </div>
+            <%# Mobile preview cards %>
             <section class="mobile-section">
-              <% let combined = []; let maxLength = Math.min(6, data.songs.length + data.mixes.length); let songsCopy =
-              [...data.songs]; let mixCopy = [...data.mixes]; while (combined.length < maxLength && (songsCopy.length >
-              0 || mixCopy.length > 0)) { if (songsCopy.length > 0) { combined.push({ type: 'song', item:
-              songsCopy.shift() }); } if (combined.length >= maxLength) break; if (mixCopy.length > 0) { combined.push({
-              type: 'mix', item: mixCopy.shift() }); } } %> <% combined.forEach(card => { %>
+              <% let combined = []; let maxLength = Math.min(6, data.songs.length + data.mixes.length); let songs =
+              [...data.songs], mixes = [...data.mixes]; while (combined.length < maxLength && (songs.length ||
+              mixes.length)) { let pick = Math.random() < 0.5 ? songs : mixes; if (pick.length === 0) pick =
+              songs.length ? songs : mixes; combined.push({ type: pick === songs ? 'song' : 'mix', item: pick.shift()
+              }); } %> <% combined.forEach(card => { %>
+              <%# Individual mobile card (song or mix) %>
               <div class="mobile-card">
                 <img src="<%= card.item.image %>" alt="<%= card.item.title %>" />
                 <% if (card.type === 'song') { %>
-                <div class="mobile-card-info">
-                  <p class="title"><%= card.item.title %></p>
-                  <p class="mobile-card-author"><%= card.item.author %></p>
-                </div>
+                  <%# Song info (title + author) %>
+                  <div class="mobile-card-info">
+                    <p class="title"><%= card.item.title %></p>
+                    <p class="mobile-card-author"><%= card.item.author %></p>
+                  </div>
                 <% } else { %>
-                <p class="mobile-title-center"><%= card.item.title %></p>
+                  <%# Mix title only %>
+                  <p class="mobile-title-center"><%= card.item.title %></p>
                 <% } %>
               </div>
               <% }) %>
             </section>
 
-            <!-- Made For You Section -->
+            <%# Made For You Section %>
             <section class="section" data-category="music">
               <div class="section-title">
                 <h3>Made for you</h3>
+                <%# Actions for this section %>
                 <%- include('partials/actions', {type : 'homepage'}) %>
               </div>
               <div class="cards-viewport">
                 <div class="card-container">
+                  <%# Mix cards (first 12) %>
                   <% data.mixes.slice(0,12).forEach(item => { %>
-                  <%- include('partials/card', { item, type: 'mix' }) %>
+                    <%- include('partials/card', { item, type: 'mix' }) %>
                   <% }) %>
                 </div>
               </div>
             </section>
-            <!-- Your Top Mixes Section -->
+
+            <%# Your Top Mixes Section %>
             <section class="section" data-category="music">
               <div class="section-title">
                 <h3>Your top mixes</h3>
@@ -102,13 +115,14 @@
 
               <div class="cards-viewport">
                 <div class="card-container">
+                  <%# Mix cards (next 8) %>
                   <% data.mixes.slice(12,20).forEach(item => { %>
                   <%- include('partials/card', { item, type: 'mix' }) %>
                   <% }) %>
                 </div>
               </div>
             </section>
-            <!-- Your Favorite Artists Section -->
+            <%# Your Favorite Artists Section %>
             <section class="section" data-category="artists">
               <div class="section-title">
                 <h3>Your favorite artists</h3>
@@ -116,13 +130,14 @@
               </div>
               <div class="cards-viewport">
                 <div class="card-container">
+                  <%# Artist cards %>
                   <% data.artists.forEach(item => { %>
                   <%- include('partials/card', { item, type: 'artist' }) %>
                   <% }) %>
                 </div>
               </div>
             </section>
-            <!-- Your Albums Section -->
+            <%# Albums for You Section %>
             <section class="section" data-category="music">
               <div class="section-title">
                 <h3>Albums for You</h3>
@@ -130,13 +145,14 @@
               </div>
               <div class="cards-viewport">
                 <div class="card-container">
+                  <%# Album cards %>
                   <% data.albums.forEach(item => { %>
                   <%- include('partials/card', { item, type: 'album' }) %>
                   <% }) %>
                 </div>
               </div>
             </section>
-            <!-- Your Audiobooks Section -->
+            <%# Audiobooks Section %>
             <section class="section" data-category="audiobooks">
               <div class="section-title">
                 <h3>Audiobooks for you</h3>
@@ -144,13 +160,14 @@
               </div>
               <div class="cards-viewport">
                 <div class="card-container">
+                  <%# Audiobook cards %>
                   <% data.audiobooks.forEach(item => { %>
                   <%- include('partials/card', { item, type: 'audiobooks' }) %>
                   <% }) %>
                 </div>
               </div>
             </section>
-            <!-- Your Podcasts Section -->
+            <%# Podcasts Section %>
             <section class="section" data-category="podcasts">
               <div class="section-title">
                 <h3>Podcasts for you</h3>
@@ -158,13 +175,14 @@
               </div>
               <div class="cards-viewport">
                 <div class="card-container">
+                  <%# Podcast cards %>
                   <% data.podcasts.forEach(item => { %>
                   <%- include('partials/card', { item, type: 'podcasts' }) %>
                   <% }) %>
                 </div>
               </div>
             </section>
-            <!-- Your Episodes Section -->
+            <%# Episodes Section %>
             <section class="section" data-category="episodes">
               <div class="section-title">
                 <h3>Episodes for you</h3>
@@ -172,6 +190,7 @@
               </div>
               <div class="cards-viewport">
                 <div class="card-container">
+                  <%# Episode cards %>
                   <% data.podcasts.forEach(item => { %>
                   <%- include('partials/card', { item, type: 'episodes' }) %>
                   <% }) %>
@@ -179,11 +198,14 @@
               </div>
             </section>
           </main>
+          <%# Friends activity sidebar %>
           <%- include('partials/friends') %>
         </div>
+        <%# Bottom music player %>
         <%- include('partials/player') %>
       </div>
     </div>
+    <%# Main client-side JavaScript %>
     <script src="/js/script.js"></script>
   </body>
 </html>

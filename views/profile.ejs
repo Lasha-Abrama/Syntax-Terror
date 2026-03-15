@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- Page metadata and global styles -->
   <title>Profile - Spotify</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Main stylesheet -->
   <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
   <div class="wrapper">
+    <%# Sidebar navigation (shared across pages) %>
     <%- include('partials/sidebar') %>
 
     <div class="right">
+      <%# Top header with navigation and actions %>
       <%- include('partials/header') %>
       <div class="content-wrapper">
+        <%# Profile page main content %>
         <main class="profile-page">
+          <%# User profile information %>
           <div class="profile">
             <div class="profile-info">
               <img src="/assets/images/profiles/profile.png" alt="Profile Picture" class="profile-pic"/>
               <div class="profile-text">
                 <h2>Jux</h2>
+                <%# Followers / following / playlists stats %>
                 <div class="profile-text-desc">
                   <div class="first-row">
                     <p>3 <span>followers</span></p>
@@ -30,24 +36,27 @@
                 </div>
               </div>
             </div>
+            <%# Profile action buttons %>
             <div class="profile-actions">
-              <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 41">
                 <mask id="path-1-inside-1_1_1728" fill="white">
                 <path d="M17.2345 26.4272C16.8439 26.8177 16.2108 26.8177 15.8202 26.4272L13.6989 24.3059C13.3084 23.9153 13.3084 23.2822 13.6989 22.8916L27.4875 9.10305C28.4638 8.12674 30.0467 8.12674 31.023 9.10305C31.9993 10.0794 31.9993 11.6623 31.023 12.6386L17.2345 26.4272Z"/>
                 </mask>
                 <path d="M17.2345 26.4272C16.8439 26.8177 16.2108 26.8177 15.8202 26.4272L13.6989 24.3059C13.3084 23.9153 13.3084 23.2822 13.6989 22.8916L27.4875 9.10305C28.4638 8.12674 30.0467 8.12674 31.023 9.10305C31.9993 10.0794 31.9993 11.6623 31.023 12.6386L17.2345 26.4272Z" stroke="#898989" stroke-width="4" mask="url(#path-1-inside-1_1_1728)"/>
                 <path d="M12.5811 26.0162L14.1099 27.545L11.2048 28.9213L12.5811 26.0162Z" stroke="#E0E0E0" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round"/>
               </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 41">
                 <path d="M20.6902 22.0167V10.7406M20.6902 10.7406L16.0471 15.3837M20.6902 10.7406L25.3333 15.3837M28.9815 20.3585V25.0016C28.9815 26.4669 27.7936 27.6548 26.3283 27.6548L15.0521 27.6548C13.5868 27.6548 12.3989 26.4669 12.3989 25.0016V20.3585" stroke="#898989" stroke-width="2.02054" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
           </div>
 
+          <%# Friends list displayed on mobile view %>
           <div class="friends-mobile">
             <%- include('partials/friends', { title: "Friends" }) %>
           </div>
 
+          <%# User subscription / current Spotify plan section %>
           <div class="profile-plan">
             <div class="current-plan">
               <img src="./assets/images/spotify.png" alt="spotify_logo">
@@ -59,50 +68,62 @@
             </div>
           </div>
 
+          <%# Profile menu options %>
           <div class="menu-options">
             <div class="menu-item">
+              <%# Listening history menu item %>
               <div class="menu-item-info">
-                <svg width="41" height="41" viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
+                <!-- icon -->
+                <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
                 <path d="M20.3242 14.8271V20.3819L25.0075 23.2722" stroke="#898989" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M10.3242 19.8271C10.3242 25.35 14.8014 29.8271 20.3242 29.8271C25.8471 29.8271 30.3242 25.35 30.3242 19.8271C30.3242 14.3043 25.8471 9.82715 20.3242 9.82715" stroke="#898989" stroke-width="2"/>
                 <path d="M10.3242 19.8271C10.3242 14.3043 14.8014 9.82715 20.3242 9.82715" stroke="#898989" stroke-width="2" stroke-linejoin="round" stroke-dasharray="3 3"/>
-              </svg>
-              <h4>Listening history</h4>
+                </svg>
+                <h4>Listening history</h4>
               </div>
-              <svg width="41" height="41" viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
+              <!-- arrow icon -->
+              <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18.5219 25.2568L23.5732 20.2055L18.5219 15.1541" stroke="#898989" stroke-width="2.3573" stroke-linecap="round" stroke-linejoin="round"/>
               </svg> 
             </div>
+            <%# Settings and privacy menu item %>
             <div class="menu-item">
               <div class="menu-item-info">
-                <svg width="41" height="41" viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
+                <!-- icon -->
+                <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
                 <path d="M22.4406 8.82715H18.2078C17.9257 8.82715 17.6811 8.91881 17.4742 9.10215C17.2672 9.28548 17.145 9.51465 17.1073 9.78965L16.7687 12.3471C16.5242 12.4388 16.2939 12.5488 16.0779 12.6771C15.8612 12.8055 15.6494 12.943 15.4425 13.0896L12.9875 12.0996C12.7241 12.008 12.4607 11.9988 12.1974 12.0721C11.934 12.1455 11.727 12.3013 11.5766 12.5396L9.4884 16.0871C9.3379 16.3255 9.29087 16.5821 9.34731 16.8571C9.40374 17.1321 9.54483 17.3521 9.77058 17.5171L11.887 19.0846C11.8681 19.213 11.8587 19.3369 11.8587 19.4564V20.1989C11.8587 20.3177 11.8681 20.4413 11.887 20.5696L9.77058 22.1371C9.54483 22.3021 9.40374 22.5221 9.34731 22.7971C9.29087 23.0721 9.3379 23.3288 9.4884 23.5671L11.5766 27.1146C11.7082 27.3713 11.9103 27.5319 12.1827 27.5964C12.4558 27.6602 12.7241 27.6463 12.9875 27.5546L15.4425 26.5646C15.6494 26.7113 15.8657 26.8488 16.0915 26.9771C16.3172 27.1055 16.543 27.2155 16.7687 27.3071L17.1073 29.8646C17.145 30.1396 17.2672 30.3688 17.4742 30.5521C17.6811 30.7355 17.9257 30.8271 18.2078 30.8271H22.4406C22.7228 30.8271 22.9673 30.7355 23.1743 30.5521C23.3812 30.3688 23.5035 30.1396 23.5411 29.8646L23.8797 27.3071C24.1243 27.2155 24.3549 27.1055 24.5716 26.9771C24.7876 26.8488 24.999 26.7113 25.206 26.5646L27.661 27.5546C27.9243 27.6463 28.1877 27.6555 28.4511 27.5821C28.7145 27.5088 28.9214 27.353 29.0719 27.1146L31.16 23.5671C31.3105 23.3288 31.3576 23.0721 31.3011 22.7971C31.2447 22.5221 31.1036 22.3021 30.8779 22.1371L28.7615 20.5696C28.7803 20.4413 28.7897 20.3177 28.7897 20.1989V19.4564C28.7897 19.3369 28.7709 19.213 28.7333 19.0846L30.8496 17.5171C31.0754 17.3521 31.2165 17.1321 31.2729 16.8571C31.3294 16.5821 31.2823 16.3255 31.1318 16.0871L29.0437 12.5671C28.8932 12.3288 28.6817 12.1682 28.4093 12.0853C28.1362 12.0032 27.8679 12.008 27.6045 12.0996L25.206 13.0896C24.999 12.943 24.7827 12.8055 24.557 12.6771C24.3312 12.5488 24.1055 12.4388 23.8797 12.3471L23.5411 9.78965C23.5035 9.51465 23.3812 9.28548 23.1743 9.10215C22.9673 8.91881 22.7228 8.82715 22.4406 8.82715Z" stroke="#898989" stroke-width="2"/>
                 <circle cx="3.34783" cy="3.34783" r="3.34783" transform="matrix(1 0 0 -1 16.9763 23.1748)" stroke="#898989" stroke-width="2"/>
-              </svg>
-              <h4>Settings and privacy</h4>
+                </svg>
+                <h4>Settings and privacy</h4>
               </div>
+              <!-- arrow icon -->
               <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18.5219 25.2568L23.5732 20.2055L18.5219 15.1541" stroke="#898989" stroke-width="2.3573" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
+            <%# What's new / updates menu item %>
             <div class="menu-item">
               <div class="menu-item-info">
-                <svg width="41" height="41" viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
+                <!-- icon -->
+                <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
                   <path d="M27.8735 24.2746H12.8178C11.6282 24.2746 10.9783 22.8871 11.7399 21.9732L12.9944 20.4678C13.2098 20.2093 13.3173 19.8824 13.314 19.5461C13.2934 17.4267 13.6655 9.5415 20.3457 9.5415C27.0259 9.5415 27.398 17.4267 27.3773 19.5461C27.374 19.8825 27.4816 20.2093 27.6969 20.4678L28.9514 21.9732C29.713 22.8871 29.0632 24.2746 27.8735 24.2746Z" stroke="#898989" stroke-width="1.6838" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M16.8379 27.0806C16.8379 27.0806 17.5395 29.1853 20.3458 29.1853C23.1521 29.1853 23.8537 27.0806 23.8537 27.0806" stroke="#898989" stroke-width="1.6838" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
                 <h4>What's new</h4>
               </div>
-              <svg width="41" height="41" viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
+              <!-- arrow icon -->
+              <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18.5219 25.2568L23.5732 20.2055L18.5219 15.1541" stroke="#898989" stroke-width="2.3573" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
           </div>
         </main>
       </div>
+      <%# Bottom music player %>
       <%- include('partials/player') %>
     </div>
   </div>
+  <%# Main client-side JavaScript %>
   <script src="/js/script.js"></script>
 </body>
 </html>

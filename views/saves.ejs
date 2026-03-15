@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Page metadata and global styles -->
     <title>Spotify</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   </head>
   <body>
     <div class="wrapper">
+      <%# Sidebar navigation (shared across pages) %>
       <%- include('partials/sidebar') %>
 
       <div class="right">
+        <%# Top header with navigation and actions %>
         <%- include('partials/header') %>
         <div class="content-wrapper">
           <main class="main-content">
+            <%# Library control icons %>
             <%- include('partials/library-icons') %>
+            <%# Saved content section %>
             <section class="section">
               <div class="library empty-saves saves-mobile">
+                <%# Container used for card layout consistency across pages %>
                 <div class="cards-viewport">
                   <div class="card-container">
+                    <%# Empty state displayed when no items are saved %>
                     <div class="empty-state">
                       <h3>Nothing saved yet</h3>
                       <p>Save music you love and it will appear here.</p>
@@ -29,11 +36,14 @@
               </div>
             </section>
           </main>
+          <%# Friends activity sidebar %>
           <%- include('partials/friends') %>
         </div>
+        <%# Bottom music player %>
         <%- include('partials/player') %>
       </div>
     </div>
+    <%# Main client-side JavaScript %>
     <script src="/js/script.js"></script>
   </body>
 </html>
