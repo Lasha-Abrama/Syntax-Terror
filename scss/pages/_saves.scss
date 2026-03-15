@@ -4,21 +4,35 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
 
   .empty-state {
     text-align: center;
-    max-width: 360px;
     color: variables.$text-secondary;
 
     h3 {
-      font-size: 22px;
-      margin-bottom: 8px;
+      font-size: 24px;
+      margin-bottom: 12px;
     }
 
     p {
-      font-size: 14px;
-      line-height: 1.5;
+      font-size: 18px;
+    }
+  }
+}
+
+@media(max-width: 420px){
+  .saves-mobile .card-container{
+    .empty-state {
+      margin-top: 24px;
+  
+      h3 {
+        font-size: 20px;
+        margin-bottom: 8px;
+      };
+  
+      p {
+        font-size: 14px;
+      };
     }
   }
 }

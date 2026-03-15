@@ -44,7 +44,7 @@
               </div>
               <div class="cards-viewport">
                 <div class="card-container">
-                  <% data.artists .filter(a => a.name === "Daft Punk" || a.name === "David Bowie") .forEach(a => { %>
+                  <% data.artists.filter(a => a.name === "Daft Punk" || a.name === "David Bowie").forEach(a => { %>
 
                   <div class="card artist">
                     <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" class="cancel">
@@ -70,7 +70,7 @@
 
                   <% }) %>
 
-                  <% data.albums .filter (alb => alb.title === "Black Holes and Revelations") .forEach(alb => { %>
+                  <% data.albums.filter(alb => alb.title === "Black Holes and Revelations").forEach(alb => { %>
 
                   <div class="card album">
                     <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" class="cancel">
