@@ -1,5 +1,8 @@
 @use "../abstracts/_variables";
 @use "../abstracts/_mixins";
+/* =====================
+  Hero Section
+===================== */
 .hero-wrapper {
   @include mixins.flex-column();
 }
@@ -16,99 +19,98 @@
     width: 100%;
     height: 100vh;
   }
-  .hero-left {
-    .hero-image-wrapper {
-      position: relative;
-      .progress-bar {
-        width: calc(100% - 34px);
-        height: 6px;
-        background: #dbdbdb33;
-        border-radius: 16px;
-        overflow: hidden;
-        position: absolute;
-        bottom: 12px;
-        left: 17px;
-        cursor: pointer;
-      }
-
-      .progress {
-        width: 0%;
-        height: 100%;
-        background: variables.$text-primary;
-      }
-
-      .hero-image {
-        width: 400px;
-        height: 612px;
-        border-radius: 10px;
-      }
+}
+.hero-left {
+  .hero-image-wrapper {
+    position: relative;
+    .progress-bar {
+      width: calc(100% - 34px);
+      height: 6px;
+      background: #dbdbdb33;
+      border-radius: 16px;
+      overflow: hidden;
+      position: absolute;
+      bottom: 12px;
+      left: 17px;
+      cursor: pointer;
     }
-  }
-  .discover-action-btn {
-    position: absolute;
-    bottom: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    z-index: 13;
-  }
-  .hero-right {
-    display: flex;
-    align-items: center;
 
-    .info-card {
-      @include mixins.flex-row(18px);
+    .progress {
+      width: 0%;
+      height: 100%;
+      background: variables.$text-primary;
+    }
 
-      .info-left {
-        img.artist-image {
-          @include mixins.square(185px);
-        }
-      }
-
-      .info-right {
-        @include mixins.flex-column(20px);
-        justify-content: center;
-        .profile-icon-mobile {
-          display: none;
-        }
-        p {
-          color: variables.$text-secondary;
-          display: inline-block;
-        }
-        .title {
-          letter-spacing: 3%;
-          font-size: 30px;
-          font-weight: bold;
-          color: variables.$text-primary;
-        }
-        .player-controls {
-          @include mixins.flex-row(14px, center);
-
-          button {
-            background: none;
-            border: none;
-            cursor: pointer;
-          }
-          .favorite {
-            display: flex;
-            align-items: center;
-          }
-          &-desc {
-            display: flex;
-            gap: 14px;
-          }
-        }
-
-        .genre-buttons {
-          @include mixins.flex-row(10px);
-          .genre-btn {
-            @include mixins.genre-button();
-          }
-        }
-      }
+    .hero-image {
+      width: 400px;
+      height: 612px;
+      border-radius: variables.$radius-md;
     }
   }
 }
+.discover-action-btn {
+  position: absolute;
+  bottom: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 13;
+}
+.hero-right {
+  display: flex;
+  align-items: center;
+
+  .info-card {
+    @include mixins.flex-row(18px);
+  }
+  .info-left {
+    img.artist-image {
+      @include mixins.square(185px);
+    }
+  }
+  .profile-icon-mobile {
+    display: none;
+  }
+  .info-right {
+    @include mixins.flex-column(20px);
+    justify-content: center;
+
+    p {
+      color: variables.$text-secondary;
+      display: inline-block;
+    }
+    .title {
+      letter-spacing: 3%;
+      font-size: 30px;
+      font-weight: bold;
+      color: variables.$text-primary;
+    }
+    .player-controls {
+      @include mixins.flex-row(14px, center);
+
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+      .favorite {
+        display: flex;
+        align-items: center;
+      }
+      &-desc {
+        display: flex;
+        gap: 14px;
+      }
+    }
+  }
+  .genre-buttons {
+    @include mixins.flex-row(10px);
+    .genre-btn {
+      @include mixins.genre-button();
+    }
+  }
+}
+
 @media (max-width: 420px) {
   .discover-page {
     main {
@@ -152,85 +154,85 @@
       height: 100vh;
       padding: 0;
       justify-content: flex-start;
-      .hero-right {
-        position: absolute;
-        bottom: 25px;
-        width: 100%;
+    }
+    .hero-right {
+      position: absolute;
+      bottom: 25px;
+      width: 100%;
 
-        .info-card {
-          background-color: transparent;
-          border: none;
-          margin-left: 17px;
-          gap: 11px;
-          .info-right {
-            gap: 3px;
-          }
-          .profile-icon-mobile {
-            display: block;
-            position: relative;
-            height: 41px;
-            width: 41px;
-            img {
-              width: 100%;
-              border-radius: 50%;
-            }
-            svg {
-              position: absolute;
-              bottom: -12px;
-              width: 24px;
-              height: 24px;
-              left: 50%;
-              transform: translateX(-50%);
-            }
-          }
-          .info-right-desc {
-            font-size: 14px;
-            > * {
-              display: none;
-            }
-            > :first-child {
-              display: block;
-              .by-text {
-                display: none;
-              }
-            }
-          }
-          .info-right .title {
-            font-size: 14px;
-          }
-          .genre-buttons {
-            position: absolute;
-            left: 14px;
-            bottom: 70px;
-          }
-          .info-left {
-            img.artist-image {
-              @include mixins.square(51px);
-            }
-          }
-        }
+      .info-card {
+        background-color: transparent;
+        border: none;
+        margin-left: 17px;
+        gap: 11px;
       }
-      .hero-left {
-        width: 100%;
-        .hero-image-wrapper {
-          height: calc(100vh - 135px);
+      .info-right {
+        gap: 3px;
+      }
+      .profile-icon-mobile {
+        display: block;
+        position: relative;
+        height: 41px;
+        width: 41px;
+        img {
           width: 100%;
-          .hero-image {
-            display: block;
-            @include mixins.image-cover();
-          }
+          border-radius: variables.$radius-circle;
         }
-        .hero-image-wrapper::after {
-          content: "";
+        svg {
           position: absolute;
-          left: 0;
-          bottom: 0;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(to bottom, rgba(17, 17, 17, 0) 0%, rgba(17, 17, 17, 1) 100%);
-          pointer-events: none; /* lets clicks pass through */
+          bottom: -12px;
+          width: 24px;
+          height: 24px;
+          left: 50%;
+          transform: translateX(-50%);
         }
       }
+      .info-right-desc {
+        font-size: variables.$font-md;
+        > * {
+          display: none;
+        }
+        > :first-child {
+          display: block;
+          .by-text {
+            display: none;
+          }
+        }
+      }
+      .info-right .title {
+        font-size: variables.$font-md;
+      }
+      .genre-buttons {
+        position: absolute;
+        left: 14px;
+        bottom: 70px;
+      }
+      .info-left {
+        img.artist-image {
+          @include mixins.square(51px);
+        }
+      }
+    }
+  }
+  .hero-left {
+    width: 100%;
+    .hero-image-wrapper {
+      height: calc(100vh - 135px);
+      width: 100%;
+      .hero-image {
+        display: block;
+        @include mixins.image-cover();
+      }
+    }
+    .hero-image-wrapper::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(17, 17, 17, 0) 0%, rgba(17, 17, 17, 1) 100%);
+      pointer-events: none; /* lets clicks pass through */
     }
   }
 

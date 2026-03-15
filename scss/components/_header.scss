@@ -1,59 +1,68 @@
 @use "../abstracts/_variables";
 @use "../abstracts/_mixins";
-
+/* =====================
+  Header
+===================== */
 .header {
   flex-shrink: 0;
-  .navigation {
-    height: 54px;
-    @include mixins.flex-row(null, center, space-between);
-    color: variables.$text-secondary;
-    background-color: variables.$background-main;
+}
+/* =====================
+  Navigation
+===================== */
+.navigation {
+  height: 54px;
+  @include mixins.flex-row(null, center, space-between);
 
-    .nav-left {
-      @include mixins.flex-row(25px, center);
+  background-color: variables.$background-main;
+  /* =====================
+  Navigation Left
+  ===================== */
+  .nav-left {
+    @include mixins.flex-row(25px, center);
+  }
+}
+.nav-btn {
+  @include mixins.flex-link();
+  color: variables.$text-secondary;
+  padding: 7px 0;
+  width: 210px;
+  span {
+    font-size: variables.$font-md;
+  }
+}
+a.header-library,
+a.header-profile {
+  display: none;
+}
+.search-box {
+  @include mixins.flex-link(8px);
 
-      a.nav-btn {
-        @include mixins.flex-link();
-        padding: 7px 0;
-        border-radius: 10px;
-        width: 210px;
-        span {
-          font-size: 14px;
-        }
-      }
-      a.header-library,
-      a.header-profile {
-        display: none;
-      }
-      .search-box {
-        @include mixins.flex-link(8px);
+  input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: variables.$text-primary;
 
-        input {
-          background: transparent;
-          border: none;
-          outline: none;
-          color: variables.$text-primary;
+    &::placeholder {
+      color: variables.$text-secondary;
+    }
+  }
 
-          &::placeholder {
-            color: variables.$text-secondary;
-          }
-        }
-      }
+  /* =====================
+      Navigation Right
+    ===================== */
+  .nav-right {
+    @include mixins.flex-row(13px, center);
+
+    a {
+      @include mixins.flex-link();
+      font-size: 16px;
     }
 
-    .nav-right {
-      @include mixins.flex-row(13px, center);
-
-      a {
-        @include mixins.flex-link();
-        font-size: 16px;
-      }
-
-      .profile-circle {
-        @include mixins.square(32px);
-        border-radius: 50%;
-        background-color: variables.$background-player;
-      }
+    .profile-circle {
+      @include mixins.square(32px);
+      border-radius: variables.$radius-circle;
+      background-color: variables.$background-player;
     }
   }
 }
@@ -67,26 +76,26 @@
     bottom: 0;
     width: 100%;
     background: linear-gradient(to top, rgba(17, 17, 17, 1) 0%, rgba(17, 17, 17, 1) 43%, rgba(17, 17, 17, 0.85) 100%);
-    .navigation {
-      height: 95px;
-      background: transparent;
-      .nav-right {
-        display: none;
+  }
+  .navigation {
+    height: 95px;
+    background: transparent;
+    .nav-right {
+      display: none;
+    }
+    .nav-left {
+      @include mixins.flex-row(31px, center);
+      width: 100%;
+      a.header-library,
+      a.header-profile {
+        display: flex;
       }
-      .nav-left {
-        @include mixins.flex-row(31px, center);
-        width: 100%;
-        a.header-library,
-        a.header-profile {
-          display: flex;
-        }
-        a.nav-btn {
-          flex-direction: column;
-          width: auto;
-          gap: 0;
-          span {
-            font-size: 12px;
-          }
+      a.nav-btn {
+        flex-direction: column;
+        width: auto;
+        gap: 0;
+        span {
+          font-size: variables.$font-sm;
         }
       }
     }

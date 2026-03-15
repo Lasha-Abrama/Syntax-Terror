@@ -1,3 +1,6 @@
+/* =====================
+  Font Faces
+===================== */
 @font-face {
   font-family: "Satoshi";
   src: url("/fonts/satoshi/Satoshi-Regular.woff2") format("woff2");
@@ -10,7 +13,27 @@
   font-weight: 700;
   font-style: normal;
 }
-/* ===== RESET ===== */
+/* =====================
+  Colors
+===================== */
+/* =====================
+  Fonts
+===================== */
+/* =====================
+  Font Sizes
+===================== */
+/* =====================
+  Border Radius
+===================== */
+/* =====================
+  Content Paddings
+===================== */
+/* =====================
+  Mixins
+===================== */
+/* =====================
+  Reset
+===================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -38,143 +61,24 @@ ol {
   list-style: none;
 }
 
-body {
-  font-family: "Satoshi", sans-serif;
-  background-color: #060606;
-  background-color: #060606;
-}
-
-.wrapper {
-  display: flex;
-  height: 100%;
-  padding: 0 7px;
-}
-
-.right {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  flex: 1;
-  min-width: 0;
-  position: relative;
-  margin-left: 7px;
-}
-
-.content-wrapper {
-  height: calc(100vh - 60px - 90px);
-  margin-bottom: 5px;
-  display: flex;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  padding: 12px 25px;
-  flex: 1;
-  min-width: 0;
-  border-radius: 10px;
-  border: 1px solid #202020;
-  overflow-y: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-main::-webkit-scrollbar {
-  display: none;
-}
-
-body:-webkit-scrollbar {
-  display: none;
-}
-
-.active {
-  color: #e0e0e0;
-  background-color: #111111;
-  border-radius: 10px;
-}
-
-.sidebar .active svg,
-.header .active svg {
-  stroke: #e0e0e0 !important;
-  fill: #e0e0e0;
-}
-
-svg {
-  width: 41px;
-  height: 41px;
-  fill: none;
-  cursor: pointer;
-}
-
-.sidebar,
-.header svg {
-  stroke: #898989;
-  stroke-width: 2;
-  stroke-linejoin: round;
-}
-
-.arrow-left,
-.arrow-right {
-  opacity: 0.4;
-  pointer-events: none;
-}
-
-.arrow-left.active,
-.arrow-right.active {
-  opacity: 1;
-  pointer-events: auto;
-  color: var(--text-primary);
-}
-
-h3 {
-  font-size: 20px;
-  font-weight: 600;
-  color: #e0e0e0;
-}
-
-h4 {
-  font-size: 18px;
-  font-weight: 500;
-  color: #e0e0e0;
-}
-
-@media (max-width: 420px) {
-  .right {
-    margin-left: 0;
-    width: 100%;
-  }
-  .wrapper {
-    padding: 0;
-  }
-  .content-wrapper {
-    height: auto;
-    flex-direction: column;
-  }
-  main {
-    margin-bottom: 155px;
-    padding: 12px 15px;
-    gap: 15px;
-    border: none;
-  }
-  .active {
-    background-color: transparent;
-  }
-}
+/* =====================
+  Sidebar 
+===================== */
 .sidebar {
   padding: 7px 0;
 }
-.sidebar .sidebar-nav .sidebar-menu {
+.sidebar .sidebar-menu {
   display: flex;
   flex-direction: column;
   gap: 11px;
   width: 260px;
 }
-.sidebar .sidebar-nav .sidebar-menu li {
+.sidebar .sidebar-menu li {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.sidebar .sidebar-nav .sidebar-menu li a.nav-btn {
+.sidebar .sidebar-menu li a.nav-btn {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -183,30 +87,29 @@ h4 {
   font-family: "Satoshi", sans-serif;
   transition: color 0.2s ease;
 }
-.sidebar .sidebar-nav .sidebar-menu li a.nav-btn:hover {
+.sidebar .sidebar-menu li a.nav-btn:hover {
   color: #e0e0e0;
 }
-.sidebar .sidebar-nav .sidebar-menu li a.nav-btn:hover span,
-.sidebar .sidebar-nav .sidebar-menu li a.nav-btn:hover svg {
+.sidebar .sidebar-menu li a.nav-btn:hover span,
+.sidebar .sidebar-menu li a.nav-btn:hover svg {
   color: #e0e0e0;
   fill: #e0e0e0;
   stroke: #e0e0e0;
   transition: color 0.3s ease, fill 0.3s ease;
 }
-.sidebar .sidebar-nav .sidebar-menu li a.nav-btn {
+.sidebar .sidebar-menu li a.nav-btn {
   width: 100%;
 }
-.sidebar .sidebar-nav .sidebar-menu li a.nav-btn span {
+.sidebar .sidebar-menu li a.nav-btn span {
   color: #898989;
 }
-.sidebar .sidebar-nav .sidebar-menu li.active a.nav-btn {
+.sidebar .sidebar-menu li a.active {
   border-radius: 4px;
-  font-weight: 700;
 }
-.sidebar .sidebar-nav .sidebar-menu li.active a.nav-btn span {
+.sidebar .sidebar-menu li a.active span {
   color: #e0e0e0;
 }
-.sidebar .sidebar-nav .sidebar-menu .mobile-arrow {
+.sidebar .sidebar-menu .mobile-arrow {
   display: none;
 }
 
@@ -232,39 +135,49 @@ h4 {
   .mobile-sidebar .sidebar-nav .sidebar-menu .sidebar-library {
     display: none;
   }
-  .mobile-sidebar .sidebar-nav .sidebar-menu li {
+  .mobile-sidebar .sidebar-nav li {
     padding: 20px 0;
     border-bottom: 2px solid #202020;
   }
-  .mobile-sidebar .sidebar-nav .sidebar-menu li a.nav-btn span {
+  .mobile-sidebar .sidebar-nav li a.nav-btn span {
     color: #e0e0e0;
     font-size: 20px;
     font-weight: bold;
   }
-  .mobile-sidebar .sidebar-nav .sidebar-menu li a.nav-btn svg {
+  .mobile-sidebar .sidebar-nav li a.nav-btn svg {
     display: none;
   }
-  .mobile-sidebar .sidebar-nav .sidebar-menu .mobile-arrow {
+  .mobile-sidebar .sidebar-nav .mobile-arrow {
     display: block;
   }
 }
+/* =====================
+  Header
+===================== */
 .header {
   flex-shrink: 0;
 }
-.header .navigation {
+
+/* =====================
+  Navigation
+===================== */
+.navigation {
   height: 54px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #898989;
   background-color: #060606;
+  /* =====================
+  Navigation Left
+  ===================== */
 }
-.header .navigation .nav-left {
+.navigation .nav-left {
   display: flex;
   gap: 25px;
   align-items: center;
 }
-.header .navigation .nav-left a.nav-btn {
+
+.nav-btn {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -273,29 +186,31 @@ h4 {
   font-family: "Satoshi", sans-serif;
   transition: color 0.2s ease;
 }
-.header .navigation .nav-left a.nav-btn:hover {
+.nav-btn:hover {
   color: #e0e0e0;
 }
-.header .navigation .nav-left a.nav-btn:hover span,
-.header .navigation .nav-left a.nav-btn:hover svg {
+.nav-btn:hover span,
+.nav-btn:hover svg {
   color: #e0e0e0;
   fill: #e0e0e0;
   stroke: #e0e0e0;
   transition: color 0.3s ease, fill 0.3s ease;
 }
-.header .navigation .nav-left a.nav-btn {
+.nav-btn {
+  color: #898989;
   padding: 7px 0;
-  border-radius: 10px;
   width: 210px;
 }
-.header .navigation .nav-left a.nav-btn span {
+.nav-btn span {
   font-size: 14px;
 }
-.header .navigation .nav-left a.header-library,
-.header .navigation .nav-left a.header-profile {
+
+a.header-library,
+a.header-profile {
   display: none;
 }
-.header .navigation .nav-left .search-box {
+
+.search-box {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -304,31 +219,36 @@ h4 {
   font-family: "Satoshi", sans-serif;
   transition: color 0.2s ease;
 }
-.header .navigation .nav-left .search-box:hover {
+.search-box:hover {
   color: #e0e0e0;
 }
-.header .navigation .nav-left .search-box:hover span,
-.header .navigation .nav-left .search-box:hover svg {
+.search-box:hover span,
+.search-box:hover svg {
   color: #e0e0e0;
   fill: #e0e0e0;
   stroke: #e0e0e0;
   transition: color 0.3s ease, fill 0.3s ease;
 }
-.header .navigation .nav-left .search-box input {
+.search-box input {
   background: transparent;
   border: none;
   outline: none;
   color: #e0e0e0;
 }
-.header .navigation .nav-left .search-box input::placeholder {
+.search-box input::placeholder {
   color: #898989;
 }
-.header .navigation .nav-right {
+.search-box {
+  /* =====================
+      Navigation Right
+    ===================== */
+}
+.search-box .nav-right {
   display: flex;
   gap: 13px;
   align-items: center;
 }
-.header .navigation .nav-right a {
+.search-box .nav-right a {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -337,20 +257,20 @@ h4 {
   font-family: "Satoshi", sans-serif;
   transition: color 0.2s ease;
 }
-.header .navigation .nav-right a:hover {
+.search-box .nav-right a:hover {
   color: #e0e0e0;
 }
-.header .navigation .nav-right a:hover span,
-.header .navigation .nav-right a:hover svg {
+.search-box .nav-right a:hover span,
+.search-box .nav-right a:hover svg {
   color: #e0e0e0;
   fill: #e0e0e0;
   stroke: #e0e0e0;
   transition: color 0.3s ease, fill 0.3s ease;
 }
-.header .navigation .nav-right a {
+.search-box .nav-right a {
   font-size: 16px;
 }
-.header .navigation .nav-right .profile-circle {
+.search-box .nav-right .profile-circle {
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -368,32 +288,35 @@ h4 {
     width: 100%;
     background: linear-gradient(to top, rgb(17, 17, 17) 0%, rgb(17, 17, 17) 43%, rgba(17, 17, 17, 0.85) 100%);
   }
-  .header .navigation {
+  .navigation {
     height: 95px;
     background: transparent;
   }
-  .header .navigation .nav-right {
+  .navigation .nav-right {
     display: none;
   }
-  .header .navigation .nav-left {
+  .navigation .nav-left {
     display: flex;
     gap: 31px;
     align-items: center;
     width: 100%;
   }
-  .header .navigation .nav-left a.header-library,
-  .header .navigation .nav-left a.header-profile {
+  .navigation .nav-left a.header-library,
+  .navigation .nav-left a.header-profile {
     display: flex;
   }
-  .header .navigation .nav-left a.nav-btn {
+  .navigation .nav-left a.nav-btn {
     flex-direction: column;
     width: auto;
     gap: 0;
   }
-  .header .navigation .nav-left a.nav-btn span {
+  .navigation .nav-left a.nav-btn span {
     font-size: 12px;
   }
 }
+/* =====================
+  Player
+===================== */
 .player {
   flex-shrink: 0;
   display: flex;
@@ -427,6 +350,9 @@ h4 {
   gap: 5px;
 }
 
+/* =====================
+  Song Display
+===================== */
 .song {
   display: flex;
   align-items: center;
@@ -447,6 +373,9 @@ h4 {
   color: #e0e0e0;
 }
 
+/* =====================
+  Music Controls & Progress
+===================== */
 .music-player {
   display: flex;
   gap: 10px;
@@ -615,6 +544,9 @@ h4 {
     display: none;
   }
 }
+/* =====================
+  Friends Section
+===================== */
 .friends-section {
   border-radius: 10px;
   color: #e0e0e0;
@@ -639,59 +571,66 @@ h4 {
   display: flex;
   gap: 5px;
 }
-.friends-section .friend-activity {
+
+/* =====================
+  Friend Activity
+===================== */
+.friend-activity {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
-.friends-section .friend-activity .friend {
+.friend-activity .friend {
   display: flex;
   gap: 4px;
 }
-.friends-section .friend-activity .friend img {
+.friend-activity .friend img {
   width: 40px;
   height: 40px;
 }
-.friends-section .friend-activity .friend-content {
+.friend-activity .friend-content {
   display: flex;
   flex-direction: column;
 }
-.friends-section .friend-activity .friend-content-title {
+.friend-activity .friend-content-title {
   font-size: 12px;
   margin-left: 8px;
 }
-.friends-section .friend-activity .friend-content-activity {
+.friend-activity .friend-content-activity {
   display: flex;
   align-items: center;
   font-size: 14px;
 }
-.friends-section .friend-activity .friend-content-activity-desc {
+.friend-activity .friend-content-activity-desc {
   color: #898989;
 }
-.friends-section .friend-activity .not-active {
+.friend-activity .not-active {
   gap: 12px;
 }
-.friends-section .friend-activity .not-active .friend-content-title {
+.friend-activity .not-active .friend-content-title {
   margin-left: 0;
 }
-.friends-section .friend-activity .not-active .friend-content {
+.friend-activity .not-active .friend-content {
   gap: 5px;
 }
-.friends-section .friend-activity .not-active .friend-content-activity {
+.friend-activity .not-active .friend-content-activity {
   gap: 10px;
 }
-.friends-section .friend-activity .active-now .listening-svg {
+.friend-activity .active-now .listening-svg {
   width: 30px;
   height: 30px;
 }
-.friends-section .friend-activity .active-now .friend-content-activity {
+.friend-activity .active-now .friend-content-activity {
   gap: 3px;
 }
-.friends-section .friend-activity .active-now .friend-content-activity div {
+.friend-activity .active-now .friend-content-activity div {
   display: flex;
   gap: 10px;
 }
 
+/* =====================
+  Friends Section Active Modifier
+===================== */
 .friends-section.active {
   background-color: transparent;
   flex: 0 0 358px;
@@ -700,6 +639,161 @@ h4 {
   margin-left: 5px;
 }
 
+/* =====================
+  Body Styles
+===================== */
+body {
+  font-family: "Satoshi", sans-serif;
+  background-color: #060606;
+  background-color: #060606;
+}
+
+/* =====================
+  Wrapper
+===================== */
+.wrapper {
+  display: flex;
+  height: 100%;
+  padding: 0 7px;
+}
+
+/* =====================
+  Right Column
+===================== */
+.right {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  margin-left: 7px;
+}
+
+/* =====================
+  Content Wrapper
+===================== */
+.content-wrapper {
+  height: calc(100vh - 60px - 90px);
+  margin-bottom: 5px;
+  display: flex;
+}
+
+/* =====================
+  Main Content
+===================== */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 12px 25px;
+  flex: 1;
+  min-width: 0;
+  border-radius: 10px;
+  border: 1px solid #202020;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+main::-webkit-scrollbar {
+  display: none;
+}
+
+/* =====================
+  Scrollbar Styles
+===================== */
+body:-webkit-scrollbar {
+  display: none;
+}
+
+/* =====================
+  Active States
+===================== */
+.active {
+  color: #e0e0e0;
+  background-color: #111111;
+  border-radius: 10px;
+}
+
+/* =====================
+  Sidebar and Header SVG
+===================== */
+.sidebar .active svg,
+.header .active svg {
+  stroke: #e0e0e0 !important;
+  fill: #e0e0e0;
+}
+
+svg {
+  width: 41px;
+  height: 41px;
+  fill: none;
+  cursor: pointer;
+}
+
+.sidebar,
+.header svg {
+  stroke: #898989;
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+/* =====================
+  Arrow Buttons
+===================== */
+.arrow-left,
+.arrow-right {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.arrow-left.active,
+.arrow-right.active {
+  opacity: 1;
+  pointer-events: auto;
+  color: var(--text-primary);
+}
+
+/* =====================
+  Headings
+===================== */
+h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #e0e0e0;
+}
+
+@media (max-width: 420px) {
+  .right {
+    margin-left: 0;
+    width: 100%;
+  }
+  .wrapper {
+    padding: 0;
+  }
+  .content-wrapper {
+    height: auto;
+    flex-direction: column;
+  }
+  main {
+    margin-bottom: 155px;
+    padding: 12px 15px;
+    gap: 15px;
+    border: none;
+  }
+  .active {
+    background-color: transparent;
+  }
+}
+/* =====================
+  Mobile Section Cards
+===================== */
 .mobile-section {
   flex-wrap: wrap;
   gap: 10px;
@@ -737,6 +831,9 @@ h4 {
   align-items: center;
 }
 
+/* =====================
+  Home Buttons
+===================== */
 .home-buttons {
   display: flex;
   align-items: center;
@@ -775,6 +872,9 @@ h4 {
   background-color: #202020;
 }
 
+/* =====================
+  Sections Layout
+===================== */
 .section {
   display: flex;
   flex-direction: column;
@@ -797,11 +897,14 @@ h4 {
     display: none;
   }
 }
+/* =====================
+  Search Cards
+===================== */
 .card-title-search {
   color: white;
   font-weight: 900;
   margin: 20px 0 0 20px;
-  font-size: 20px;
+  font-size: 14px;
   max-width: 88px;
 }
 .card-image-search {
@@ -869,11 +972,17 @@ h4 {
     height: 100px;
   }
 }
+/* =====================
+  Library Cards
+===================== */
 .library .card-container {
   display: flex;
   flex-wrap: wrap;
 }
 
+/* =====================
+  Section Actions & Buttons
+===================== */
 .section-actions {
   display: flex;
   justify-content: space-between;
@@ -894,6 +1003,9 @@ h4 {
   font-size: 14px;
 }
 
+/* =====================
+  Pinned Element
+===================== */
 .pinned {
   position: absolute;
   top: 0;
@@ -916,6 +1028,9 @@ h4 {
     gap: 5px;
   }
 }
+/* =====================
+  Hero Section
+===================== */
 .hero-wrapper {
   display: flex;
   flex-direction: column;
@@ -943,10 +1058,11 @@ h4 {
   width: 100%;
   height: 100vh;
 }
-.hero-section .hero-left .hero-image-wrapper {
+
+.hero-left .hero-image-wrapper {
   position: relative;
 }
-.hero-section .hero-left .hero-image-wrapper .progress-bar {
+.hero-left .hero-image-wrapper .progress-bar {
   width: calc(100% - 34px);
   height: 6px;
   background: rgba(219, 219, 219, 0.2);
@@ -957,17 +1073,18 @@ h4 {
   left: 17px;
   cursor: pointer;
 }
-.hero-section .hero-left .hero-image-wrapper .progress {
+.hero-left .hero-image-wrapper .progress {
   width: 0%;
   height: 100%;
   background: #e0e0e0;
 }
-.hero-section .hero-left .hero-image-wrapper .hero-image {
+.hero-left .hero-image-wrapper .hero-image {
   width: 400px;
   height: 612px;
   border-radius: 10px;
 }
-.hero-section .discover-action-btn {
+
+.discover-action-btn {
   position: absolute;
   bottom: 50%;
   width: 100%;
@@ -975,60 +1092,61 @@ h4 {
   justify-content: space-between;
   z-index: 13;
 }
-.hero-section .hero-right {
+
+.hero-right {
   display: flex;
   align-items: center;
 }
-.hero-section .hero-right .info-card {
+.hero-right .info-card {
   display: flex;
   gap: 18px;
 }
-.hero-section .hero-right .info-card .info-left img.artist-image {
+.hero-right .info-left img.artist-image {
   width: 185px;
   height: 185px;
 }
-.hero-section .hero-right .info-card .info-right {
+.hero-right .profile-icon-mobile {
+  display: none;
+}
+.hero-right .info-right {
   display: flex;
   flex-direction: column;
   gap: 20px;
   justify-content: center;
 }
-.hero-section .hero-right .info-card .info-right .profile-icon-mobile {
-  display: none;
-}
-.hero-section .hero-right .info-card .info-right p {
+.hero-right .info-right p {
   color: #898989;
   display: inline-block;
 }
-.hero-section .hero-right .info-card .info-right .title {
+.hero-right .info-right .title {
   letter-spacing: 3%;
   font-size: 30px;
   font-weight: bold;
   color: #e0e0e0;
 }
-.hero-section .hero-right .info-card .info-right .player-controls {
+.hero-right .info-right .player-controls {
   display: flex;
   gap: 14px;
   align-items: center;
 }
-.hero-section .hero-right .info-card .info-right .player-controls button {
+.hero-right .info-right .player-controls button {
   background: none;
   border: none;
   cursor: pointer;
 }
-.hero-section .hero-right .info-card .info-right .player-controls .favorite {
+.hero-right .info-right .player-controls .favorite {
   display: flex;
   align-items: center;
 }
-.hero-section .hero-right .info-card .info-right .player-controls-desc {
+.hero-right .info-right .player-controls-desc {
   display: flex;
   gap: 14px;
 }
-.hero-section .hero-right .info-card .info-right .genre-buttons {
+.hero-right .genre-buttons {
   display: flex;
   gap: 10px;
 }
-.hero-section .hero-right .info-card .info-right .genre-buttons .genre-btn {
+.hero-right .genre-buttons .genre-btn {
   background: none;
   border: 2px solid rgba(137, 137, 137, 0.1);
   color: #898989;
@@ -1078,31 +1196,31 @@ h4 {
     padding: 0;
     justify-content: flex-start;
   }
-  .hero-section .hero-slide .hero-right {
+  .hero-section .hero-right {
     position: absolute;
     bottom: 25px;
     width: 100%;
   }
-  .hero-section .hero-slide .hero-right .info-card {
+  .hero-section .hero-right .info-card {
     background-color: transparent;
     border: none;
     margin-left: 17px;
     gap: 11px;
   }
-  .hero-section .hero-slide .hero-right .info-card .info-right {
+  .hero-section .hero-right .info-right {
     gap: 3px;
   }
-  .hero-section .hero-slide .hero-right .info-card .profile-icon-mobile {
+  .hero-section .hero-right .profile-icon-mobile {
     display: block;
     position: relative;
     height: 41px;
     width: 41px;
   }
-  .hero-section .hero-slide .hero-right .info-card .profile-icon-mobile img {
+  .hero-section .hero-right .profile-icon-mobile img {
     width: 100%;
     border-radius: 50%;
   }
-  .hero-section .hero-slide .hero-right .info-card .profile-icon-mobile svg {
+  .hero-section .hero-right .profile-icon-mobile svg {
     position: absolute;
     bottom: -12px;
     width: 24px;
@@ -1110,44 +1228,44 @@ h4 {
     left: 50%;
     transform: translateX(-50%);
   }
-  .hero-section .hero-slide .hero-right .info-card .info-right-desc {
+  .hero-section .hero-right .info-right-desc {
     font-size: 14px;
   }
-  .hero-section .hero-slide .hero-right .info-card .info-right-desc > * {
+  .hero-section .hero-right .info-right-desc > * {
     display: none;
   }
-  .hero-section .hero-slide .hero-right .info-card .info-right-desc > :first-child {
+  .hero-section .hero-right .info-right-desc > :first-child {
     display: block;
   }
-  .hero-section .hero-slide .hero-right .info-card .info-right-desc > :first-child .by-text {
+  .hero-section .hero-right .info-right-desc > :first-child .by-text {
     display: none;
   }
-  .hero-section .hero-slide .hero-right .info-card .info-right .title {
+  .hero-section .hero-right .info-right .title {
     font-size: 14px;
   }
-  .hero-section .hero-slide .hero-right .info-card .genre-buttons {
+  .hero-section .hero-right .genre-buttons {
     position: absolute;
     left: 14px;
     bottom: 70px;
   }
-  .hero-section .hero-slide .hero-right .info-card .info-left img.artist-image {
+  .hero-section .hero-right .info-left img.artist-image {
     width: 51px;
     height: 51px;
   }
-  .hero-section .hero-slide .hero-left {
+  .hero-left {
     width: 100%;
   }
-  .hero-section .hero-slide .hero-left .hero-image-wrapper {
+  .hero-left .hero-image-wrapper {
     height: calc(100vh - 135px);
     width: 100%;
   }
-  .hero-section .hero-slide .hero-left .hero-image-wrapper .hero-image {
+  .hero-left .hero-image-wrapper .hero-image {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-  .hero-section .hero-slide .hero-left .hero-image-wrapper::after {
+  .hero-left .hero-image-wrapper::after {
     content: "";
     position: absolute;
     left: 0;
@@ -1182,6 +1300,9 @@ h4 {
     display: none;
   }
 }
+/* =====================
+  Section Actions
+===================== */
 .section-actions-right {
   display: flex;
   gap: 35px;
@@ -1191,6 +1312,9 @@ h4 {
   gap: 10px;
 }
 
+/* =====================
+  Songs Table & Song Content
+===================== */
 .songs-table {
   color: #898989;
   font-size: 14px;
@@ -1198,11 +1322,14 @@ h4 {
   text-align: left;
   max-width: 800px;
 }
+.songs-table tbody tr:hover {
+  background-color: #111111;
+}
 .songs-table thead {
   position: relative;
 }
-.songs-table tbody tr:first-child td {
-  border-top: 32px solid transparent;
+.songs-table thead tr th {
+  border-bottom: 32px solid transparent;
 }
 .songs-table th {
   font-weight: 400;
@@ -1220,7 +1347,7 @@ h4 {
   content: "";
   position: absolute;
   left: 0;
-  top: calc(100% + 12px);
+  bottom: 20px;
   width: calc(100% + 600px);
   height: 2px;
   background: rgba(137, 137, 137, 0.0823529412);
@@ -1271,6 +1398,9 @@ h4 {
   }
 }
 @media (max-width: 420px) {
+  /* =====================
+    Mobile Search
+  ===================== */
   .search {
     display: flex;
     gap: 19px;
@@ -1305,6 +1435,9 @@ h4 {
     width: 16px;
     height: 16px;
   }
+  /* =====================
+    Mobile Library Filter
+  ===================== */
   .library-filter {
     display: flex;
     gap: 32px;
@@ -1319,6 +1452,9 @@ h4 {
   }
 }
 @media (max-width: 420px) {
+  /* =====================
+    Profile Page (Mobile)
+  ===================== */
   .profile-page {
     color: #e0e0e0;
   }
@@ -1342,7 +1478,7 @@ h4 {
     gap: 14px;
   }
   .profile-page .profile .profile-info .profile-text h2 {
-    font-size: 20px;
+    font-size: 14px;
     font-weight: bold;
   }
   .profile-page .profile .profile-info .profile-text p {
@@ -1373,6 +1509,11 @@ h4 {
     gap: 7px;
     top: 6px;
     right: 6px;
+  }
+  .profile-page {
+    /* =====================
+      Friends, Plan & Menu
+    ===================== */
   }
   .profile-page .friends-mobile .friends-section {
     max-height: 165px;
@@ -1456,11 +1597,17 @@ h4 {
     align-items: center;
   }
 }
+/* =====================
+  Mobile Folder Styles
+===================== */
 @media (max-width: 420px) {
   .folder-mobile .card-container {
     display: flex;
   }
 }
+/* =====================
+  Empty Saves 
+===================== */
 .empty-saves .card-container {
   display: flex;
   justify-content: center;
@@ -1483,7 +1630,7 @@ h4 {
     margin-top: 24px;
   }
   .saves-mobile .card-container .empty-state h3 {
-    font-size: 20px;
+    font-size: 14px;
     margin-bottom: 8px;
   }
   .saves-mobile .card-container .empty-state p {

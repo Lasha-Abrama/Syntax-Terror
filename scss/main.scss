@@ -2,14 +2,14 @@
 @use "abstracts/mixins";
 @use "abstracts/reset";
 
-@use "base/fonts";
-@use "base/general";
-
 @use "components/sidebar";
 @use "components/header";
 @use "components/player";
 @use "components/cards";
 @use "components/friends";
+
+@use "base/fonts";
+@use "base/general";
 
 @use "pages/homepage";
 @use "pages/search";

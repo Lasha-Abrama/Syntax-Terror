@@ -1,7 +1,10 @@
 @use "../abstracts/_variables";
 @use "../abstracts/_mixins";
+/* =====================
+  Friends Section
+===================== */
 .friends-section {
-  border-radius: 10px;
+  border-radius: variables.$radius-md;
   color: variables.$text-primary;
   @include mixins.flex-column(44px);
   flex: 0 0 0;
@@ -15,61 +18,68 @@
   &-title {
     @include mixins.flex-row(null, center, space-between);
     p {
-      font-size: 14px;
+      font-size: variables.$font-md;
     }
     &-icons {
       @include mixins.flex-row(5px);
     }
   }
-  .friend-activity {
-    @include mixins.flex-column(24px);
+}
+/* =====================
+  Friend Activity
+===================== */
+.friend-activity {
+  @include mixins.flex-column(24px);
 
-    .friend {
-      @include mixins.flex-row(4px);
-      img {
-        @include mixins.square(40px);
-      }
-      &-content {
-        @include mixins.flex-column();
-        &-title {
-          font-size: 12px;
-          margin-left: 8px;
-        }
-        &-activity {
-          @include mixins.flex-row(null, center);
-          font-size: 14px;
-          &-desc {
-            color: variables.$text-secondary;
-          }
-        }
+  .friend {
+    @include mixins.flex-row(4px);
+    img {
+      @include mixins.square(40px);
+    }
+  }
+  .friend-content {
+    @include mixins.flex-column();
+    &-title {
+      font-size: variables.$font-sm;
+      margin-left: 8px;
+    }
+    &-activity {
+      @include mixins.flex-row(null, center);
+      font-size: variables.$font-md;
+      &-desc {
+        color: variables.$text-secondary;
       }
     }
-    .not-active {
-      gap: 12px;
-      .friend-content-title {
-        margin-left: 0;
-      }
-      .friend-content {
-        gap: 5px;
-      }
-      .friend-content-activity {
-        gap: 10px;
-      }
+  }
+  .not-active {
+    gap: 12px;
+    .friend-content-title {
+      margin-left: 0;
     }
-    .active-now {
-      .listening-svg {
-        @include mixins.square(30px);
-      }
-      .friend-content-activity {
-        gap: 3px;
-        div {
-          @include mixins.flex-row(10px);
-        }
+    .friend-content {
+      gap: 5px;
+    }
+    .friend-content-activity {
+      gap: 10px;
+    }
+  }
+
+  .active-now {
+    .listening-svg {
+      @include mixins.square(30px);
+    }
+    .friend-content-activity {
+      gap: 3px;
+      div {
+        @include mixins.flex-row(10px);
       }
     }
   }
 }
 
+/* =====================
+  Friends Section Active Modifier
+===================== */
 .friends-section.active {
   background-color: transparent;
   flex: 0 0 358px;

@@ -43,14 +43,14 @@
     }
 
     .card-title {
-      font-size: 14px;
+      font-size: variables.$font-md;
       font-weight: 500;
       @include mixins.text-ellipsis(140px);
       color: variables.$text-primary;
     }
 
     .card-quantity {
-      font-size: 14px;
+      font-size: variables.$font-md;
       color: variables.$text-secondary;
     }
     .card-quantity-liked {
@@ -58,7 +58,7 @@
     }
 
     .card-description {
-      font-size: 12px;
+      font-size: variables.$font-sm;
       color: variables.$text-secondary;
     }
   }
@@ -70,7 +70,7 @@
     justify-content: center;
   }
   .card-image img {
-    border-radius: 50%;
+    border-radius: variables.$radius-circle;
   }
   .card-title {
     text-align: center;

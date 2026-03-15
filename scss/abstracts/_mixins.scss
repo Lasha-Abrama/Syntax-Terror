@@ -1,6 +1,7 @@
 @use "variables";
-
-// Mixin for flex items with text styling
+/* =====================
+  Mixins
+===================== */
 @mixin flex-link($gap: 10px, $color: variables.$text-secondary, $hover-color: variables.$text-primary) {
   display: flex;
   align-items: center;
@@ -26,7 +27,7 @@
 
 @mixin genre-button() {
   background: none;
-  border: 2px solid rgba(137, 137, 137, 0.1); // #898989 at 10% opacity
+  border: 2px solid rgba(137, 137, 137, 0.1);
   color: variables.$text-secondary;
   font-size: 12px;
   padding: 8px 13px;
@@ -58,7 +59,7 @@
   object-fit: cover;
 }
 @mixin text-ellipsis($width: 100%) {
-  width: $width; // defaults to 100% of container
+  width: $width;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
