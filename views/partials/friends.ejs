@@ -1,9 +1,15 @@
+<!-- 
+  Set the section title; default is "Friends Activity" if no `title` is passed
+ -->
 <% const sectionTitle = typeof title !== 'undefined' ? title : "Friends Activity"; %>
 
 <section class="friends-section" id="friendsPanel">
+  <!-- Section header with title and icons -->
   <div class="friends-section-title">
     <p><%= sectionTitle %></p>
+    <!-- Add / Close icons for the friends panel -->
     <div class="friends-section-title-icons">
+      <!-- Add friend icon -->
       <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg" id="friends-add">
         <path
           d="M23.5711 13.4691C23.5711 15.329 22.0634 16.8367 20.2035 16.8367C18.3436 16.8367 16.8359 15.329 16.8359 13.4691C16.8359 11.6093 18.3436 10.1016 20.2035 10.1016C22.0634 10.1016 23.5711 11.6093 23.5711 13.4691Z"
@@ -25,6 +31,7 @@
           stroke-linejoin="round"
         />
       </svg>
+      <!-- Close / X icon for hiding friends panel -->
       <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg" id="friends-close">
         <path
           d="M25.257 15.1543L20.2056 20.2056M15.1543 25.257L20.2056 20.2056M20.2056 20.2056L15.1543 15.1543M20.2056 20.2056L25.257 25.257"
@@ -36,12 +43,15 @@
       </svg>
     </div>
   </div>
+  <!-- Friends activity list -->
   <div class="friend-activity">
+    <!-- Active friend currently listening -->
     <div class="friend active-now">
       <img src="./assets/images/profiles/friend1.png" alt="friend-profile" />
       <div class="friend-content">
         <p class="friend-content-title">FriendlyMusicListener</p>
         <div class="friend-content-activity">
+          <!-- Listening bars icon -->
           <svg class="listening-svg" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M10.418 20.323V16.24M14.8722 20.323V9.55859M19.3265 20.323V13.6417"
@@ -58,6 +68,7 @@
         </div>
       </div>
     </div>
+    <!-- Another active friend -->
     <div class="friend active-now">
       <img src="./assets/images/profiles/friend2.png" alt="friend-profile" />
       <div class="friend-content">
@@ -79,6 +90,7 @@
         </div>
       </div>
     </div>
+    <!-- Friend who is not currently active -->
     <div class="friend not-active">
       <img src="./assets/images/profiles/friend3.png" alt="friend-profile" />
       <div class="friend-content">
@@ -91,6 +103,7 @@
         </div>
       </div>
     </div>
+    <!-- Another inactive friend -->
     <div class="friend not-active">
       <img src="./assets/images/profiles/friend4.png" alt="friend-profile" />
       <div class="friend-content">

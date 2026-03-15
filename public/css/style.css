@@ -348,6 +348,12 @@ a.header-profile {
 .player-right {
   display: flex;
   gap: 5px;
+  align-items: center;
+}
+.player-right-image {
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
 }
 
 /* =====================

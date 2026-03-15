@@ -1,18 +1,24 @@
-<div class="card <%= type %>" 
+<div class="card <%= type %>"
+  <%# <!-- Dynamic data-colour attribute for podcasts or browse cards --> %>
   <%= type === 'podcasts' ? `data-colour="${item['border-color']}"` : '' %> 
   <%= type === 'browse' ? `data-colour="${item.color}"` : '' %>>
 
+    <!-- Include pinned icon if the card is pinned and page matches -->
   <% if (item.pinned && (page === "library" || page === "pins" || page === "artists")) { %>
     <%- include("card-pin") %>
   <% } %>
+  <!-- Card image -->
   <div class="card-image">
     <img src="/<%= item.image %>" alt="<%= item.title || item.name %>" />
   </div>
 
+  <!-- Card content section -->
   <div class="card-content  <%= type %>-content">
     <div class="card-content-top">
+      <!-- Card title -->
       <h4 class="card-title"><%= item.title || item.name %></h4>
 
+      <!-- Quantity / rating for different card types -->
       <% if (type === "mix") { %>
         <p class="card-quantity" data-colour="<%= item['rating-color'] %>">50</p>
       <% } %>
@@ -27,10 +33,12 @@
       <% } %>
     </div>
 
+    <!-- Optional description (not for browse cards) -->
     <% if (item.description && type !== 'browse') { %>
       <p class="card-description"><%= item.description %></p>
     <% } %>
 
+    <!-- Optional artist or author information -->
     <% if (item.artist) { %>
       <p class="card-sub"><%= item.artist %></p>
     <% } %>

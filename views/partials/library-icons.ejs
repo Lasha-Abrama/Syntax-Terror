@@ -1,8 +1,14 @@
+<!-- 
+  Set variables based on title.
+  recentAction and groupAction will hold the page title if defined,
+  otherwise they are null.
+ -->
 <% const recentAction = typeof title !== 'undefined' ? title : null; %>
 <% const groupAction = typeof title !== 'undefined' ? title : null %>
 
 <section class="section">
   <div class="section-actions">
+    <!-- Left side container for action buttons and view icons -->
     <div class="section-actions-left">
       <div class="section-actions-left-first">
         <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
@@ -51,6 +57,7 @@
         </svg>
       </div>
 
+      <!-- Recent button with arrow icon -->
       <button>
         <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -71,6 +78,7 @@
         <span class="recent-action">Recent</span>
       </button>
 
+      <!-- Group button with lines icon -->
       <button>
         <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
           <path d="M29.3351 14.081L11.3351 14.081" stroke="#898989" stroke-width="2" stroke-linecap="round" />
@@ -80,6 +88,7 @@
         <span class="group-action">Group</span>
       </button>
 
+      <!-- Search or magnifying glass icon -->
       <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M24.7357 24.361C26.2733 22.7925 27.2214 20.644 27.2214 18.274C27.2214 13.4715 23.3282 9.57837 18.5257 9.57837C13.7233 9.57837 9.83008 13.4715 9.83008 18.274C9.83008 23.0765 13.7233 26.9697 18.5257 26.9697C20.9582 26.9697 23.1575 25.9709 24.7357 24.361ZM24.7357 24.361L29.8301 29.5784"
@@ -89,6 +98,7 @@
         />
       </svg>
     </div>
+    <!-- action icon on the right side -->
     <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M20.2052 13.0618V20.2054M20.2052 27.3491V20.2054M20.2052 20.2054L13.0615 20.2054M20.2052 20.2054H27.3489"

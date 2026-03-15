@@ -26,7 +26,11 @@
     @include mixins.flex-row(5px, center);
   }
   &-right {
-    @include mixins.flex-row(5px);
+    @include mixins.flex-row(5px, center);
+    &-image {
+      @include mixins.square(33px);
+      border-radius: variables.$radius-circle;
+    }
   }
 }
 /* =====================
