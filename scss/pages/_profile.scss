@@ -1,6 +1,9 @@
 @use "../abstracts/_variables";
 @use "../abstracts/_mixins";
 @media (max-width: 420px) {
+  /* =====================
+  Profile Page (Mobile)
+===================== */
   .profile-page {
     color: variables.$text-primary;
 
@@ -8,7 +11,7 @@
       position: relative;
       @include mixins.flex-row(null, center, space-between);
       background: linear-gradient(to bottom, #8a354a -92%, #111111 92%);
-      border-radius: 12px;
+      border-radius: variables.$radius-lg;
       box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.082);
 
       .profile-info {
@@ -18,30 +21,29 @@
           @include mixins.flex-column(14px, space-between);
 
           h2 {
-            font-size: 20px;
+            font-size: variables.$font-md;
             font-weight: bold;
           }
 
           p {
-            font-size: 14px;
+            font-size: variables.$font-md;
+          }
+        }
+        .profile-text-desc {
+          @include mixins.flex-column(10px);
+
+          .first-row {
+            @include mixins.flex-row(10px);
           }
 
-          &-desc {
-            @include mixins.flex-column(10px);
-
-            .first-row {
-              @include mixins.flex-row(10px);
-            }
-
-            span {
-              color: variables.$text-secondary;
-            }
+          span {
+            color: variables.$text-secondary;
           }
         }
 
         .profile-pic {
           @include mixins.square(95px);
-          border-radius: 50%;
+          border-radius: variables.$radius-circle;
           margin: 19px;
           margin-right: 16px;
         }
@@ -54,12 +56,14 @@
         right: 6px;
       }
     }
-
+    /* =====================
+  Friends, Plan & Menu
+===================== */
     .friends-mobile {
       .friends-section {
         max-height: 165px;
         gap: 0;
-        border-radius: 12px;
+        border-radius: variables.$radius-lg;
         padding: 6px 6px 16px 21px;
         box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.082);
         border: 1px solid variables.$background-secondary;
@@ -68,7 +72,7 @@
           align-items: flex-start;
 
           p {
-            font-size: 12px;
+            font-size: variables.$font-sm;
             padding-top: 7px;
           }
 
@@ -88,7 +92,7 @@
     .profile-plan {
       @include mixins.flex-column(20px);
       background: linear-gradient(to bottom, #10301b 0%, #111111 100%);
-      border-radius: 12px;
+      border-radius: variables.$radius-lg;
       box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.082);
       padding: 16px 0 26px 21px;
 
@@ -100,18 +104,17 @@
         }
 
         p {
-          font-size: 12px;
+          font-size: variables.$font-sm;
         }
-
-        &-info {
-          @include mixins.flex-column(5px);
-          h3 {
-            font-size: 18px;
-            color: variables.$accent-green;
-          }
-          p {
-            font-size: 14px;
-          }
+      }
+      .current-plan-info {
+        @include mixins.flex-column(5px);
+        h3 {
+          font-size: 18px;
+          color: variables.$accent-green;
+        }
+        p {
+          font-size: variables.$font-md;
         }
       }
     }

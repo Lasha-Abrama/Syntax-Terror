@@ -1,13 +1,17 @@
 @use "../abstracts/_variables";
 @use "../abstracts/_mixins";
-
+/* =====================
+  Library Cards
+===================== */
 .library {
   .card-container {
     display: flex;
     flex-wrap: wrap;
   }
 }
-
+/* =====================
+  Section Actions & Buttons
+===================== */
 .section-actions {
   @include mixins.flex-row(null, null, space-between);
 
@@ -20,16 +24,18 @@
   button {
     @include mixins.flex-row(5px, center);
     color: variables.$text-secondary;
-    font-size: 14px;
+    font-size: variables.$font-md;
   }
 }
-
+/* =====================
+  Pinned Element
+===================== */
 .pinned {
   position: absolute;
   top: 0;
   right: 0;
   background-color: variables.$background-primary;
-  border-radius: 50%;
+  border-radius: variables.$radius-circle;
   cursor: pointer;
 }
 

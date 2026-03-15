@@ -1,5 +1,8 @@
 @use "../abstracts/_variables";
 @use "../abstracts/_mixins";
+/* =====================
+  Mobile Section Cards
+===================== */
 .mobile-section {
   flex-wrap: wrap;
   gap: 10px;
@@ -8,12 +11,12 @@
 .mobile-card {
   width: calc((100% - 10px) / 2);
   padding: 8px;
-  border-radius: 10px;
+  border-radius: variables.$radius-md;
   background-color: variables.$background-secondary;
   color: variables.$text-primary;
   display: flex;
   gap: 8px;
-  font-size: 14px;
+  font-size: variables.$font-md;
   img {
     @include mixins.square(43px);
   }
@@ -28,6 +31,9 @@
     @include mixins.flex-row(null, center);
   }
 }
+/* =====================
+  Home Buttons
+===================== */
 .home-buttons {
   @include mixins.flex-row(null, center, space-between);
   .filter-buttons {
@@ -47,7 +53,7 @@
     border: none;
     cursor: pointer;
     font-family: variables.$font-primary;
-    font-size: 14px;
+    font-size: variables.$font-md;
     transition: all 0.2s ease;
 
     &.active {
@@ -60,7 +66,9 @@
     }
   }
 }
-
+/* =====================
+  Sections Layout
+===================== */
 .section {
   @include mixins.flex-column(15px);
 
@@ -76,7 +84,7 @@
     }
     .filter-buttons {
       .filter-btn {
-        font-size: 12px;
+        font-size: variables.$font-sm;
       }
     }
     .arrow {

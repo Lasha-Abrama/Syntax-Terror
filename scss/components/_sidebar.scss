@@ -1,36 +1,35 @@
 @use "../abstracts/_variables";
 @use "../abstracts/_mixins";
-
+/* =====================
+  Sidebar 
+===================== */
 .sidebar {
   padding: 7px 0;
 
-  .sidebar-nav {
-    .sidebar-menu {
-      @include mixins.flex-column(11px);
-      width: 260px; // fixed desktop width
+  .sidebar-menu {
+    @include mixins.flex-column(11px);
+    width: 260px; // fixed desktop width
 
-      li {
-        @include mixins.flex-row(null, center, space-between);
-        a.nav-btn {
-          @include mixins.flex-link();
-          width: 100%;
-          span {
-            color: variables.$text-secondary;
-          }
-        }
-
-        &.active a.nav-btn {
-          border-radius: 4px;
-          font-weight: 700;
-
-          span {
-            color: variables.$text-primary;
-          }
+    li {
+      @include mixins.flex-row(null, center, space-between);
+      a.nav-btn {
+        @include mixins.flex-link();
+        width: 100%;
+        span {
+          color: variables.$text-secondary;
         }
       }
-      .mobile-arrow {
-        display: none;
+
+      a.active {
+        border-radius: 4px;
+
+        span {
+          color: variables.$text-primary;
+        }
       }
+    }
+    .mobile-arrow {
+      display: none;
     }
   }
 }
@@ -55,24 +54,24 @@
           .sidebar-library {
             display: none;
           }
-          li {
-            padding: 20px 0;
-            border-bottom: 2px solid #202020;
+        }
+        li {
+          padding: 20px 0;
+          border-bottom: 2px solid #202020;
 
-            a.nav-btn {
-              span {
-                color: variables.$text-primary;
-                font-size: 20px;
-                font-weight: bold;
-              }
-              svg {
-                display: none;
-              }
+          a.nav-btn {
+            span {
+              color: variables.$text-primary;
+              font-size: variables.$font-lg;
+              font-weight: bold;
+            }
+            svg {
+              display: none;
             }
           }
-          .mobile-arrow {
-            display: block;
-          }
+        }
+        .mobile-arrow {
+          display: block;
         }
       }
     }

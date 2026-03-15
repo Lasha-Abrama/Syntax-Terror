@@ -1,5 +1,8 @@
 @use "../abstracts/_variables";
 @use "../abstracts/_mixins";
+/* =====================
+  Section Actions
+===================== */
 .section-actions {
   &-right {
     @include mixins.flex-row(35px);
@@ -8,17 +11,26 @@
     }
   }
 }
+/* =====================
+  Songs Table & Song Content
+===================== */
 .songs-table {
   color: variables.$text-secondary;
-  font-size: 14px;
+  font-size: variables.$font-md;
   border-collapse: separate;
   text-align: left;
   max-width: 800px;
+  tbody {
+    tr:hover {
+      background-color: variables.$background-primary;
+    }
+  }
+
   thead {
     position: relative;
-  }
-  tbody tr:first-child td {
-    border-top: 32px solid transparent;
+    tr th {
+      border-bottom: 32px solid transparent;
+    }
   }
   th {
     font-weight: 400;
@@ -38,7 +50,7 @@
   content: "";
   position: absolute;
   left: 0;
-  top: calc(100% + 12px);
+  bottom: 20px;
   width: calc(100% + 600px);
   height: 2px;
   background: #89898915;
@@ -47,7 +59,7 @@
   @include mixins.flex-row(10px);
   img {
     @include mixins.square(51px);
-    border-radius: 3px;
+    border-radius: variables.$radius-sm;
   }
   .song-info {
     @include mixins.flex-column(4px);
@@ -66,14 +78,14 @@
       gap: 5px;
     }
     .songs-table {
-      font-size: 12px;
+      font-size: variables.$font-sm;
     }
     .song-content {
       align-items: center;
 
       .song-info {
         .title {
-          font-size: 14px;
+          font-size: variables.$font-md;
           padding-right: 5px;
         }
       }

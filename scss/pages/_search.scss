@@ -1,12 +1,14 @@
 @use "../abstracts/_variables";
 @use "../abstracts/_mixins";
-
+/* =====================
+  Search Cards
+===================== */
 .card {
   &-title-search {
     color: white;
     font-weight: 900;
     margin: 20px 0 0 20px;
-    font-size: 20px;
+    font-size: variables.$font-md;
     max-width: 88px;
   }
   &-image-search {
@@ -17,7 +19,7 @@
 }
 .search-card {
   height: 170px;
-  border-radius: 10px;
+  border-radius: variables.$radius-md;
 }
 .cancel {
   position: absolute;

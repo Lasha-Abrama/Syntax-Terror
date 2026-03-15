@@ -1,11 +1,14 @@
 @use "../abstracts/_variables";
 @use "../abstracts/_mixins";
+/* =====================
+  Player
+===================== */
 .player {
   flex-shrink: 0;
   @include mixins.flex-row(null, center, space-between);
   background-color: variables.$background-player;
   padding: 12px 20px;
-  border-radius: 10px;
+  border-radius: variables.$radius-md;
   position: fixed;
   bottom: 0;
   width: calc(100% - 260px);
@@ -26,6 +29,9 @@
     @include mixins.flex-row(5px);
   }
 }
+/* =====================
+  Song Display
+===================== */
 .song {
   display: flex;
   align-items: center;
@@ -36,20 +42,23 @@
   &-text {
     @include mixins.flex-column();
     justify-content: space-between;
-    font-size: 14px;
+    font-size: variables.$font-md;
     color: variables.$text-secondary;
   }
   &-title {
     color: variables.$text-primary;
   }
 }
+/* =====================
+  Music Controls & Progress
+===================== */
 .music-player {
   @include mixins.flex-row(10px, center);
   width: 317px;
 }
 
 .music-player-time {
-  font-size: 12px;
+  font-size: variables.$font-sm;
   color: variables.$text-secondary;
 }
 
@@ -57,7 +66,7 @@
   flex: 1;
   height: 6px;
   background-color: #555; /* unfilled line */
-  border-radius: 3px;
+  border-radius: variables.$radius-sm;
   position: relative;
   cursor: pointer;
 }
@@ -71,7 +80,7 @@
 .music-player-progress-fill {
   height: 100%;
   background-color: variables.$text-primary;
-  border-radius: 3px;
+  border-radius: variables.$radius-sm;
   width: 0%;
   pointer-events: none; /* so clicks go to wrapper */
 }

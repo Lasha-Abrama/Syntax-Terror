@@ -1,6 +1,8 @@
 @use "../abstracts/_variables";
-
-.empty-saves .card-container{
+/* =====================
+  Empty Saves 
+===================== */
+.empty-saves .card-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,19 +22,19 @@
   }
 }
 
-@media(max-width: 420px){
-  .saves-mobile .card-container{
+@media (max-width: 420px) {
+  .saves-mobile .card-container {
     .empty-state {
       margin-top: 24px;
-  
+
       h3 {
-        font-size: 20px;
+        font-size: variables.$font-md;
         margin-bottom: 8px;
-      };
-  
+      }
+
       p {
-        font-size: 14px;
-      };
+        font-size: variables.$font-md;
+      }
     }
   }
 }

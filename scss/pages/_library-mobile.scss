@@ -2,13 +2,16 @@
 @use "../abstracts/_mixins";
 
 @media (max-width: 420px) {
+  /* =====================
+  Mobile Search
+===================== */
   .search {
     display: flex;
     gap: 19px;
     .search-box {
       @include mixins.flex-row(null, center, space-between);
       width: 100%;
-      border-radius: 10px;
+      border-radius: variables.$radius-md;
       padding: 0 8px;
       background-color: #20202080;
       .small-svg {
@@ -18,7 +21,7 @@
         border: none;
         outline: none;
         background: transparent;
-        font-size: 14px;
+        font-size: variables.$font-md;
 
         &::placeholder {
           color: #888;
@@ -34,6 +37,9 @@
       }
     }
   }
+  /* =====================
+  Mobile Library Filter
+===================== */
   .library-filter {
     display: flex;
     gap: 32px;
