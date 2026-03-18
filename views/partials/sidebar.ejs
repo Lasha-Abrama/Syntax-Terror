@@ -41,7 +41,7 @@
         </a>
       </li>
       <%# Pins link %>
-      <li>
+      <li class="<%= currentPage === '/pins' ? 'active-li' : '' %>">
         <a href="/pins" class="nav-btn <%= currentPage === '/pins' ? 'active' : '' %>">
           <%# Pins SVG icon %>
           <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
@@ -65,7 +65,7 @@
         </svg>
       </li>
       <%# Playlists link %>
-      <li>
+      <li class="<%= currentPage === '/playlists' ? 'active-li' : '' %>">
         <a href="/playlists" class="nav-btn <%= currentPage === '/playlists' ? 'active' : '' %>">
           <%# Playlists SVG icon %>
           <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
