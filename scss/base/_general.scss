@@ -6,7 +6,10 @@
 body {
   font-family: variables.$font-primary;
   background-color: variables.$background-main;
-  background-color: variables.$background-main;
+}
+
+body.theme-light {
+  background-color: variables.$background-light;
 }
 /* =====================
   Wrapper
@@ -63,6 +66,9 @@ body:-webkit-scrollbar {
   background-color: variables.$background-primary;
   border-radius: variables.$radius-md;
 }
+.active-li {
+  background-color: variables.$background-primary;
+}
 /* =====================
   Sidebar and Header SVG
 ===================== */
@@ -99,7 +105,15 @@ svg {
 .arrow-right.active {
   opacity: 1;
   pointer-events: auto;
-  color: var(--text-primary);
+  color: variables.$text-primary;
+}
+
+.theme-toggle .icon-sun {
+  display: inline;
+}
+
+.theme-toggle .icon-moon {
+  display: none;
 }
 /* =====================
   Headings

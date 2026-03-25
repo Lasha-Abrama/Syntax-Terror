@@ -31,6 +31,13 @@
   cursor: pointer;
   border-radius: 44px;
 }
+
+@mixin theme-bg-main($property: background-color) {
+  #{$property}: variables.$background-main;
+  body.theme-light & {
+    #{$property}: variables.$background-light;
+  }
+}
 @mixin hide-scrollbar {
   scrollbar-width: none; // Firefox
   -ms-overflow-style: none; // IE 10+

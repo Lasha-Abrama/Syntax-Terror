@@ -1,0 +1,147 @@
+@use "../abstracts/_variables";
+
+body.theme-light {
+  .navigation {
+    background-color: variables.$background-light;
+  }
+
+  .nav-btn {
+    color: variables.$text-dark;
+  }
+
+  .nav-btn:hover {
+    color: variables.$text-dark;
+  }
+
+  .nav-btn:hover span {
+    color: variables.$text-dark;
+  }
+
+  .active {
+    color: variables.$text-dark;
+    background-color: variables.$background-primary-light;
+  }
+  .active-li {
+    background-color: variables.$background-primary-light;
+  }
+
+  .sidebar,
+  .header svg {
+    stroke: variables.$text-dark;
+  }
+
+  main {
+    border: 1px solid variables.$background-primary-light;
+    background-color: variables.$background-light;
+  }
+
+  .sidebar .sidebar-menu li a.nav-btn span {
+    color: variables.$text-dark;
+  }
+
+  .sidebar .sidebar-menu li a.active span {
+    color: variables.$text-dark;
+  }
+
+  .sidebar .active svg,
+  .header .active svg {
+    stroke: variables.$text-dark !important;
+    fill: variables.$text-dark;
+  }
+
+  .card-content .card-title {
+    color: variables.$text-dark;
+  }
+
+  h3,
+  h4 {
+    color: variables.$text-dark;
+  }
+
+  .song-info .title,
+  .song-title {
+    color: variables.$text-dark;
+  }
+
+  .card-content .card-description,
+  .card-content .card-quantity,
+  .song-text, .info-card .title,
+  .music-player-time,
+  .section-actions button {
+    color: #2d2d2d;
+  }
+
+  .player {
+    background-color: #AAB3C6;
+  }
+
+  .music-player-progress-wrapper {
+    background-color: #d4d4d4;
+  }
+
+  .music-player-progress-fill {
+    background-color: variables.$text-dark;
+  }
+
+  .mobile-card {
+    background-color: variables.$background-primary-light;
+    color: variables.$text-dark;
+  }
+
+  .mobile-card-author {
+    color: #2d2d2d;
+  }
+
+  .filter-buttons .filter-btn {
+    background-color: rgba(6, 6, 6, 0.08);
+    color: variables.$text-dark;
+  }
+
+  .filter-buttons .filter-btn.active {
+    background-color: variables.$text-dark;
+    color: variables.$background-light;
+  }
+
+  .songs-table {
+    color: #2d2d2d;
+  }
+
+  .songs-table tbody tr:hover {
+    background-color: variables.$background-primary-light;
+  }
+
+  .songs-table thead::after {
+    background: #0000001f;
+  }
+
+  .pinned {
+    background-color: variables.$background-light;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  }
+
+  .sidebar .nav-btn:hover svg {
+    stroke: #000000;
+  }
+
+  .header .nav-btn:hover svg {
+    stroke: #000000;
+  }
+
+  .square{
+    stroke: variables.$text-dark;
+  }
+
+  .theme-toggle .icon-sun {
+    display: none;
+  }
+
+  .theme-toggle .icon-moon {
+    display: inline;
+  }
+}
+
+body.theme-light .discover-page {
+  .filter-buttons {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(242, 242, 242, 1) 100%);
+  }
+}

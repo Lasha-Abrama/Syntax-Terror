@@ -13,7 +13,7 @@
   height: 54px;
   @include mixins.flex-row(null, center, space-between);
 
-  background-color: variables.$background-main;
+  @include mixins.theme-bg-main();
   /* =====================
   Navigation Left
   ===================== */
@@ -57,6 +57,14 @@ a.header-profile {
   a {
     @include mixins.flex-link();
     font-size: 16px;
+  }
+
+  .theme-toggle {
+    @include mixins.flex-link();
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
   }
 
   .profile-circle {
