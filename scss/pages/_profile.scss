@@ -21,7 +21,7 @@
           @include mixins.flex-column(14px, space-between);
 
           h2 {
-            font-size: variables.$font-md;
+            font-size: variables.$font-lg;
             font-weight: bold;
           }
 
