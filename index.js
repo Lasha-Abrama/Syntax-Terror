@@ -98,10 +98,6 @@ app.get("/profile", (req, res) => {
   });
 });
 
-app.get("/liked", (req, res) => {
-  res.render("liked", { data, page: "liked" });
-});
-
 app.get("/saves", (req, res) => {
   res.render("saves", {
     page: "saves",

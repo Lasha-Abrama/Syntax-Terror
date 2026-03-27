@@ -74,7 +74,7 @@
               }); } %> <% combined.forEach(card => { %>
               <%# Individual mobile card (song or mix) %>
               <div class="mobile-card">
-                <img src="<%= card.item.image %>" alt="<%= card.item.title %>" />
+                <img src="/<%= card.item.image %>" alt="<%= card.item.title %>" />
                 <% if (card.type === 'song') { %>
                   <%# Song info (title + author) %>
                   <div class="mobile-card-info">

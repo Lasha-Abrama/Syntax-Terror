@@ -1,4 +1,4 @@
-// color functionals
+// Card accent colors (ratings and podcast borders)
 document.querySelectorAll(".card-quantity").forEach((el) => {
   el.style.color = el.dataset.colour;
 });
@@ -14,7 +14,7 @@ document.querySelectorAll(".podcasts").forEach((el) => {
   el.style.setProperty("--colour-g", g);
   el.style.setProperty("--colour-b", b);
 });
-// slider logic
+// Horizontal card sliders (left/right arrows)
 document.querySelectorAll(".section").forEach((section) => {
   const container = section.querySelector(".card-container");
   const viewport = section.querySelector(".cards-viewport");
@@ -85,7 +85,7 @@ document.querySelectorAll(".section").forEach((section) => {
   updateArrows();
 });
 
-// mix background logic
+// Mix card background colors
 document.querySelectorAll(".mix").forEach((card) => {
   const color = card.dataset.color;
   if (color) {
@@ -93,15 +93,7 @@ document.querySelectorAll(".mix").forEach((card) => {
   }
 });
 
-// your mix background logic
-document.querySelectorAll(".mix").forEach((card) => {
-  const color = card.dataset.color;
-  if (color) {
-    card.style.backgroundColor = color;
-  }
-});
-
-//cancel button
+// Remove card (recent searches)
 document.querySelectorAll(".cancel").forEach((btn) => {
   btn.addEventListener("click", function () {
     const card = this.closest(".card");
@@ -110,7 +102,7 @@ document.querySelectorAll(".cancel").forEach((btn) => {
     }
   });
 });
-//friends activity
+// Friends activity panel toggle
 const toggleBtn = document.getElementById("friendsToggle");
 const closeBtn = document.getElementById("friends-close");
 const panel = document.getElementById("friendsPanel");
@@ -127,6 +119,7 @@ closeBtn?.addEventListener("click", () => {
   toggleBtn?.classList.remove("active");
 });
 
+// Homepage filter buttons (show/hide sections)
 document.addEventListener("DOMContentLoaded", () => {
   const filterButtons = document.querySelectorAll(".filter-btn");
   const sections = document.querySelectorAll("section.section");
@@ -152,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-// player logic
+// Audio player: playback + progress + seeking
 const audio = document.getElementById("audio");
 
 const progressWrappers = document.querySelectorAll(".music-player-progress-wrapper");
@@ -184,7 +177,7 @@ audio.addEventListener("timeupdate", () => {
   currentTimeEl.textContent = formatTime(audio.currentTime);
 });
 
-/* PLAY BUTTONS */
+// Play/pause buttons (desktop + mobile)
 
 const playBtns = document.querySelectorAll(".music-player-btn");
 
@@ -215,7 +208,7 @@ playBtns.forEach((btn) => {
   });
 });
 
-/* SEEKING */
+// Seeking (click + drag)
 
 let isDragging = false;
 let activeWrapper = null;

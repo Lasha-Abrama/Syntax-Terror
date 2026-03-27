@@ -1,3 +1,4 @@
+// Desktop discover hero (auto-play + scroll)
 (function () {
   if (window.innerWidth <= 420) return;
   document.querySelectorAll(".hero-slide").forEach((el) => {
@@ -19,6 +20,7 @@
   let currentSlide = null;
   let time = 0;
 
+  // Reset UI state for a slide
   function resetSlide(slide) {
     if (!slide) return;
     const progress = slide.querySelector(".progress");
@@ -29,6 +31,7 @@
     if (pauseIcon) pauseIcon.style.display = "none";
   }
 
+  // Stop current audio + UI
   function stopCurrent() {
     if (interval) clearInterval(interval);
     audio.pause();
@@ -36,6 +39,7 @@
     if (currentSlide) resetSlide(currentSlide);
   }
 
+  // Keep active slide in view
   function scrollToSlide(slide) {
     if (!slide) return;
     // Scroll relative to container
@@ -46,6 +50,7 @@
     });
   }
 
+  // Start playing a slide and animate progress
   function playSlide(slide) {
     stopCurrent();
     if (!slide) return;
@@ -113,6 +118,7 @@
     play();
   }
 
+  // Advance to the next slide
   function nextSlide() {
     const currentIndex = Array.from(slides).indexOf(currentSlide);
     const nextIndex = (currentIndex + 1) % slides.length;
@@ -129,6 +135,7 @@
     }
   });
 })();
+// Mobile discover hero (touch + tap)
 (function () {
   if (window.innerWidth > 420) return;
 
@@ -141,12 +148,14 @@
   let time = 0;
   let isDragging = false;
 
+  // Reset progress bar
   function resetSlide(slide) {
     if (!slide) return;
     const progress = slide.querySelector(".progress");
     if (progress) progress.style.width = "0%";
   }
 
+  // Stop current audio + progress
   function stopCurrent() {
     clearInterval(intervalId);
     intervalId = null;
@@ -155,12 +164,14 @@
     if (currentSlide) resetSlide(currentSlide);
   }
 
+  // Advance to the next slide
   function nextSlide() {
     const currentIndex = Array.from(slides).indexOf(currentSlide);
     const nextIndex = (currentIndex + 1) % slides.length;
     setTimeout(() => playSlide(slides[nextIndex], true), 300);
   }
 
+  // Drive the progress bar
   function startInterval() {
     clearInterval(intervalId);
     intervalId = setInterval(() => {
@@ -178,6 +189,7 @@
   }
 
   // scroll is optional — only used when tapping another slide
+  // Start playing a slide (optionally scroll into view)
   function playSlide(slide, scroll = false) {
     stopCurrent();
     if (!slide) return;

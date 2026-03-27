@@ -34,11 +34,11 @@
                 class="hero-slide"
                 data-index="<%= index %>"
                 data-colour="<%= song.color %>"
-                data-src="<%= song.audio || '' %>"
+                data-src="/<%= song.audio || '' %>"
               >
                 <div class="hero-left">
                   <div class="hero-image-wrapper">
-                    <img src="<%= song.cover %>" alt="<%= song.title %>" class="hero-image" />
+                    <img src="/<%= song.cover %>" alt="<%= song.title %>" class="hero-image" />
 
                     <div class="progress-bar">
                       <div class="progress"></div>
@@ -49,7 +49,7 @@
                 <div class="hero-right">
                   <div class="info-card">
                     <div class="info-left">
-                      <img src="<%= song.image %>" alt="<%= song.author %>" class="artist-image" />
+                      <img src="/<%= song.image %>" alt="<%= song.author %>" class="artist-image" />
                     </div>
 
                     <div class="info-right">
@@ -93,7 +93,7 @@
                           />
                         </svg>
                         <div class="profile-icon-mobile">
-                          <img src="<%= song.image %>" alt="<%= song.author %>" />
+                          <img src="/<%= song.image %>" alt="<%= song.author %>" />
                           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="12" cy="12" r="5.5" fill="#E0E0E0" stroke="#E0E0E0" />
                             <path
