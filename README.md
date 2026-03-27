@@ -2,6 +2,8 @@
 
 A multi-page Spotify-inspired UI built with Express + EJS + Sass. This project is intended to demonstrate practical front-end and templating knowledge in a professional, portfolio-ready format. Data is driven from `data/data.json`, and the UI is rendered server-side using reusable EJS partials.
 
+👉 [Open the app](https://syntax-terror-spotify-clone.onrender.com/)
+
 ## Tech Stack
 - Node.js + Express (server + routing)
 - EJS (templating)
